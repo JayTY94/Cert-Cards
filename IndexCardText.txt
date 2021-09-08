@@ -117,7 +117,7 @@ Selectors are Properties of UI Automation activities which help the robot identi
 
 25
 UiPath Developer
-Some examples of when selectors require fine-tuning are when the target elements contain dynamic IDs, when the selectors are too specific or when they contain IDXs.    
+Some examples of when selectors require fine-tuning are when the target elements contain dynamic IDs, when the selectors are too specific or when they contain IDXs.
 
 
 
@@ -132,7 +132,7 @@ UiPath Developer
 27
 UiPath Developer
 
-
+sdfs
 
 
 28
