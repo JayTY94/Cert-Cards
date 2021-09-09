@@ -148,7 +148,7 @@ Full selectors contain all the information required to identify a specific UI el
 
 30
 UiPath Developer
-
+Fine-tuning is the process of refining selectors in order to have the workflow correctly executed in situations in which the generated selector is unreliable, too specific or too sensitive with regards to system changes.
 
 
 
@@ -157,12 +157,15 @@ Process finished with exit code 0
 C:\Users\jayoshimi\PycharmProjects\pythonProject\venv\Scripts\python.exe "C:/Users/jayoshimi/PycharmProjects/pythonProject/cards document.py"
 1
 UiPath Developer
-
+When using a variable to fine tune a selector, the variable name must be inside quotation marks and double curly braces.
+attribute="{{VariableName}}"
 
 
 
 2
 UiPath Developer
+To identify a target, a UI Automation activity can either use a selector of type string in the Selector property or an object of type UI Element in the Element property, but not both.
+
 
 
 
