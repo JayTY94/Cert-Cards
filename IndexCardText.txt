@@ -125,7 +125,189 @@ Some examples of when selectors require fine-tuning are when the target elements
 
 26
 UiPath Developer
-Does this get pushed?
+UI Explorer lets us create a custom selector for a specific UI element. The Visual Tree panel displays a tree of the UI hierarchy and enables us to navigate through it, by clicking the arrows in front of each node.
+
+
+27
+UiPath Developer
+The top part of the Selector Editor panel enables us to view all the nodes in a selector and eliminate the ones that are not necessary by clearing the check box in front of them.
+The bottom part of the panel displays the actual XML fragment that we have to use in a project.
+
+
+28
+UiPath Developer
+When it comes to Classic recorders, the Basic Recorder generates full selectors while the Desktop recorder generates partial selectors. 
+
+
+
+29
+UiPath Developer
+Full selectors contain all the information required to identify a specific UI element. It’s recommended to use full selectors when the robot must switch between multiple windows while performing the automation workflow.  
+
+
+
+30
+UiPath Developer
+
+
+
+
+
+Process finished with exit code 0
+C:\Users\jayoshimi\PycharmProjects\pythonProject\venv\Scripts\python.exe "C:/Users/jayoshimi/PycharmProjects/pythonProject/cards document.py"
+1
+UiPath Developer
+
+
+
+
+2
+UiPath Developer
+
+
+
+
+3
+UiPath Developer
+
+
+
+
+4
+UiPath Developer
+
+
+
+
+5
+UiPath Developer
+
+
+
+
+6
+UiPath Developer
+
+
+
+
+7
+UiPath Developer
+
+
+
+
+8
+UiPath Developer
+
+
+
+
+9
+UiPath Developer
+
+
+
+
+10
+UiPath Developer
+
+
+
+
+11
+UiPath Developer
+
+
+
+
+12
+UiPath Developer
+
+
+
+
+13
+UiPath Developer
+
+
+
+
+14
+UiPath Developer
+
+
+
+
+15
+UiPath Developer
+
+
+
+
+16
+UiPath Developer
+
+
+
+
+17
+UiPath Developer
+
+
+
+
+18
+UiPath Developer
+
+
+
+
+19
+UiPath Developer
+
+
+
+
+20
+UiPath Developer
+
+
+
+
+21
+UiPath Developer
+
+
+
+
+22
+UiPath Developer
+
+
+
+
+23
+UiPath Developer
+
+
+
+
+24
+UiPath Developer
+
+
+
+
+25
+UiPath Developer
+
+
+
+
+26
+UiPath Developer
+
 
 
 
