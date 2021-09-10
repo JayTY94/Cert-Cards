@@ -172,13 +172,16 @@ To identify a target, a UI Automation activity can either use a selector of type
 
 3
 UiPath Developer
+To set default values in UiPath Studio:
+Project Panel > Gear/Settings > UI Automation Modern
+I use modern, not classic for the most part.
 
 
 
 
 4
 UiPath Developer
-
+It is good practice to create one folder in the project folder for each app used in the automation.
 
 
 
