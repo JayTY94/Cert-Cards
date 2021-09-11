@@ -187,25 +187,30 @@ It is good practice to create one folder in the project folder for each app used
 
 5
 UiPath Developer
+A Business Exception describes an error rooted in the fact that certain data which the automation project depends on is incomplete or missing.
+
+Retrying the transaction does not yield any chance of solving the issue, and there are other better courses of action, such as notifying the human user of this error.
 
 
 
 
 6
 UiPath Developer
+An Application Exception describes an error rooted in a technical issue, such as an application that is not responding.
 
+These kinds of issues have a chance of being solved simply by retrying the transaction, as the application can unfreeze.
 
 
 
 7
 UiPath Developer
-
+To import workflows in studio, right click the project name in the project panel and choose "import workflows". Import the .xaml files of the desired workflows.
 
 
 
 8
 UiPath Developer
-
+The difference between log messages and write line is that log messages get sent to orchestrator and write line messages do not.
 
 
 
