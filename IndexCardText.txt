@@ -1,45 +1,5 @@
 
 
-
-21
-UiPath Developer
-FullText is the default screen scraping method, it is fast and accurate, yet unlike the Native screen scraping method, it cannot extract the screen coordinates of the text.
-
-
-
-
-
-22
-UiPath Developer
-Both the FullText and Native screen scraping methods work only with desktop applications, but the Native method only works with apps that are built to render text with the Graphics Device Interface (GDI).
-
-
-
-23
-UiPath Developer
-Selectors with Wildcards
-
-Wildcards are symbols that enable you to replace zero or multiple characters in a string. These can be quite useful when dealing with dynamically-changing attributes in a selector.
-
-Asterisk (*) – replaces zero or more characters
-Question mark (?) – replaces a single character
-
-
-
-24
-UiPath Developer
-Selectors are Properties of UI Automation activities which help the robot identify UI Elements. They contain the attributes of each graphical user interface element and its parents as XML fragments.
-
-
-
-25
-UiPath Developer
-Some examples of when selectors require fine-tuning are when the target elements contain dynamic IDs, when the selectors are too specific or when they contain IDXs.
-
-
-
-
-
 26
 UiPath Developer
 UI Explorer lets us create a custom selector for a specific UI element. The Visual Tree panel displays a tree of the UI hierarchy and enables us to navigate through it, by clicking the arrows in front of each node.
@@ -133,13 +93,17 @@ The difference between log messages and write line is that log messages get sent
 
 9
 UiPath Developer
-
+In the Robotic Enterprise Framework, the Config file has three sheets - Settings, Constants and Assets. In the Settings sheet, we can store any configuration related to the business process, such as URLs, file paths, credential names, and any process-specific piece of information.
 
 
 
 10
 UiPath Developer
+To get the csv files in the Downloads folder, use:
 
+Directory.GetFiles(String.Format("C:\Users\{0}\Downloads", Environment.UserName),"*csv").ToList
+
+The output will be a List of strings with the full file paths for each csv file.
 
 
 
