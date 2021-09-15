@@ -1,31 +1,5 @@
 
 
-26
-UiPath Developer
-UI Explorer lets us create a custom selector for a specific UI element. The Visual Tree panel displays a tree of the UI hierarchy and enables us to navigate through it, by clicking the arrows in front of each node.
-
-
-27
-UiPath Developer
-The top part of the Selector Editor panel enables us to view all the nodes in a selector and eliminate the ones that are not necessary by clearing the check box in front of them.
-The bottom part of the panel displays the actual XML fragment that we have to use in a project.
-
-
-28
-UiPath Developer
-When it comes to Classic recorders, the Basic Recorder generates full selectors while the Desktop recorder generates partial selectors. 
-
-
-
-29
-UiPath Developer
-Full selectors contain all the information required to identify a specific UI element. It’s recommended to use full selectors when the robot must switch between multiple windows while performing the automation workflow.  
-
-
-
-30
-UiPath Developer
-Fine-tuning is the process of refining selectors in order to have the workflow correctly executed in situations in which the generated selector is unreliable, too specific or too sensitive with regards to system changes.
 
 
 
