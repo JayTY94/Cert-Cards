@@ -83,7 +83,11 @@ The output will be a List of strings with the full file paths for each csv file.
 
 11
 UiPath Developer
+Assign
+dataTable = dataTable.AsEnumerable().skip(intA).Take(intB).CopyToDataTable()
 
+Cuts out a number of rows in dataTable by index. The first intA rows are skipped, and the next intB rows are included.
+Remember that this requires a conversion to an IEnumerable and back to a DataTable.
 
 
 
