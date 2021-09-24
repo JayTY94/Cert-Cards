@@ -13,20 +13,24 @@ Remember that this requires a conversion to an IEnumerable and back to a DataTab
 
 
 12
-UiPath Developer
+hemic
+When pulling Lumisight reports, remember to pick user types HRs, Employees, and Administrators.
 
 
 
 
 13
 UiPath Developer
-
+WaitElementExist and WaitElementDisappear don't exist in Modern Studio. Use CheckAppState instead.
 
 
 
 14
 UiPath Developer
-
+The UiPath Architecture has three layers
+Client Layer: UiPath Robots/UiPath Studio
+Server Layer: UiPath Orchestrator
+Persistancy Layer: Database
 
 
 

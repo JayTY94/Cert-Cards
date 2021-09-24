@@ -1,0 +1,17 @@
+need pages:
+Insurer Participation Schedule (pro rata) and
+Commercial Property Insurance Policy Jacket
+
+
+Get aim accounting, (Later?)
+
+
+Questions:
+
+Is there a specific reason for MS print to PDF over copy paste to another location? (Control + Shift + P)
+How do I get that .csv in the first place?
+
+
+
+Musings:
+It looks like if I use the Microsoft OCR, it will take about 3 seconds to scan each document. That is not great, but I can probably construct logic around that which will find the documents that I need. I should note that the Microsoft OCR is not great on this default view (I think it would improve if I zoomed in), but all Caps text seems to come out ok.
