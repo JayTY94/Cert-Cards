@@ -30,55 +30,76 @@ UiPath Developer
 The UiPath Architecture has three layers
 Client Layer: UiPath Robots/UiPath Studio
 Server Layer: UiPath Orchestrator
-Persistancy Layer: Database
+Persistency Layer: Database
 
 
 
 15
 UiPath Developer
+Folder
+–
+In Orchestrator, folders help replicate the organizational hierarchies, with the separation of automated processes between teams, segregation of process data, and access control for users. At the same time, when it makes sense, they allow sharing of the resources and assets.
+
 
 
 
 
 16
 UiPath Developer
-
+Heartbeat
+–
+Attended and unattended robots send a heartbeat to Orchestrator every 30 seconds. This signals to Orchestrator that the connection is working.
 
 
 
 17
 UiPath Developer
+Tenants and folders
+
+Just like folders, tenants are meant to replicate organizational hierarchies within the same instance of Orchestrator.
+
+From a hierarchy perspective, folders are subdivisions of tenants. And while in the folders case it's more about hierarchization and separation, tenants are clearly isolated from one another.
+
 
 
 
 
 18
 UiPath Developer
-
+Webhook
+–
+Webhooks facilitate the communication between Orchestrator and other applications at API level. These are mapped at tenant level, which means they cannot be differentiated between folders and will provide information for the entire tenant.
 
 
 
 19
 UiPath Developer
+There are two types of machines in Orchestrator:
+
+Machine templates: this allows the connection to multiple workstations with a single API key.
 
 
 
 
 20
 UiPath Developer
+There are two types of machines in Orchestrator:
 
+Standard machines: this allows the connection between Orchestrator and a single machine. This is suitable for scenarios in which robots need to run on specific machines.
 
 
 
 21
 UiPath Developer
+In Orchestrator, licenses are also called runtimes. They are allocated at machine template level, under Machines in the Tenant menu.
 
+The number of runtimes allocated there should be matched with the maximum number of users which can run on a single machine connected using that machine template.
 
 
 
 22
 UiPath Developer
-
+The process, the user and the machine template need to be mapped to the folder in order to run an unattended job. The package is a tenant entity, therefore not mapped to the folder.
 
 
 
