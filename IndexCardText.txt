@@ -105,37 +105,53 @@ The process, the user and the machine template need to be mapped to the folder i
 
 23
 UiPath Developer
-
+The separation of processes based on UI interaction
+Processes in Orchestrator are now differentiated between those that interact with the user interface (known as foreground processes) and those that don't, called background or headless processes.
 
 
 
 24
 UiPath Developer
-
+Trigger allocation per user
+Triggers can be set to allocate jobs dynamically, or to allocate the jobs only to a certain user.
 
 
 
 25
 UiPath Developer
+Which of the following folder entities can be configured to be accessed/executed only by a certain unattended robot?
+
+
+Asset
+
+Trigger
+
+Job
 
 
 
 
 26
 UiPath Developer
+Which of the following Orchestrator entities are available through the Resources panel in Studio?
+Processes
+Assets
+Queues
 
 
 
 
 27
 UiPath Developer
-
+What happens when a new version of an existing libraries is published to Orchestrator?
+Both versions will be available
 
 
 
 28
 UiPath Developer
 
+Orchestrator admins can toggle between read-only and write privileges for each storage bucket.
 
 
 
