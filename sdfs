@@ -1,0 +1,61 @@
+Ave DF since 2015 =
+CALCULATE(
+    DIVIDE(
+        SUM(DFs_Incurred[end_interval]),
+        SUM(DFs_Incurred[start_interval])
+    ),
+    FILTER(DFs_Incurred,DFs_Incurred[QFirst] >= DATE(2015, 1, 1)),
+    FILTER(DFs_Incurred,DFs_Incurred[end_interval] <> BLANK())
+)
+
+TestMeasure =
+CALCULATE(
+    SUM(DFs_Incurred[end_interval]),
+    FILTER(DFs_Incurred,DFs_Incurred[QFirst] >= DATE(2015, 1, 1)),
+    FILTER(DFs_Incurred,DFs_Incurred[end_interval] <> BLANK())
+)
+
+So the number that I'm getting is bigger than the numbers on the table with the other schema (Which I don't know if I need), implying that there is an additional filter applied for numbers in the table Incurred_Table or Agg_Incurred that is not applied on my new statements. If I can figure out what that is, that should help me work out how to add it to the new formulae.
+
+It looks like that implicit change is that the transactions should all be of claims where the claim number appears on the claim table. It makes sense. This would mean that I'm now including some transactions in calculations that were not in the originals. OK, but how do I make the new like the old?
+
+I tried to make a new table with
+Table 2 = EXCEPT(SUMMARIZE(Claim_View, Claim_View[ClaimNumber]),SUMMARIZE(Transaction_View, Transaction_View[Claim Number]))
+
+I guess that it should be
+
+Table 2 = EXCEPT(SUMMARIZE(Transaction_View, Transaction_View[Claim Number]), SUMMARIZE(Claim_View, Claim_View[ClaimNumber]))
+
+and I'm returned an empty table. What's up with this? Maybe that just wasn't what's happening here?
+
+
+Also, this should get added
+
+Ave DF since 2018 =
+CALCULATE(
+    DIVIDE(
+        SUM(DFs_Incurred[end_interval]),
+        SUM(DFs_Incurred[start_interval])
+    ),
+    FILTER(DFs_Incurred,DFs_Incurred[QFirst] >= DATE(2018, 1, 1)),
+    FILTER(DFs_Incurred,DFs_Incurred[end_interval] <> BLANK())
+)
+
+Shit the other thing that is broken is that for some reason I can't somethign something the indemnity filter and the med only filter looking the same. What's the deal with that? Is it that those filters filter out too many values?
+
+I think that I figured out where the error is! These values are getting a value for the end interval; I think that it's supposed to be blank when it's not, one interval early. Example:
+
+interval 9 for 10/1/2020 is 9.41e6
+interval 12 for 10/1/2020 is 9.50e6
+
+I had assumed that the interval for 12 would not be present, but it is!!!!!! That's the discrepancy between the two independent calculations: one done for the Incurred_Table table, and the other for DFs_Incurred table.
+
+...or was it just that I was doing <= for the date comparison rather than <? That could also be it, but I really hope that is not the case.
+
+I stopped messing with the somethign something I stopped messing with the 2015s and I'm just doing this for all of the data, not just since 2015. My end interval is still 4 mill higher than it's supposed to be. Why IS that?
+
+
+OK. I THINK that the slicer is not working as intended because there is no relationship between Claim_View and Transaction_View. I suspect that this may be the horrible thing that tells me "Redo your Schema, Idiot." I don't want to because it will take so long that I will have nothing to show tomorrow. Also because it means that I have to fix my data sources. fadl;skjsdoaijfoiaejwfiuvfhdfo;ijvfd;ij
+
+
+Need to do the thing with Orca.msi to modify some .MSI's for deployment so that they have the desired settings when we use them for deployment
