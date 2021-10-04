@@ -2,66 +2,6 @@
 
 
 
-Process finished with exit code 0
-C:\Users\jayoshimi\PycharmProjects\pythonProject\venv\Scripts\python.exe "C:/Users/jayoshimi/PycharmProjects/pythonProject/cards document.py"
-1
-Power BI
-Dimension tables are used to filter and group the data in fact tables. The dimension tables, by contrast, contain unique values, for instance, one row for each product in the Products table and one row for each customer in the Customer table.
-
-
-
-2
-Power BI
-Fact tables contain observational or event data values: sales orders, product counts, prices, transactional dates and times, and quantities. Fact tables can contain several repeated values. For example, one product can appear multiple times in multiple rows, for different customers on different dates. These values can be aggregated to create visuals.
-
-
-
-3
-Power BI
-When you load your data into Power BI, the Autodetect feature will help you establish relationships between columns that are named similarly. Relationships can be inactive or active. Only one active relationship can exist between tables, which is discussed in a future module.
-
-
-
-4
-Power BI
-The Model view in Power BI desktop provides many options within the column properties that you can view or update. A simple method to get to this menu to update the tables and fields is by Ctrl+clicking or Shift+clicking items on this page.
-
-
-
-
-5
-Power BI
-Occasionally, source databases and data warehouses already have their own date tables. If the administrator who designed the database did a thorough job, these tables can be used to perform the following tasks:
-
-Identify company holidays
-
-Separate calendar and fiscal year
-
-Identify weekends versus weekdays
-
-
-
-6
-Power BI
-You can use the Data Analysis Expression (DAX) functions CALENDARAUTO() or CALENDAR() to build your common date table. The CALENDAR() function returns a contiguous range of dates based on a start and end date that are entered as arguments in the function.
-
-
-
-7
-Power BI
-You can use hierarchies as one source to help you find detail in dimension tables. These hierarchies form through natural segments in your data. For instance, you can have a hierarchy of dates in which your dates can be segmented into years, months, weeks, and days.
-
-
-
-8
-Power BI
-The process of viewing multiple child levels based on a top-level parent is known as flattening the hierarchy. In this process, you are creating multiple columns in a table to show the hierarchical path of the parent to the child in the same record.
-
-
-
-9
-Power BI
-Role-playing dimensions have multiple valid relationships with fact tables, meaning that the same dimension can be used to filter multiple columns or tables of data. As a result, you can filter data differently depending on what information you need to retrieve.
 
 
 
