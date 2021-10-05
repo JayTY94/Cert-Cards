@@ -3,16 +3,6 @@
 
 
 
-
-
-10
-Power BI
-Data granularity is the detail that is represented within your data, meaning that the more granularity your data has, the greater the level of detail within your data.
-
-
-
-
-
 11
 Power BI
 For different scenarios, you could settle on data granularity that is defined weekly, monthly, or quarterly. Generally, the fewer the records that you are working with, the faster your reports and visuals will function. This approach translates to a faster refresh rate for the entire dataset, which might mean that you can refresh more frequently.
