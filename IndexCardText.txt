@@ -152,3 +152,186 @@ The matrix visual is similar to a table. A table supports two dimensions and the
 
 
 Process finished with exit code 0
+C:\Users\jayoshimi\PycharmProjects\pythonProject\venv\Scripts\python.exe "C:/Users/jayoshimi/PycharmProjects/pythonProject/cards document.py"
+1
+UiPath Advanced Developer
+The priority order of the log types is: Verbose < Trace < Information < Warning < Error < Critical < Off.
+
+
+
+2
+UiPath Advanced Developer
+
+
+
+
+3
+UiPath Advanced Developer
+
+
+
+
+4
+UiPath Advanced Developer
+
+
+
+
+5
+UiPath Advanced Developer
+
+
+
+
+6
+UiPath Advanced Developer
+
+
+
+
+7
+UiPath Advanced Developer
+
+
+
+
+8
+UiPath Advanced Developer
+
+
+
+
+9
+UiPath Advanced Developer
+
+
+
+
+10
+UiPath Advanced Developer
+
+
+
+
+11
+UiPath Advanced Developer
+
+
+
+
+12
+UiPath Advanced Developer
+
+
+
+
+13
+UiPath Advanced Developer
+
+
+
+
+14
+UiPath Advanced Developer
+
+
+
+
+15
+UiPath Advanced Developer
+
+
+
+
+16
+UiPath Advanced Developer
+
+
+
+
+17
+UiPath Advanced Developer
+
+
+
+
+18
+UiPath Advanced Developer
+
+
+
+
+19
+UiPath Advanced Developer
+
+
+
+
+20
+UiPath Advanced Developer
+
+
+
+
+21
+UiPath Advanced Developer
+
+
+
+
+22
+UiPath Advanced Developer
+
+
+
+
+23
+UiPath Advanced Developer
+
+
+
+
+24
+UiPath Advanced Developer
+
+
+
+
+25
+UiPath Advanced Developer
+
+
+
+
+26
+UiPath Advanced Developer
+
+
+
+
+27
+UiPath Advanced Developer
+
+
+
+
+28
+UiPath Advanced Developer
+
+
+
+
+29
+UiPath Advanced Developer
+
+
+
+
+30
+UiPath Advanced Developer
+
+
+
+
+
+Process finished with exit code 0
