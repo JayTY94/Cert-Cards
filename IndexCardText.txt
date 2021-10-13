@@ -80,19 +80,20 @@ The priority order of the log types is: Verbose < Trace < Information < Warning 
 
 
 2
-UiPath Advanced Developer
-
+hemic
+NOC stands for Notice of Cancellation.
 
 
 
 3
-UiPath Advanced Developer
-
+hemic
+I'm picking up jotform for the Small Business Program, a project involving hemic, himi, and epic
 
 
 
 4
-UiPath Advanced Developer
+hemic
+The small business program for now targets restaurants and artisan contractors.
 
 
 
