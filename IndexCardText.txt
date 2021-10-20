@@ -150,6 +150,293 @@ Next we append the in_SystemError message and source,
 
 22
 UiPath Advanced Developer
+UiPath.Core.Activities.ExtractData
+
+Extracts data from an indicated web page. You can specify what information to extract by providing an XML string in the ExtractMetadata field, in the Properties panel. This can easily be generated with all the properties set by using the Data Scraping wizard.
+
+
+
+23
+UiPath Advanced Developer
+Target.WaitForReady - Before performing the actions, wait for the target to become ready. The following options are available:
+None
+Interactive/Complete
+Desktop applications
+Web applications
+
+
+24
+UiPath Advanced Developer
+Options for the Target.WaitForReady property on, for example, UiPath.Core.Activities.ExtractData
+
+Interactive/Complete - Waits all of the UI elements in the target app to exist before actually executing the action.
+To assess if an application is in the Interactive or Complete state, the following tags are verified:
+
+Desktop applications - A wm_null message is sent to check the existence of the <wnd>, <ctrl>, <java>, or <uia> tags. If they exist, the activity is executed.
+
+
+25
+UiPath Advanced Developer
+In the UI Explorer, the Validate button shows the status of the selector by checking the validity of the selector definition and the visibility of the target element on the screen. The Validate button has three states:
+
+Valid selector (Green color button)
+Invalid selector (Red color button)
+Modified selector, revalidate (Yellow color button)
+
+
+
+26
+UiPath Advanced Developer
+In UI Explorer, the UI Frameworks button changes the technology used to determine UI elements and their selectors. The following options are available:
+
+Default – UiPath proprietary method. Usually works fine with all types of user interfaces.
+Active Accessibility – A solution from Microsoft for making apps accessible. It is recommended that you use this option with legacy software, when the Default one does not work.
+UI Automation – The improved accessibility model from Microsoft. It is recommended that you use this option with newer apps, when the Default one does not work.
+
+
+
+
+27
+UiPath Advanced Developer
+UiPath.Core.Activities.TriggerScope
+
+The activity interface is composed of the Triggers and Actions containers. This allows to define a set of triggers in the first, followed by a sequence of activities to execute based on trigger response.
+
+The Triggers container only supports User Events activities.
+
+In the Actions container, you can define TriggerArgs to be used in the next activity sequence. Please note that, in order to interrupt the Trigger Scope activity handling sequence, the Break activity should be used. This allows the workflow to continue execution as intended.
+
+
+
+28
+UiPath Advanced Developer
+The following are User Events activities.
+
+Click Trigger
+Key Press Trigger
+Click Image Trigger
+System Trigger
+Hotkey Trigger
+Mouse Trigger
+Get Event Info
+Monitor Events
+Get Source Element
+Replay User Event
+Block User Input
+
+
+
+29
+UiPath Advanced Developer
+VB.NET namespaces in UiPath Studio represent containers that store different types of data. They enable you to easily define the scope of your expressions, variables and arguments.
+
+For example, if you have the System.Data namespace imported, you can further use DataTable, DataView, DataColumn, DataRow and other classes that are available in it, without having to always type System.Data.DataTable and so on.
+
+
+
+30
+UiPath Advanced Developer
+All imported namespaces are displayed in the Imports panel. Note that some namespaces are automatically imported when you browse for a .Net type variable or argument.
+
+To open this panel, click Imports in the Designer panel. The Designer panel also includes tabs for Variables and Arguments.
+
+
+
+
+Process finished with exit code 0
+C:\Users\jayoshimi\PycharmProjects\pythonProject\venv\Scripts\python.exe "C:/Users/jayoshimi/PycharmProjects/pythonProject/cards document.py"
+1
+UiPath Advanced Developer
+Workflow Analyzer is a static code analyzer that ensures your project meets high quality and reliability standards. A static code analyzer checks for inconsistencies without actually executing the project, as opposed to dynamic analyzers which step in during execution.
+
+
+
+2
+UiPath Advanced Developer
+Workflow Analyzer uses a set of rules to check for various inconsistencies unrelated to project execution. The rules are based on Automation Best Practices and take into consideration variable and argument naming, empty sequences or workflows, package restrictions, and so on. The analyzer does not identify errors in execution or compilation.
+
+
+
+
+
+3
+UiPath Advanced Developer
+Rule ID: ST-NMG-004
+
+Scope: Workflow
+
+Description
+This rule analyzes the display names of activities and determines whether they are repetitive or generic.
+
+The display names of activities should clearly indicate how they are used in the workflow. This makes the project meaningful and avoids any confusion in terms of usage.
+
+The default value for ST-NMG-004 threshold is 1.
+
+
+
+
+4
+UiPath Advanced Developer
+UiPath.Core.Activities.RetryScope
+
+Retries the contained activities as long as the condition is not met or an error is thrown.
+
+
+
+5
+UiPath Advanced Developer
+System.Activities.Statements.TryCatch
+
+Catches a specified exception type in a sequence or activity, and either displays an error notification or dismisses it and continues the execution.
+
+The activity has three main sections:
+
+Try - holds the activity that could throw an exception;
+Catches - specifies the exception type and, optionally, holds an activity that informs the user about the found exception;
+Finally - holds an activity that should be executed only if no error occurred or if the error was already caught.
+There is no limit to how many Catches you can use in a Try Catch activity.
+
+
+
+6
+UiPath Advanced Developer
+UiPath.Core.Activities.SetAsset
+
+Enables you to update the value of an indicated asset, which is already available in Orchestrator, be it a global or a Per Robot asset. Please note that to execute this activity, the Robot role needs to have Edit permissions on assets. When the UiPath.Core.Activities.SetAsset is triggered, the authentication context of the Robot under which it runs is being used.
+
+
+
+7
+UiPath Advanced Developer
+
+Managing Asset Links
+Sharing assets between folders enables launching jobs in multiple folders without redesigning your workflows in Studio when the underlying processes are targeting the same asset. Linking an asset to a folder makes the asset and all asset-associated objects, such as asset items, available in that folder.
+
+You can only share assets with global values and no specific value per user. You cannot share assets with values per user between folders.
+
+
+
+8
+UiPath Advanced Developer
+Within any given queue the transactions are processed in a hierarchical manner, according to this order:
+
+Items that have a Deadline, as follows:
+a. in order of Priority; and
+b. according to the set Deadline for items with the same Priority.
+Items with no Deadline, in order of Priority, and
+a. according to the rule First In, First Out for items with the same Priority.
+
+
+
+9
+UiPath Advanced Developer
+A queue is a container that enables you to hold an unlimited number of items. Queue items can store multiple types of data, such as invoice information or customer details. This information can be processed in other systems - SAP or Salesforce, for instance.
+
+
+
+
+10
+UiPath Advanced Developer
+The data stored in, and output from, Queue items is free form by default. For situations where a specific schema is needed, such as integrations with other applications, processing of machine generated forms, or for analytics, you can upload custom JSON schemas to ensure that all Queue item data is in the proper format.
+
+
+
+11
+UiPath Advanced Developer
+In Orchestrator, newly created queues are empty by default. To populate them with items you can either use the upload functionality in Orchestrator, or Studio activities. The latter also enable you to change item statuses and process them. As soon as queue items are processed, they become transactions.
+
+
+
+
+
+12
+UiPath Advanced Developer
+Init — This is the initial state which is used to read and store the config data in the dictionary, close all the unnecessary applications and open the required one. For example, if in the Process we need to upload an attachment in SAP, we first require the Bot to fetch the credentials from Orchestrator, open the SAP application and then login to SAP using the credentials.
+
+If there is an error while initializing the applications or the credentials provided are invalid, an exception notification will be sent from within Init State and end the process.
+
+
+
+13
+UiPath Advanced Developer
+In the Init state, the robot reads the configuration and initializes all applications. If this step is completed successfully, the robot moves on to the next state, GetSet Transaction Data.
+
+
+If a System Error is encountered and within the max retry limit, the robot tries to initialize one more time before it moves on to the End Process.
+
+
+
+14
+UiPath Advanced Developer
+Queue item statuses let you know if an item has been processed or not, and the stage of the process at a particular time. Item statuses are displayed in the Status column, in the Transactions page. Queue items can go through the following statuses:
+
+New - the item has just been added to the queue with the Add Queue Item activity, or the item was postponed, or a deadline was added to it, or the item was added after an attempt and failure of a previous queue item with auto-retry enabled.
+In Progress - the item was processed with the Get Transaction Item or the Add Transaction Item activity; when an item has this status, your custom progress status is also displayed, in the Progress column;
+
+
+
+15
+UiPath Advanced Developer
+Queue item statuses:
+Successful - the item was processed and sent to a Set Transaction Status activity, which changed its status to Successful;
+Abandoned - the item remained in the In Progress status for a long period of time (approx. 24 hours) without being processed;
+ Queue items processed by a long-running workflow do not get abandoned after 24 hours, if the job executing the queue item remains in a Suspended state.
+
+
+
+16
+UiPath Advanced Developer
+Queue item statuses:
+Retried - the item failed with an application exception and was retried. After the Robot finishes retrying the item, the status changes to Failed or Successful, according to your workflow.
+Deleted - the item has been manually selected from the Transactions page and marked as deleted; an item with this status can no longer be processed.
+
+
+
+17
+UiPath Advanced Developer
+The Set Transaction Status activity can be used to shape the logic of your project in a way that encapsulates this distinction in several ways:
+
+If the Set Transaction Status activity fails the transaction with an Application Exception and the Auto Retry option in the Create Queue page is set to Yes when the queue is created, the queue item is retried.
+By default, Orchestrator does not retry transactions which are failed due to Business Exceptions. This happens because an inconsistency between the transaction value and the business requirement means that there might be errors in the initial data which the queue items were created from. Additional actions might be required to fix this type of issue, and logging this type of exception can be useful.
+
+
+
+18
+UiPath Advanced Developer
+According to this type of license, an Attended Robot can concurrently execute one foreground process (with UI interaction) and multiple background processes (without UI interaction).
+
+
+
+19
+UiPath Advanced Developer
+Background Process Automation with Attended Robots rely on the user's session on the machine to run automations, these are started from Studio or UiPath Assistant and run in the same Windows Session as the user. As the automation happens in the same session, the robot is able to retrieve information and access files that are specific to the user.
+
+
+
+20
+UiPath Advanced Developer
+Workflow Diff
+Comparing changes between a process, library, project.json, or .txt file in a local repository and the latest version from GIT, TFS, or SVN is done using Workflow Diff in Studio. It shows a side-by-side comparison between the two files, highlighting added or removed activities, packages, variables, arguments.
+
+
+
+
+
+21
+UiPath Advanced Developer
+Workflow Diff is used for comparing changes made in the project.json file, such as adding, updating or removing dependencies, modifying the runtime rule, making workflows private, or setting a Global Exception Handler.
+
+📘
+Note:
+
+Workflow Diff must be used after the file is saved, and before it's checked into the source control repository.
+
+
+
+22
+UiPath Advanced Developer
+Aside from Workflow Diff, Show History from the same context menu allows you to compare changes between two versions of the same file. This option is available for GIT, TFS, and SVN versioned files, either .xaml or project.json.
+
 
 
 
