@@ -200,49 +200,66 @@ Aside from Workflow Diff, Show History from the same context menu allows you to 
 
 23
 UiPath Advanced Developer
-
+Automation on a virtual environment is done through visual recognition of elements rather than direct UI object interaction. This means that the RDP window needs to be visible at all times for most UI actions to work.
 
 
 
 24
 UiPath Advanced Developer
+To redirect the Robot through a proxy server, you have to make multiple configurations on the Robot machine. They are split into the following steps:
 
+Configure your preferred web browser, to ensure that the Robot machine can access Orchestrator through the indicated proxy server.
+Edit the Robot and NuGet configuration files, to ensure that the connection between the Robot and Orchestrator is routed through the provided proxy server and that the activities packages and the automation processes can be downloaded through the specified proxy server.
 
 
 
 25
 UiPath Advanced Developer
+The Service Mode Robot/Robot Service is launched by the Windows Service Control Manager under the Local System. It can open interactive Windows sessions, and has all the rights of a machine administrator. As such, it enables automatic session management (such as log on and log off) for unattended jobs. It is recommended to use the Service Mode Robot for large-scale platform deployments.
+
 
 
 
 
 26
 UiPath Advanced Developer
-
+UiPath Assistant and Studio (clients) require communication with Robot Service. This is a separate Windows process, which is automatically started by the client if it is not already running, with the same elevation level as the client.
 
 
 
 27
 UiPath Advanced Developer
-
+AI Robot - with an AI Robot license you can execute one ML training job OR serve two ML Skills concurrently.
+AI Robot Pro - with an AI Robot license you can execute one ML training job OR serve two ML Skills concurrently and the runtime can use a GPU (for both serving a model or training a model).
 
 
 
 28
 UiPath Advanced Developer
+2021.4.5 bug fix
+A fix has been introduced that corrected a race condition when different priority jobs were run against a single robot. This caused the jobs to fail with the following error message: "A foreground process is already running. Only one foreground process can run at a time".
 
 
 
 
 29
 UiPath Advanced Developer
+The User Mode Robot Service (UiPath.Service.UserHost.exe):
+Windows application automatically launched if the SCM-managed Robot Service is not installed;
+Best suited for attended automation scenarios;
+Has the rights of the user that installed it;
+Is not listed under Windows services;
+Requires a user to be logged in to execute jobs from Orchestrator;
+Deployed by default through UiPathStudioSetup.exe.
 
 
 
 
 30
 UiPath Advanced Developer
+When the Robot receives the Cancel command, it cancels the execution of the current activity and starts executing the final steps. If this takes more than 3 seconds, the process is killed.
 
+On the other hand, when the Robot receives the command to Kill a process, it first tries to Cancel the execution and if the execution is not finished in 3 seconds, the process is killed.
 
 
 
