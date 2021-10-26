@@ -169,3 +169,187 @@ On the other hand, when the Robot receives the command to Kill a process, it fir
 
 
 Process finished with exit code 0
+C:\Users\jayoshimi\PycharmProjects\pythonProject\venv\Scripts\python.exe "C:/Users/jayoshimi/PycharmProjects/pythonProject/cards document.py"
+1
+hemic
+Classically, the definition of a project has been contained in document, referred to as Project Initiation Document (PID), Project Definition Document (PDD), Project Quality Plan or Project Charter.
+
+
+
+2
+hemic
+An outlay cost is a cost incurred in order to execute a strategy or acquire an asset. Outlay costs are also paid to vendors to acquire goods such as inventory or services, such as consulting or software design. They are concrete expenses that are actually incurred in order to achieve a goal.
+
+
+
+
+3
+UiPath Advanced Developer
+
+
+
+
+4
+UiPath Advanced Developer
+
+
+
+
+5
+UiPath Advanced Developer
+
+
+
+
+6
+UiPath Advanced Developer
+
+
+
+
+7
+UiPath Advanced Developer
+
+
+
+
+8
+UiPath Advanced Developer
+
+
+
+
+9
+UiPath Advanced Developer
+
+
+
+
+10
+UiPath Advanced Developer
+
+
+
+
+11
+UiPath Advanced Developer
+
+
+
+
+12
+UiPath Advanced Developer
+
+
+
+
+13
+UiPath Advanced Developer
+
+
+
+
+14
+UiPath Advanced Developer
+
+
+
+
+15
+UiPath Advanced Developer
+
+
+
+
+16
+UiPath Advanced Developer
+
+
+
+
+17
+UiPath Advanced Developer
+
+
+
+
+18
+UiPath Advanced Developer
+
+
+
+
+19
+UiPath Advanced Developer
+
+
+
+
+20
+UiPath Advanced Developer
+
+
+
+
+21
+UiPath Advanced Developer
+
+
+
+
+22
+UiPath Advanced Developer
+
+
+
+
+23
+UiPath Advanced Developer
+
+
+
+
+24
+UiPath Advanced Developer
+
+
+
+
+25
+UiPath Advanced Developer
+
+
+
+
+26
+UiPath Advanced Developer
+
+
+
+
+27
+UiPath Advanced Developer
+
+
+
+
+28
+UiPath Advanced Developer
+
+
+
+
+29
+UiPath Advanced Developer
+
+
+
+
+30
+UiPath Advanced Developer
+
+
+
+
+
+Process finished with exit code 0
