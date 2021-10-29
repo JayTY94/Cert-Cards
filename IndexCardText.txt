@@ -120,6 +120,7 @@ A software design description (a.k.a. software design document or SDD; just desi
 
 
 
+-
 5
 hemic
 Magic Number: Hit it if your company makes $1mil in sales per employee. It's hard to do this.
@@ -144,98 +145,122 @@ Financial professionals who fail to live up to their duties and responsibilities
 
 
 8
-UiPath Advanced Developer
+hemic
+Box.com is a cloud-based content management system with collaboration, security, analytics and other features related to files and information. There is a core Box service, then add-ons for different industries and situations. Box is used to manage, share, and collaborate on digital files. As of 2017, there are about 41 million users, constituting 6.5% of the market for software that helps manage, share, and collaborate on digital files.
+Accuity uses it.
 
 
 
 
 9
 UiPath Advanced Developer
+The block user input activity prevents the user from interrupting the automation with mouse movements or keystrokes. This isolation mode is used when the process needs to ensure it is not interrupted by the user logged into the machine.
+
 
 
 
 
 10
 UiPath Advanced Developer
+The Simulate and Send Window message activities allow automations that run in an isolated mode to interact with an application without mouse or keyboard hardware involvement.
+
 
 
 
 
 11
 UiPath Advanced Developer
+The picture-in-picture (PiP) mode runs attended automations in a separate, isolated window that provides a realtime display of the work being performed.
+
 
 
 
 
 12
 UiPath Advanced Developer
+The Invoke Processes activity executes a UiPath process that is available for the local machine. Can be used to run local packages, as well as processes in Orchestrator, if a connection is available.
+
 
 
 
 
 13
 UiPath Advanced Developer
-
+BlockUser activity -
+Once the designated hotkey combination for reactivating user input is pressed, and user input is restored, it cannot be blocked again during the same runtime. The hotkey combination is implemented as a safeguard against blocking yourself from stopping the workflow while developing it.
 
 
 
 14
 UiPath Advanced Developer
+With SimulateType set as the input method for each of these activities, the automation can run without capturing the user's keyboard and mouse and they won’t need to worry that they might interfere with the log in process.
+
 
 
 
 
 15
 UiPath Advanced Developer
+It's worth noting that Microsoft Office applications in general do not run successfully in Picture-in-Picture mode if they are already open in the user's main session.  
 
+For automations which use both the PiP mode and Office products, either ensure they are closed in the user's session, or change the Target Session of the workflow that uses the apps to Main.
 
 
 
 16
 UiPath Advanced Developer
 
+Only one Picture-in-Picture session can be started at a time on the same machine.
+
+Run as administrator cannot be used in PiP sessions.
+
+The machine cannot be restarted or shut down while the PiP session is opened as the PiP session needs to be closed beforehand.
 
 
 
 17
 UiPath Advanced Developer
+The Background Process is a template for creating processes that can run in parallel on the same Robot, together with one foreground process. For this reason, background processes must not contain activities that require UI Interaction activities like Click and Type Into.
+
 
 
 
 
 18
 UiPath Advanced Developer
+A fired trigger passes arguments to the group of activities that run. These arguments contain information about the event, including the name of the trigger, the trigger type, and an event info object that enables us to extract different types of data about the trigger and its target. 
 
 
 
 
 19
 UiPath Advanced Developer
-
+ If we start a background process with a foreground scope and another entity is running in the foreground (either a process or another foreground scope), the background process goes into a queue and waits, determined by the ‘Wait for foreground’ property, to acquire foreground.
 
 
 
 20
-UiPath Advanced Developer
+hemic
+SITE Pillar: Emplyees are our greatest asset
 
 
 
 
 21
-UiPath Advanced Developer
-
+hemic
+SITE Pillar: How to foster a culture of innovation
 
 
 
 22
-UiPath Advanced Developer
-
+hemic
+SITE Pillar: How to effectively communicate across different generations
 
 
 
 23
-UiPath Advanced Developer
-
+hemic
+SITE Pillar: How to develop trust in leadership
 
 
 
