@@ -150,56 +150,86 @@ UiPath Advanced Developer
 
 20
 hemic
-SITE Pillar: Emplyees are our greatest asset
+SITE Pillars:
+Emplyees are our greatest asset
+How to foster a culture of innovation
+How to effectively communicate across different generations
+How to develop trust in leadership
 
 
 
 
 21
-hemic
-SITE Pillar: How to foster a culture of innovation
-
+Upside
+The Chicago Board Options Exchange (CBOE), located at 400 South LaSalle Street in Chicago, is the largest U.S. options exchange with annual trading volume that hovered around 1.27 billion contracts at the end of 2014
 
 
 22
-hemic
-SITE Pillar: How to effectively communicate across different generations
+UiPath Advanced Developer
+Triger Scopes have three scheduling options:
 
+
+One Time - Execute one action and exit.
+
+
+Sequential: Actions are executed one after another.
+
+
+Concurrent: Action executions can overlap.
 
 
 23
-hemic
-SITE Pillar: How to develop trust in leadership
+UiPath Advanced Developer
+We can use ‘Invoke Process’ to execute a process which is available for the local machine. The parent process waits for the child process to complete before resuming.
+
 
 
 
 24
 UiPath Advanced Developer
+Run Parallel Process lets us invoke a local process which executes alongside the caller process. In the Process Name property of the activity, we must enter the package name. We can pass data to the invoked parallel process, but we cannot retrieve data, the only available argument direction is in.
+
 
 
 
 
 25
 UiPath Advanced Developer
+Select all options which apply for the Send Window Messages input method.
+Works with 80% of apps
+Can run in the background
+Speed 50%
+Has Hotkey Support
+Does not empty fields automatically
 
 
 
 
 26
 UiPath Advanced Developer
-
+Select all the statements that are true about Invoke Process and Run Parallel Process.
+They execute processes that are available to the local machine.
+Invoke Process runs in Synchronous mode.
+Run Parallel Process runs in Asynchronous mode.
+Unserializable data types cannot be passed to the child processes.
 
 
 
 27
 UiPath Advanced Developer
+When creating a trigger scope activity with a switch statement, remember to
+1. Assign args.TriggerName to a str variable
+2. Add Switch statements
+3. Change TypeArgument in Properties panel to String
+
+This is if you're using the names of the triggers to identify which trigger fired.
 
 
 
 
 28
-UiPath Advanced Developer
-
+general
+A special purpose acquisition company (SPAC) is a company that has no commercial operations and is formed strictly to raise capital through an initial public offering (IPO) for the purpose of acquiring or merging with an existing company
 
 
 
