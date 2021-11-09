@@ -1,0 +1,21 @@
+Get-ADUser -Filter 'enabled -eq $true' -Properties 'Enabled', 'LastLogonDate', 'PasswordNeverExpires', 'PasswordLastSet', 'PasswordNotRequired' > C:\temp\users.txt
+
+Get-ADUser -Filter 'enabled -eq $true' -Properties 'Enabled', 'LastLogonDate', 'PasswordNeverExpires', 'PasswordLastSet', 'PasswordNotRequired' | Select -Property UserPrincipalName,Enabled,LastLogonDate,PasswordNeverExpires,PasswordLastSet,PasswordNotRequired | Export-CSV "C:\temp\users.csv" -NoTypeInformation -Encoding UTF8
+
+Get-ADUser -Filter * -Properties 'Enabled', 'LastLogonDate', 'PasswordNeverExpires', 'PasswordLastSet', 'PasswordNotRequired' | Select -Property UserPrincipalName,Enabled,LastLogonDate,PasswordNeverExpires,PasswordLastSet,PasswordNotRequired | Export-CSV "C:\temp\allusers.csv" -NoTypeInformation -Encoding UTF8
+
+
+Get-ADUser -Filter * -Properties 'Enabled', 'LastLogonDate', 'PasswordNeverExpires', 'PasswordLastSet', 'PasswordNotRequired', 'ObjectGUID' | Select -Property UserPrincipalName,ObjectGUID,Enabled,LastLogonDate,PasswordNeverExpires,PasswordLastSet,PasswordNotRequired,DistinguishedName | Export-CSV "C:\temp\allusers.csv" -NoTypeInformation -Encoding UTF8
+
+Get-ADUser -Filter 'enabled -eq $true' -Properties 'Enabled', 'LastLogonDate', 'PasswordNeverExpires', 'PasswordLastSet', 'PasswordNotRequired', 'ObjectGUID' | Select -Property UserPrincipalName,ObjectGUID,Enabled,LastLogonDate,PasswordNeverExpires,PasswordLastSet,PasswordNotRequired,DistinguishedName | Export-CSV "C:\temp\AccessReview.csv" -NoTypeInformation -Encoding UTF8
+
+Get-ADUser -Identity 9c674743-e42d-4d7f-b261-007fbb334c12
+
+
+@{Name="LastLogonDate";Expression={ $date = [datetime]::FromFileTime( $_.lastlogon);$date}} |
+
+
+  Export-Csv
+
+
+Get-ADUser -Filter 'enabled -eq $true' -Properties 'Enabled', 'LastLogon', 'PasswordNeverExpires', 'PasswordLastSet', 'PasswordNotRequired', 'ObjectGUID' | Select -Property UserPrincipalName,ObjectGUID,Enabled,@{Name="LastLogonDate_FromTimestamp";Expression={ $date = [datetime]::FromFileTime( $_.lastlogon);$date}},PasswordNeverExpires,PasswordLastSet,PasswordNotRequired,DistinguishedName | Export-CSV "C:\temp\AccessReview.csv" -NoTypeInformation -Encoding UTF8
