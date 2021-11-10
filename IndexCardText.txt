@@ -1,104 +1,4 @@
 
-
-
-
-
-
-
-
-21
-Upside
-The Chicago Board Options Exchange (CBOE), located at 400 South LaSalle Street in Chicago, is the largest U.S. options exchange with annual trading volume that hovered around 1.27 billion contracts at the end of 2014
-
-
-22
-UiPath Advanced Developer
-Triger Scopes have three scheduling options:
-
-
-One Time - Execute one action and exit.
-
-
-Sequential: Actions are executed one after another.
-
-
-Concurrent: Action executions can overlap.
-
-
-23
-UiPath Advanced Developer
-We can use ‘Invoke Process’ to execute a process which is available for the local machine. The parent process waits for the child process to complete before resuming.
-
-
-
-
-24
-UiPath Advanced Developer
-Run Parallel Process lets us invoke a local process which executes alongside the caller process. In the Process Name property of the activity, we must enter the package name. We can pass data to the invoked parallel process, but we cannot retrieve data, the only available argument direction is in.
-
-
-
-
-
-25
-UiPath Advanced Developer
-Select all options which apply for the Send Window Messages input method.
-Works with 80% of apps
-Can run in the background
-Speed 50%
-Has Hotkey Support
-Does not empty fields automatically
-
-
-
-
-26
-UiPath Advanced Developer
-Select all the statements that are true about Invoke Process and Run Parallel Process.
-They execute processes that are available to the local machine.
-Invoke Process runs in Synchronous mode.
-Run Parallel Process runs in Asynchronous mode.
-Unserializable data types cannot be passed to the child processes.
-
-
-
-27
-UiPath Advanced Developer
-When creating a trigger scope activity with a switch statement, remember to
-1. Assign args.TriggerName to a str variable
-2. Add Switch statements
-3. Change TypeArgument in Properties panel to String
-
-This is if you're using the names of the triggers to identify which trigger fired.
-
-
-
-
-28
-general
-A special purpose acquisition company (SPAC) is a company that has no commercial operations and is formed strictly to raise capital through an initial public offering (IPO) for the purpose of acquiring or merging with an existing company
-
-
-
-29
-UiPath Advanced Developer
-A transaction represents the minimum (atomic) amount of data and the necessary steps required to process the data, by fulfilling a section of a business process. A typical example would be a process that reads a single email from a mailbox and extracts data from it.
-
-
-
-We call the data atomic because once it is processed, the assumption is that we no longer need it as we advance with the business process.
-
-
-
-30
-UiPath Advanced Developer
-The steps of the process are performed multiple times, but each time different data items are used.
-
-This kind of process can be implemented with a simple loop, but it has the disadvantage that, if a problem happens when processing one item, the whole process is interrupted and the other items remain unprocessed.
-
-
-
-
 Process finished with exit code 0
 C:\Users\jayoshimi\PycharmProjects\pythonProject\venv\Scripts\python.exe "C:/Users/jayoshimi/PycharmProjects/pythonProject/cards document.py"
 1
@@ -179,31 +79,34 @@ Long-term support (LTS) is a product lifecycle management policy in which a stab
 
 11
 UiPath Advanced Developer
+Flowcharts should be used only as the general workflow (with sequences nested inside), not for individual parts of projects (nested inside other workflows).
 
 
 
 
 12
 UiPath Advanced Developer
-
+When using the Extract as Workflow action to create a sequence, the variables are automatically converted to arguments.
+Right click on container > choose Extract as Workflow
 
 
 
 13
 UiPath Advanced Developer
+Arguments can be made directly in the properties panel with the hotkey ctrl+M, similar to how variables can be made with ctrl+K.
 
 
 
 
 14
 UiPath Advanced Developer
-
+arguments you create in libraries will be listed as activity properties in the Properties panel, in the corresponding section. For example, an input argument will appear as a field in the Input section. So, including its direction in the name may not be needed here. 
 
 
 
 15
 UiPath Advanced Developer
-
+The Global Exception Handler is a type of workflow designed to determine the project’s behavior when encountering an execution error.
 
 
 
