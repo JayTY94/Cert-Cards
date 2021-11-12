@@ -112,6 +112,219 @@ The Global Exception Handler is a type of workflow designed to determine the pro
 
 16
 UiPath Advanced Developer
+Predicting and treating exceptions can be done in two ways:
+
+At activity level, using Try/Catch blocks or Retry Scope.
+
+At a global level, using the Global Exception Handler.
+
+
+
+17
+UiPath Advanced Developer
+Through the Teams page in the backstage view, Studio supports the following source control systems: Git, TFS, SVN
+
+
+
+18
+UiPath Advanced Developer
+We are developing a workflow that will be integrated in a bigger project. It consists of logging into an ERP application using secure credentials, downloading all the invoices that were validated in the previous day and transferring them.
+
+This should be a Sequence.
+
+
+
+19
+UiPath Advanced Developer
+You cannot use the Simulate input method to send hotkeys.
+
+
+
+
+20
+UiPath Advanced Developer
+We need to automate a logistics process that pairs goods in several warehouses with transporters according to certain rules. It configures shipments, it calculates costs and sends daily orders. The process is continuous.
+The best kind of workflow to use is a state machine.
+
+
+
+21
+UiPath Advanced Developer
+Which factors should be considered as criteria for breaking down a project into different workflows?
+- Having sets of activities serving different purposes in the same project
+- Using more than one application
+
+
+
+
+22
+UiPath Advanced Developer
+Steps to create a new library:
+1. Click File>Start
+2. Click New Library
+3. Enter the name, location, description, and programming language.
+4. Create your workflow
+5. Publish the library to Orchestrator or a custom feed.
+
+
+
+23
+UiPath Advanced Developer
+We want to create a robot that searches for weather information daily and then creates a report based on it.
+
+The best type of workflow to use is a Sequence.
+
+
+
+24
+UiPath Advanced Developer
+Activity: Lookup Data Table
+–
+It is similar to vLookup in Excel. You can search for a provided value in a specified DataTable, and the RowIndex returns its value.  Or it can be configured to return the value from a cell with the given coordinates (RowIndex and Target Column).
+
+
+
+25
+UiPath Advanced Developer
+Full join type: Keep all rows from DataTable1 and DataTable2, regardless of whether the join condition is met. Null values are added into the rows from both tables that don't have a match.
+
+
+
+26
+UiPath Advanced Developer
+Excel Activity: Read Cell Formula
+–
+Reads the formula from a given cell and stores it as a String.
+
+
+
+27
+hemic
+An acknowledgment of receipt (AOR) is a document that a person signs to indicate that they have received an item, document or payment. Employers can use acknowledgment receipts for employment-related documents, employee handbook or policies. While they are not a legal document, they are useful for documenting that policies, guidelines and expectations have been given to employees and received.
+
+
+
+28
+UiPath Advanced Developer
+What activity can you use to write a data table to a string variable?
+
+Output Data Table
+
+
+
+29
+UiPath Advanced Developer
+From an automation potential standpoint, a process in which changes are frequent, the system environment is volatile, and multiple manual (even non-digital) actions are required belongs to the...
+
+No RPA Category
+
+
+
+30
+UiPath Advanced Developer
+Can activities which require an Excel Application Scope run on a machine that does not have the Excel application installed?
+
+No, these activities require Excell to be installed
+
+
+
+
+Process finished with exit code 0
+C:\Users\jayoshimi\PycharmProjects\pythonProject\venv\Scripts\python.exe "C:/Users/jayoshimi/PycharmProjects/pythonProject/cards document.py"
+1
+UiPath Advanced Developer
+What happens if you use a Write Range activity and try to write data in an .xlsx file that does not exist?
+
+It will create that file for you and write the data in it.
+
+
+
+2
+UiPath Advanced Developer
+
+
+
+
+3
+UiPath Advanced Developer
+
+
+
+
+4
+UiPath Advanced Developer
+
+
+
+
+5
+UiPath Advanced Developer
+
+
+
+
+6
+UiPath Advanced Developer
+
+
+
+
+7
+UiPath Advanced Developer
+
+
+
+
+8
+UiPath Advanced Developer
+
+
+
+
+9
+UiPath Advanced Developer
+
+
+
+
+10
+UiPath Advanced Developer
+
+
+
+
+11
+UiPath Advanced Developer
+
+
+
+
+12
+UiPath Advanced Developer
+
+
+
+
+13
+UiPath Advanced Developer
+
+
+
+
+14
+UiPath Advanced Developer
+
+
+
+
+15
+UiPath Advanced Developer
+
+
+
+
+16
+UiPath Advanced Developer
 
 
 
