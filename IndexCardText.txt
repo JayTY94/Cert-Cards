@@ -1,78 +1,8 @@
 
-Process finished with exit code 0
-C:\Users\jayoshimi\PycharmProjects\pythonProject\venv\Scripts\python.exe "C:/Users/jayoshimi/PycharmProjects/pythonProject/cards document.py"
-1
-UiPath Advanced Developer
-Triggers enable the execution of jobs in a structured manner. There are two types of triggers:
-
-Time triggers: with these, you can schedule the recurrent execution of a process.
-Queue triggers: these enable the execution of a process based on the new items added to a queue.
-
-
-
-2
-UiPath Advanced Developer
-In Orchestrator, an SLA takes the form of a time interval (expressed in days and/or hours) in which a queue item has to be processed. The Risk SLA is a subsequent concept in Orchestrator, meant to identify the point in which corrective action needs to be taken to avoid breaching the SLA.
 
 
 
 
-3
-UiPath Advanced Developer
-Consider an item added to a queue at 17:00. The average processing time of the queue is 45 minutes. The SLA is 3 hours and the risk SLA is 2 hours. If a robot picks it up at 19:00, what would the status of the queue item be?
-
-In SLA, at risk
-
-
-
-4
-UiPath Advanced Developer
-Alerts are a powerful tool to ensure that robots are working according to the parameters. Depending on the role, users are able to enable or disable alerts for given components. Simply navigate to My Profile and use the dedicated toggles.
-
-
-
-5
-UiPath Advanced Developer
-Which of the following sets of jobs can be run simultaneously using a pool of 4 machines connected using the same machine template having 2 runtimes?
-3 jobs created using a foreground process and 5 jobs created using a background process
-
-5 jobs created using a background process
-
-
-6
-UiPath Advanced Developer
-Which of the following folder entities can be configured to be accessed/executed only by a certain unattended robot?
-Asset
-Job
-Trigger
-
-
-
-
-7
-UiPath Advanced Developer
-Which of the following Orchestrator entities are NOT available through the Resources panel in Studio?
-Jobs
-Packages
-
-
-
-
-8
-hemic
-Full Time Equivalent (FTE) refers to the unit of measurement equivalent to an individual – worker or student – one unit of a work or school day, applicable in a variety of contexts. In most cases, full time equivalents measure an employee or student and/or their workload.
-
-
-
-9
-general
-A non-fungible token (NFT) is a unique and non-interchangeable unit of data stored on a digital ledger (blockchain). The lack of interchangeability (fungibility) distinguishes NFTs from blockchain cryptocurrencies, such as Bitcoin.
-
-
-
-10
-general
-Long-term support (LTS) is a product lifecycle management policy in which a stable release of computer software is maintained for a longer period of time than the standard edition. The term is typically reserved for open-source software, where it describes a software edition that is supported for months or years longer than the software's standard edition.
 
 
 
