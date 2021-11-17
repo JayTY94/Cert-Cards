@@ -30,14 +30,14 @@ It will create that file for you and write the data in it.
 
 
 2
-UiPath Advanced Developer
-
+Hemic
+SMTP Tarpitting is a process that slows email delivery down significantly to repel spammers. It takes bulk emails and delays delivery across the board, whereas greylisting give more slack to trusted senders, resulting in a less intensive procedure.
 
 
 
 3
-UiPath Advanced Developer
-
+Hemic
+Greylisting (sometimes referred to as graylisting) is just one spam-prevention technique that places email addresses somewhere between a blacklist (flagged spammers) and a whitelist (trusted senders).
 
 
 
