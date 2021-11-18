@@ -59,3 +59,30 @@ OK. I THINK that the slicer is not working as intended because there is no relat
 
 
 Need to do the thing with Orca.msi to modify some .MSI's for deployment so that they have the desired settings when we use them for deployment
+
+
+
+
+
+
+
+Dear Amazon WorkSpaces User,
+
+ A new Amazon WorkSpace has been provided for you. Follow the steps below to quickly get up and running with your WorkSpace:
+
+ 1. Download and install a WorkSpaces Client for your favorite devices: https://clients.amazonworkspaces.com/
+
+ 2. Launch the client and enter the following registration code: WSpdx+SRUNRK
+
+ 3. Login with your password. Your username is c-mrokos
+
+ If you have any issues connecting to your WorkSpace, please contact your administrator.
+
+ Sincerely,
+
+ Amazon WorkSpaces
+
+WorkSpace IP 10.0.231.94
+Computer Name EC2AMAZ-JIDM365
+U/N: c-mrokos
+PW: Sp@ghetti1

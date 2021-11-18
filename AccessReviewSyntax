@@ -19,3 +19,5 @@ Get-ADUser -Identity 9c674743-e42d-4d7f-b261-007fbb334c12
 
 
 Get-ADUser -Filter 'enabled -eq $true' -Properties 'Enabled', 'LastLogon', 'PasswordNeverExpires', 'PasswordLastSet', 'PasswordNotRequired', 'ObjectGUID' | Select -Property UserPrincipalName,ObjectGUID,Enabled,@{Name="LastLogonDate_FromTimestamp";Expression={ $date = [datetime]::FromFileTime( $_.lastlogon);$date}},PasswordNeverExpires,PasswordLastSet,PasswordNotRequired,DistinguishedName | Export-CSV "C:\temp\AccessReview.csv" -NoTypeInformation -Encoding UTF8
+
+Get-ADUser -Filter 'enabled -eq $true' -Properties 'Name', 'Enabled', 'LastLogon', 'PasswordNeverExpires', 'PasswordLastSet', 'PasswordNotRequired', 'ObjectGUID' | Select -Property Name,UserPrincipalName,ObjectGUID,Enabled,@{Name="LastLogonDate_FromTimestamp";Expression={ $date = [datetime]::FromFileTime( $_.lastlogon);$date}},PasswordNeverExpires,PasswordLastSet,PasswordNotRequired,DistinguishedName | Export-CSV "C:\temp\AccessReview.csv" -NoTypeInformation -Encoding UTF8
