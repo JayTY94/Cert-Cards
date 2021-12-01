@@ -95,121 +95,129 @@ organization's internal network or on a VPN with network access to an on-premise
 
 
 11
-UiPath Advanced Developer
+General
+A warrant gives the holder the right, but not the obligation, to buy common shares of stock directly from the company at a fixed price for a pre-defined time period.
 
 
 
 
 12
-UiPath Advanced Developer
-
+General
+Strike price or exercise price – The guaranteed price at which the warrant or option buyer has the right to buy the underlying asset from the seller (technically, the writer of the call). “Exercise price” is the preferred term with reference to warrants.
 
 
 
 13
-UiPath Advanced Developer
-
+General
+Verboten
+not permitted or allowed : forbidden or prohibited by or as if by authority
 
 
 
 14
-UiPath Advanced Developer
-
+General
+abend
+(computing)
+: the unexpected failure of a piece of computer software
 
 
 
 15
-UiPath Advanced Developer
+General
+eschatology
+1: a branch of theology concerned with the final events in the history of the world or of humankind
+2: a belief concerning death, the end of the world, or the ultimate destiny of humankind
+specifically : any of various Christian doctrines concerning the Second Coming, the resurrection of the dead, or the Last Judgment
 
 
 
 
 16
-UiPath Advanced Developer
+Microsoft Exchange
 
 
 
 
 17
-UiPath Advanced Developer
+Microsoft Exchange
 
 
 
 
 18
-UiPath Advanced Developer
+Microsoft Exchange
 
 
 
 
 19
-UiPath Advanced Developer
+Microsoft Exchange
 
 
 
 
 20
-UiPath Advanced Developer
+Microsoft Exchange
 
 
 
 
 21
-UiPath Advanced Developer
+Microsoft Exchange
 
 
 
 
 22
-UiPath Advanced Developer
+Microsoft Exchange
 
 
 
 
 23
-UiPath Advanced Developer
+Microsoft Exchange
 
 
 
 
 24
-UiPath Advanced Developer
+Microsoft Exchange
 
 
 
 
 25
-UiPath Advanced Developer
+Microsoft Exchange
 
 
 
 
 26
-UiPath Advanced Developer
+Microsoft Exchange
 
 
 
 
 27
-UiPath Advanced Developer
+Microsoft Exchange
 
 
 
 
 28
-UiPath Advanced Developer
+Microsoft Exchange
 
 
 
 
 29
-UiPath Advanced Developer
+Microsoft Exchange
 
 
 
 
 30
-UiPath Advanced Developer
+Microsoft Exchange
 
 
 
