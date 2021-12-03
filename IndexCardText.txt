@@ -134,90 +134,91 @@ specifically : any of various Christian doctrines concerning the Second Coming, 
 
 16
 Microsoft Exchange
-
+Exchange Web Services (EWS) is an application program interface (API) that allows programmers to access Microsoft Exchange items such as calendars, contacts and email. ... EWS can be useful for migrating Exchange data on-premises or to a third-party host in the cloud.
 
 
 
 17
 Microsoft Exchange
+SOAP (Simple Object Access Protocol) is a standards-based web services access protocol that has been around for a long time. Originally developed by Microsoft, SOAP isn’t as simple as the acronym would suggest.
 
 
 
 
 18
-Microsoft Exchange
+KACE Appliance
 
 
 
 
 19
-Microsoft Exchange
+KACE Appliance
 
 
 
 
 20
-Microsoft Exchange
+KACE Appliance
 
 
 
 
 21
-Microsoft Exchange
+KACE Appliance
 
 
 
 
 22
-Microsoft Exchange
+KACE Appliance
 
 
 
 
 23
-Microsoft Exchange
+KACE Appliance
 
 
 
 
 24
-Microsoft Exchange
+KACE Appliance
 
 
 
 
 25
-Microsoft Exchange
+KACE Appliance
 
 
 
 
 26
-Microsoft Exchange
+KACE Appliance
 
 
 
 
 27
-Microsoft Exchange
+KACE Appliance
 
 
 
 
 28
-Microsoft Exchange
+KACE Appliance
 
 
 
 
 29
-Microsoft Exchange
+KACE Appliance
 
 
 
 
 30
-Microsoft Exchange
+KACE Appliance
 
 
 

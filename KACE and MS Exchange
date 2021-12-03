@@ -1,0 +1,88 @@
+page 2629
+InPlaceHoldConfigurationOnly - Definition of an element. I don't know how to process this.
+
+page 2415
+Response Code definition
+ErrorAddressSpaceNotFound - This error occurs when the address space record, or Domain Name System (DNS) domain name, for cross-forest availability could not be found in the Active Directory Database.
+
+page 3483
+Exchange Web Service (EWS) is a SOAP-based web service, which means that the request and response messages that are sent between the client and server are comprised of XML elements. The documentaion in this section is based on the DML instances that are sent between the client and server. The XML instances are defined in teh WSDL and schema files that are located in the virtual directory that hosts EWS.
+
+page 4254
+The OrganizationRelationshipSettings element represents a list of organization relationships for a single organization. The OrganizeRelationshipSettings element is for internal use only. This element is not used by clients.
+
+page 3066
+The schema files that describe the EWS XML elements provide a general roadmap of the XML structure that is possible for request-response message interactions. The actual XML structure that is sent between client and server varies according to the operation that is called, the information requested, and the server-side settings.
+
+page 343
+A recurring series is an appointment or meeting that repeats according to a defined pattern. A recurring series can either have a specific number
+
+page 976
+page 550
+page 4806
+page 1098
+page 2341
+page 2774
+
+
+EWS?
+Exchange Web Services (EWS) is an application program interface (API) that allows programmers to access Microsoft Exchange items such as calendars, contacts and email. ... EWS can be useful for migrating Exchange data on-premises or to a third-party host in the cloud.
+
+SOAP?
+SOAP (Simple Object Access Protocol) is a standards-based web services access protocol that has been around for a long time. Originally developed by Microsoft, SOAP isn’t as simple as the acronym would suggest. It is similar to REST
+
+WSDL file?
+
+
+Now to KACE! Not because I have a great reason; because I can.
+
+page 136
+Labels are containers that organize and categorize items, such as devices, so that you can manage them as a group. For example, you can use labels to identify devices that have the same operating system or that are in the same geographic location.
+
+page 834
+Way to use Parent Tickets: Prevent the parent form being closed unless all its child tickets are closed. This strategy uses the parent ticket as a global to-do list and each child ticket as a separate task on the list. After all the tasks are completed and the child tickets are closed, the parent can be closed.
+
+page 870
+You can create reports while viewing list pages, such as the Devices page. Choose Action > Create Report
+
+page 772
+YOu can add work information to Service Desk tickets, such as the date the work started or stopped, the total number of hours spent on the ticket, and notes about the work performed. This information is available to ticket submitters and owners.
+Work tab on bottom of tickets page
+
+page 901
+Not Discovered Applications:
+Applications that do not exist in teh ingventory, but htat do eist inthe Questst KACE Software Catalog, are refered to as Not Discovered applications. You can enable metering for Not Discovered applications, mark them as Not Allowed, andadd license information for them.
+
+page 177
+To streamline the management of Google OAuth credentials used in Inventory, Distribution, Scripting, and Service Desk, add those credentials to teh Credentials Management page. For example, i fyou have a Google Apps for Business domain or Google Apps for Education domean, with Chrome Device Management.
+
+page 272
+Communication Window (Property of an Organization)
+The period during which Agents on managed devbices are allowed to connect with the appliance. For example, to allow Agents to connect between  t he hours of 1:00 and 6:00 only, select 01:00 from the first drop-down list, and 06:00 from the second drop down list. You can set the communications window to avoid times hwen your devices are busiest.
+
+page 742
+User Console Login Background Color
+Click and use the color chooser to specify the color that you want to appear in the background of the User Console login screen. You can select the color using the mouse, or specify the RGB values, as needed. When you close the color chooser, the HTML Color Code field on the right displays the HTML code of the selected color.
+
+page 694
+SNMP traps are messages initiated by network devices and sent to the trap receiver on the appliance. For example, a router can send a message when its power supply fails. Or, a printer initiates a message when it runs out of paper. The appliance receives these traps adn generates alerts when certain pre-defined thresholds are reached.
+
+page 308
+Format for timing scans
+* * * * *
+minute, hour, day, month, day of week
+eg 30 8,12 * * 1-5 Run weekdays at 8:30 and 2:30
+
+page 932
+software version, of appliance 51
+special characters
+    escaping in monitoring profiles 719
+specifications, for the appliance 63
+speeding up patching iwth Replication Shares 598
+SQL queries
+
+page 295
+Scheduling things:
+Spaces (): Separate each field with a space
+Asterisks (): Includes the entire range of values in a field within an asterisk. For example, an asterisk in the hour field indicates every hour.
+Commas (,): Separate multiple values in a field with a comma. For example, 0, 6 in the day of th week field indicates sunday and saturday.
