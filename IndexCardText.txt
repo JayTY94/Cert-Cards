@@ -147,49 +147,59 @@ SOAP (Simple Object Access Protocol) is a standards-based web services access pr
 
 18
 KACE Appliance
-
+Labels are containers that organize and categorize items, such as devices, so that you can manage them as a group. For example, you can use labels to identify devices that have the same operating system or that are in the same geographic location.
 
 
 
 19
 KACE Appliance
+You can create reports while viewing list pages, such as the Devices page. Choose Action > Create Report
 
 
 
 
 20
 KACE Appliance
-
+YOu can add work information to Service Desk tickets, such as the date the work started or stopped, the total number of hours spent on the ticket, and notes about the work performed. This information is available to ticket submitters and owners.
+Work tab on bottom of tickets page
 
 
 
 21
 KACE Appliance
-
+Not Discovered Applications:
+Applications that do not exist in teh ingventory, but htat do eist inthe Questst KACE Software Catalog, are refered to as Not Discovered applications. You can enable metering for Not Discovered applications, mark them as Not Allowed, andadd license information for them.
 
 
 
 22
 KACE Appliance
-
+Communication Window (Property of an Organization)
+The period during which Agents on managed devbices are allowed to connect with the appliance. For example, to allow Agents to connect between  t he hours of 1:00 and 6:00 only, select 01:00 from the first drop-down list, and 06:00 from the second drop down list. You can set the communications window to avoid times hwen your devices are busiest.
 
 
 
 23
 KACE Appliance
-
+SNMP traps are messages initiated by network devices and sent to the trap receiver on the appliance. For example, a router can send a message when its power supply fails. Or, a printer initiates a message when it runs out of paper. The appliance receives these traps adn generates alerts when certain pre-defined thresholds are reached.
 
 
 
 24
 KACE Appliance
-
+Format for timing scans
+* * * * *
+minute, hour, day, month, day of week
+eg 30 8,12 * * 1-5 Run weekdays at 8:30 and 2:30
 
 
 
 25
 KACE Appliance
-
+Scheduling things:
+Spaces (): Separate each field with a space
+Asterisks (): Includes the entire range of values in a field within an asterisk. For example, an asterisk in the hour field indicates every hour.
+Commas (,): Separate multiple values in a field with a comma. For example, 0, 6 in the day of th week field indicates sunday and saturday.
 
 
 
