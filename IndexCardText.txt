@@ -204,13 +204,15 @@ Commas (,): Separate multiple values in a field with a comma. For example, 0, 6 
 
 
 26
-KACE Appliance
+Conditional Access
+Conditional Access policies at their simplest are if-then statements, if a user wants to access a resource, then they must complete an action. Example: A payroll manager wants to access the payroll application and is required to do multi-factor authentication to access it.
 
 
 
 
 27
-KACE Appliance
+Conditional Access
+Conditional Access policies are enforced after first-factor authentication is completed. Conditional Access isn't intended to be an organization's first line of defense for scenarios like denial-of-service (DoS) attacks, but it can use signals from these events to determine access.
 
 
 
