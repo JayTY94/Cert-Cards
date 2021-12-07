@@ -218,19 +218,207 @@ Conditional Access policies are enforced after first-factor authentication is co
 
 
 28
-KACE Appliance
-
+Conditional Access
+Common Signal: User or Group Membership
+Policies can be targeted to specific users and groups giving administrators fine-grained control over access.
 
 
 
 29
-KACE Appliance
+Conditional Access
+Common Signal: IP Location Information
+Organizations can created trusted IP ranges that can be used when making policy decisions.
+Administrators can specify entire countries/regions IP ranges to block or allow traffic from.
 
 
 
 
 30
-KACE Appliance
+Conditional Access
+Common Signal: Device
+Users with devices of specific platforms or marked with a specific state can be used when enforcing Conditional Access policies.
+
+
+
+
+Process finished with exit code 0
+C:\Users\m4ple\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:/Users/m4ple/PycharmProjects/pythonProject1/main.py
+1
+Conditional Access
+
+
+
+
+2
+Conditional Access
+
+
+
+
+3
+Conditional Access
+
+
+
+
+4
+Conditional Access
+
+
+
+
+5
+Conditional Access
+
+
+
+
+6
+Conditional Access
+
+
+
+
+7
+Conditional Access
+
+
+
+
+8
+Conditional Access
+
+
+
+
+9
+Conditional Access
+
+
+
+
+10
+Conditional Access
+
+
+
+
+11
+Conditional Access
+
+
+
+
+12
+Conditional Access
+
+
+
+
+13
+Conditional Access
+
+
+
+
+14
+Conditional Access
+
+
+
+
+15
+Conditional Access
+
+
+
+
+16
+Conditional Access
+
+
+
+
+17
+Conditional Access
+
+
+
+
+18
+Conditional Access
+
+
+
+
+19
+Conditional Access
+
+
+
+
+20
+Conditional Access
+
+
+
+
+21
+Conditional Access
+
+
+
+
+22
+Conditional Access
+
+
+
+
+23
+Conditional Access
+
+
+
+
+24
+Conditional Access
+
+
+
+
+25
+Conditional Access
+
+
+
+
+26
+Conditional Access
+
+
+
+
+27
+Conditional Access
+
+
+
+
+28
+Conditional Access
+
+
+
+
+29
+Conditional Access
+
+
+
+
+30
+Conditional Access
 
 
 
