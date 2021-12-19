@@ -2,96 +2,6 @@
 
 
 
-29
-UiPath Advanced Developer
-From an automation potential standpoint, a process in which changes are frequent, the system environment is volatile, and multiple manual (even non-digital) actions are required belongs to the...
-
-No RPA Category
-
-
-
-30
-UiPath Advanced Developer
-Can activities which require an Excel Application Scope run on a machine that does not have the Excel application installed?
-
-No, these activities require Excell to be installed
-
-
-
-
-Process finished with exit code 0
-C:\Users\jayoshimi\PycharmProjects\pythonProject\venv\Scripts\python.exe "C:/Users/jayoshimi/PycharmProjects/pythonProject/cards document.py"
-1
-UiPath Advanced Developer
-What happens if you use a Write Range activity and try to write data in an .xlsx file that does not exist?
-
-It will create that file for you and write the data in it.
-
-
-
-2
-Hemic
-SMTP Tarpitting is a process that slows email delivery down significantly to repel spammers. It takes bulk emails and delays delivery across the board, whereas greylisting give more slack to trusted senders, resulting in a less intensive procedure.
-
-
-
-3
-Hemic
-Greylisting (sometimes referred to as graylisting) is just one spam-prevention technique that places email addresses somewhere between a blacklist (flagged spammers) and a whitelist (trusted senders).
-
-
-
-4
-Active Directory
-The recommended way to enableand use Azure AD Multi-Factor Authentication is with Conditional Access
-policies. Conditional Access lets you createand define policies that react to sign in events and requestadditional
-actions beforea user is granted access to an application or service.
-
-
-
-5
-Active Directory
-To use Number Matching with MFA, you will need to enable Microsoft Authenticator (traditional second factor) push notifications for
-some users or groups using the new Authentication Methods Policy API. I
-
-
-
-6
-Active Directory
-Microsoft’s MultiFactor Authentication Server (MFA Server) is no longer offered for new deployments. Customers who are using
-MFA Server should moveto Azure AD Multi-Factor Authentication (Azure AD MFA).
-
-
-
-
-7
-Active Directory
-By default, smart lockout locks theaccount from sign-in attempts for one minuteafter 10 failed attempts for
-Azure Publicand Azure China 21Vianet tenants and 3 for Azure US Government tenants.Theaccount locks
-again after each subsequent failed sign-in attempt, for one minuteat firstand longer in subsequentattempts
-
-
-
-8
-Active Directory
-Azure Active Directory (Azure AD) Pass-through Authentication allows your users to sign in to both on-premises and cloud-based applications by using the same passwords. Pass-through Authentication signs users in by validating their passwords directly against on-premises Active Directory.
-
-
-
-9
-Active Directory
-Azure Active Directory (Azure AD) self-service password reset (SSPR) gives users theability to change or reset
-their password, with no administrator or help desk involvement. If a user's account is locked or they forget their
-password, they can follow prompts to unblock themselves and get back to work.
-
-
-
-10
-Active Directory
-When using SSPR, Hybrid Azure AD joined machines must have network connectivity line of sight to a domain controller to use
-the new password and updatecached credentials.This means that devices musteither be on the
-organization's internal network or on a VPN with network access to an on-premises domain controller.
-
 
 
 11
@@ -245,7 +155,7 @@ Process finished with exit code 0
 C:\Users\m4ple\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:/Users/m4ple/PycharmProjects/pythonProject1/main.py
 1
 Conditional Access
-
+Use the Conditional Access what if policy tool to simulate a sign-in of your test user. The simulation estimates the impact this sign-in has on your policies and generates a simulation report.
 
 
 
