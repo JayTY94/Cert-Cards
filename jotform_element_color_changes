@@ -1,0 +1,74 @@
+#p2 {background-color:rgba(0,255,0,0.3);}
+
+#input_3_0_0, #input_3_0_1, #input_3_0_2, #input_3_0_3, #input_3_0_4, #input_3_0_5, #input_3_1_0, #input_3_1_1, #input_3_1_2, #input_3_1_3, #input_3_1_4, #input_3_1_5, #input_3_2_0, #input_3_2_1, #input_3_2_2, #input_3_2_3, #input_3_2_4, #input_3_2_5, #input_3_3_0, #input_3_3_1, #input_3_3_2, #input_3_3_3, #input_3_3_4, #input_3_3_5, #input_3_4_0, #input_3_4_1, #input_3_4_2, #input_3_4_3, #input_3_4_4, #input_3_4_5, #input_3_5_0, #input_3_5_1, #input_3_5_2, #input_3_5_3, #input_3_5_4, #input_3_5_5, #input_3_6_0, #input_3_6_1, #input_3_6_2, #input_3_6_3, #input_3_6_4, #input_3_6_5
+
+#input_3_0_0 {background-color:rgba(0,255,0,0.3);}
+
+(1) FF0000 Red,
+(2) FF3300 Red(Orange)
+(3) ff6600
+(4) ff9900
+(5) FFCC00 Gold
+(6) FFFF00 Yellow
+(7) ccff00
+(8) 99ff00
+(9) 66ff00
+(10) 33ff00
+(11) 00FF00 Lime
+
+
+=====
+
+.form-matrix-headers.form-matrix-column-headers.form-matrix-column_0 {
+    background-color : #933709;
+}
+^^That's the one that will make those color. Thank goodness for the advanced style editor.
+.form-matrix-headers.form-matrix-column-headers.form-matrix-column_0 {
+    background-color : #FF3300;
+}
+.form-matrix-headers.form-matrix-column-headers.form-matrix-column_1 {
+    background-color : #ff6600 ;
+}
+.form-matrix-headers.form-matrix-column-headers.form-matrix-column_2 {
+    background-color : #FFCC00 ;
+}
+.form-matrix-headers.form-matrix-column-headers.form-matrix-column_3 {
+    background-color : #FFFF00;
+}
+.form-matrix-headers.form-matrix-column-headers.form-matrix-column_4 {
+    background-color : #ccff00;
+}
+.form-matrix-headers.form-matrix-column-headers.form-matrix-column_5 {
+    background-color : #66ff00;
+}
+
+^Made in python
+
+.form-matrix-headers.form-matrix-column-headers.form-matrix-column_6 {
+    background-color : rgba(0,255,0,0.3);
+}
+
+
+=====
+
+Just manipulating here in atom because faster.
+
+
+.form-matrix-headers.form-matrix-column-headers.form-matrix-column_0 {
+    background-color : rgba(240,0,0,0.3);
+}
+.form-matrix-headers.form-matrix-column-headers.form-matrix-column_1 {
+    background-color : rgba(160,0,0,0.3) ;
+}
+.form-matrix-headers.form-matrix-column-headers.form-matrix-column_2 {
+    background-color : rgba(80,0,0,0.3) ;
+}
+.form-matrix-headers.form-matrix-column-headers.form-matrix-column_3 {
+    background-color : rgba(0,80,0,0.3);
+}
+.form-matrix-headers.form-matrix-column-headers.form-matrix-column_4 {
+    background-color : rgba(0,160,0,0.3);
+}
+.form-matrix-headers.form-matrix-column-headers.form-matrix-column_5 {
+    background-color : rgba(0,240,0,0.3);
+}

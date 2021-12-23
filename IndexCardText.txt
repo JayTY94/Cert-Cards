@@ -244,62 +244,66 @@ Users with devices of specific platforms or marked with a specific state can be 
 Process finished with exit code 0
 C:\Users\m4ple\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:/Users/m4ple/PycharmProjects/pythonProject1/main.py
 1
-Conditional Access
-
+general
+SIP stands for Session Initiation Protocol, a communications protocol that helps to manage multimedia communication sessions which may include voice calls as well as videoconferencing and other aspects of unified communications.
 
 
 
 2
-Conditional Access
+Power BI
+A Power BI dataset can operate in one of the following modes to access datta from a variety of data sources.
 
+Import mode
+DirectQuery mode
+LiveConnect mode
+Push mode
 
 
 
 3
-Conditional Access
-
+Power BI
+DirectQuery datasets and datasets in LiveConnect mode to Analysis Services don't import data; they query the underlying data source with every user interaction.
 
 
 
 4
-Conditional Access
-
+Power BI
+Datasets in push mode don't access any data sources directly but expect you to push the data into Power BI.
 
 
 
 5
-Conditional Access
-
+Power BI
+A Power BI refresh operation can consists of multiple refresh types, including data refresh, OneDrive refresh, refresh of query caches, tile refresh, and refresh of report visuals.
 
 
 
 6
-Conditional Access
-
+Power BI
+You can trigger an on-demand refresh by selecting Refresh now in the dataset menu. On-demand refreshes are not included in the refresh limitation.
 
 
 
 7
-Conditional Access
-
+Power BI
+Data refreshes must complete in less than 2 hours on shred capacity. On Premium, the maximum refresh duration is 5 hours.
 
 
 
 8
-Conditional Access
-
-
+Power BI
+If you created your datasets and reports based on a Power BI Desktop file, Excel workbook, or comma separated value (.csv) file on OneDrive or SharePoint Online, Power BI performs another type of refresh, known as OneDrive refresh.
 
 
 9
-Conditional Access
-
+Power BI
+Power BI maintains a cache for every tile visual on your dashboards and proactively updates the tile caches when data changes. In other words, tile refresh happens automatically following a data refresh.
 
 
 
 10
-Conditional Access
-
+Power BI
+A data source definition provides Power BI with the connection information for a given source, including connection endpoints, authentication mode, and credentials. 
 
 
 
