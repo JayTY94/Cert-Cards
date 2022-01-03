@@ -154,13 +154,8 @@ Users with devices of specific platforms or marked with a specific state can be 
 Process finished with exit code 0
 C:\Users\m4ple\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:/Users/m4ple/PycharmProjects/pythonProject1/main.py
 1
-<<<<<<< HEAD
 general
 SIP stands for Session Initiation Protocol, a communications protocol that helps to manage multimedia communication sessions which may include voice calls as well as videoconferencing and other aspects of unified communications.
-=======
-Conditional Access
-Use the Conditional Access what if policy tool to simulate a sign-in of your test user. The simulation estimates the impact this sign-in has on your policies and generates a simulation report.
->>>>>>> c2ccf88e491ff0757e73fa1d252f2f6663a3d8ef
 
 
 
@@ -218,126 +213,130 @@ Power BI maintains a cache for every tile visual on your dashboards and proactiv
 
 10
 Power BI
-A data source definition provides Power BI with the connection information for a given source, including connection endpoints, authentication mode, and credentials. 
+A data source definition provides Power BI with the connection information for a given source, including connection endpoints, authentication mode, and credentials.
 
 
 
+C:\Users\jayoshimi\PycharmProjects\pythonProject\venv\Scripts\python.exe "C:/Users/jayoshimi/PycharmProjects/pythonProject/cards document.py"
 11
-Conditional Access
+KACE Appliance
+Provisioning scheudles configure the appliance to periodically check devices in a specified IP address range and install, reinstall, or uninstall the KACE Agent as needed.
 
 
 
 
 12
-Conditional Access
+KACE Appliance
+In addition, if the Organization component is enabled, the Administrator Console has two levels: The Admin level, which shows organization-related features, and the System level, which shows appliance-related features.
 
+If the Organization component is not enabled, Admin- and System-level features are available at the Admin level.
 
 
 
 13
-Conditional Access
+KACE Appliance
 
 
 
 
 14
-Conditional Access
+KACE Appliance
 
 
 
 
 15
-Conditional Access
+KACE Appliance
 
 
 
 
 16
-Conditional Access
+KACE Appliance
 
 
 
 
 17
-Conditional Access
+KACE Appliance
 
 
 
 
 18
-Conditional Access
+KACE Appliance
 
 
 
 
 19
-Conditional Access
+KACE Appliance
 
 
 
 
 20
-Conditional Access
+KACE Appliance
 
 
 
 
 21
-Conditional Access
+KACE Appliance
 
 
 
 
 22
-Conditional Access
+KACE Appliance
 
 
 
 
 23
-Conditional Access
+KACE Appliance
 
 
 
 
 24
-Conditional Access
+KACE Appliance
 
 
 
 
 25
-Conditional Access
+KACE Appliance
 
 
 
 
 26
-Conditional Access
+KACE Appliance
 
 
 
 
 27
-Conditional Access
+KACE Appliance
 
 
 
 
 28
-Conditional Access
+KACE Appliance
 
 
 
 
 29
-Conditional Access
+KACE Appliance
 
 
 
 
 30
-Conditional Access
+KACE Appliance
 
 
 
