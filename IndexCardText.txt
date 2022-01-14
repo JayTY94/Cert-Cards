@@ -234,50 +234,59 @@ If the Organization component is not enabled, Admin- and System-level features a
 
 
 13
-KACE Appliance
-
+VB.NET
+In Visual Basic, an attribute is enclosed in angle brackets (<>). It must appear immediately before the element to which it is applied, on the same line.
 
 
 
 14
-KACE Appliance
+VB.NET
+Metadata is information about the types defined in a program. All .NET assemblies contain a specified set of metadata that describes the types and type members defined in the assembly.
 
 
 
 
 15
-KACE Appliance
-
+hemic
+Medical Records are Confidential Medical Information (CMI)
 
 
 
 16
-KACE Appliance
+hemic
+Types of helpdesk tickets:
+Break/fix: something was working and now it's broken
+request: anything else small enough it's not a project
 
 
 
 
 17
-KACE Appliance
+hemic
+helpdesk ticket statuses
+Open: has not been looked at
+Assigned: assigned to a team memeber who hasn't read it yet
+In Progress: assigned and team member has started working on it
 
 
 
 
 18
-KACE Appliance
-
+hemic
+SB1100 is the state law that lays out the data security measures with which we must comply.
 
 
 
 19
-KACE Appliance
+VB.NET
+The declaration statement for variables is the Dim Statement. Its location and contents determine the variable's characteristics.
 
 
 
 
 20
-KACE Appliance
-
+VB.NET
+A local variable is one that is decalared with a procedure. A member variable is a member of a Visual Basic type; it is declared at module level, inside a class, structure, or model, but not within any procedure internal to that class, structure, or module.
 
 
 

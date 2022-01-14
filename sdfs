@@ -86,3 +86,103 @@ Monday 12/6 2:00pm - 5:00pm
 Tuesday 12/7 3:00pm - 5:00pm
 Wednesday 12/8 10:00 - 2:00pm, 3:00 - 5:00
 Thursday 12/9 12:00pm - 5:00pm
+
+
+
+Hi Faye, sorry to ask this, but do you mind unlocking the door to the door to the help desk office for me today? That's the first door on the left after the heavy door entering the 1st floor. I need to get a laptop ready for a new hire tomorrow.
+
+
+
+
+Next thing that I have on my list is to make a list of the things that I need for work from home.
+
+Dock (usb B to A)
+Compatible cable 1 with HDMI end
+Compatible cable 2 with DV1 end
+Compatible cable 2 with VGA end
+Power supply for dock ... I think that's it.
+
+Monitor 1 has empty HDMI port.
+Monitor 2 (I think) has either DV1 or VGA open.
+
+I'd like a nicer chair and a nicer desk, but that isn't something I'm going to be able to pick up today.
+
+
+A new Amazon WorkSpace has been provided for you. Follow the steps below to quickly get up and running with your WorkSpace:
+
+1. Download and install a WorkSpaces Client for your favorite devices: https://clients.amazonworkspaces.com/
+
+2. Launch the client and enter the following registration code: WSpdx+SRUNRK
+
+3. Login with your password. Your usernames are as follows:
+[table]
+
+If you have any issues connecting to your WorkSpace, please contact helpdesk@hemic.com.
+
+
+https://hemic.jotform.com/212789005662055?&fillIn[0][0]=N/A&fillIn[0][1]=N/A&fillIn[0][2]=N/A&fillIn[0][3]=N/A&fillIn[0][4]=N/A&fillIn[0][5]=N/A&fillIn[0][6]=&fillIn[0][7]=&fillIn[0][8]=&fillIn[0][9]=&fillIn[0][10]=&fillIn[0][11]=&fillIn[1][0]=N/A&fillIn[1][1]=N/A&fillIn[1][2]=N/A&fillIn[1][3]=N/A&fillIn[1][4]=N/A&fillIn[1][5]=N/A&fillIn[1][6]=&fillIn[1][7]=&fillIn[1][8]=&fillIn[1][9]=&fillIn[1][10]=&fillIn[1][11]=&clientName=Happy Shirts Inc
+
+https://hemic.jotform.com/212789005662055?&nEmployees=N/A&fillIn[0][1]=na&clientName=Happy Shirts Inc&address=21 dfjs
+
+
+https://hemic.jotform.com/212789005662055?&nEmployees=N/A&fillIn[0][1]=na&clientName=Happy Shirts Inc&address=21 dfjs
+Still getting nothing on the field after changing the name to nEmployees
+
+
+https://hemic.jotform.com/212789005662055?&nEmployees=N&clientName=Happy Shirts Inc&address=21 dfjs
+oh that's probably because these are still programmed only to take numbers. Let's check on that real quick.
+Yep, that was it.
+
+https://hemic.jotform.com/212789005662055?&nEmployees=N/A&clientName=Happy Shirts Inc&address[0]=21 dfjs&address[2]=sdfsd
+
+1544 Haleukana Street
+
+
+
+https://hemic.jotform.com/212789005662055?&nEmployees[0][0]=N/A&clientName=Happy Shirts Inc&address[0]=21 dfjs&address[2]=sdfsd&nEmployees[male][Oct]=3
+working again!
+
+'clientName': spreadsheet_dict['Name of Employer'],
+'address[0]': spreadsheet_dict['Street Address'],
+'address[2]': f"{spreadsheet_dict['Zip Code']}, {spreadsheet_dict['City & State']}",
+'policyNo5': spreadsheet_dict['Policy Number'],
+'nEmployees[0][0]': spreadsheet_dict['Male Cov Emp Jan'],
+'nEmployees[0][1]': spreadsheet_dict['Male Cov Emp Feb'],
+'nEmployees[0][2]': spreadsheet_dict['Male Cov Emp Mar'],
+'nEmployees[0][3]': spreadsheet_dict['Male Cov Emp Apr'],
+'nEmployees[0][4]': spreadsheet_dict['Male Cov Emp May'],
+'nEmployees[0][5]': spreadsheet_dict['Male Cov Emp Jun'],
+'nEmployees[0][6]': spreadsheet_dict['Male Cov Emp Jul'],
+'nEmployees[0][7]': spreadsheet_dict['Male Cov Emp Aug'],
+'nEmployees[0][8]': spreadsheet_dict['Male Cov Emp Sep'],
+'nEmployees[0][9]': spreadsheet_dict['Male Cov Emp Oct'],
+'nEmployees[0][10]': spreadsheet_dict['Male Cov Emp Nov'],
+'nEmployees[0][11]': spreadsheet_dict['Male Cov Emp Dec'],
+'nEmployees[1][0]': spreadsheet_dict['Female Cov Emp Jan'],
+'nEmployees[1][1]': spreadsheet_dict['Female Cov Emp Feb'],
+'nEmployees[1][2]': spreadsheet_dict['Female Cov Emp Mar'],
+'nEmployees[1][3]': spreadsheet_dict['Female Cov Emp Apr'],
+'nEmployees[1][4]': spreadsheet_dict['Female Cov Emp May'],
+'nEmployees[1][5]': spreadsheet_dict['Female Cov Emp Jun'],
+'nEmployees[1][6]': spreadsheet_dict['Female Cov Emp Jul'],
+'nEmployees[1][7]': spreadsheet_dict['Female Cov Emp Aug'],
+'nEmployees[1][8]': spreadsheet_dict['Female Cov Emp Sep'],
+'nEmployees[1][9]': spreadsheet_dict['Female Cov Emp Oct'],
+'nEmployees[1][10]': spreadsheet_dict['Female Cov Emp Nov'],
+'nEmployees[1][11]': spreadsheet_dict['Female Cov Emp Dec']
+
+
+{'Policy Number': 0, 'Name of Employer': 1, 'Inception Date': 2, 'End Date': 3, 'Employer Contact': 4, 'Email': 5, 'DOL Account No': 6, 'DBA Name': 7, 'Street Address': 8, 'City & State': 9, 'Zip Code': 10, 'TDI Plan': 11, 'Male Cov Emp Jan': 12, 'Male Cov Emp Feb': 13, 'Male Cov Emp Mar': 14, 'Male Cov Emp Apr': 15, 'Male Cov Emp May': 16, 'Male Cov Emp Jun': 17, 'Male Cov Emp Jul': 18, 'Male Cov Emp Aug': 19, 'Male Cov Emp Sep': 20, 'Male Cov Emp Oct': 21, 'Male Cov Emp Nov': 22, 'Male Cov Emp Dec': 23, 'Female Cov Emp Jan': 24, 'Female Cov Emp Feb': 25, 'Female Cov Emp Mar': 26, 'Female Cov Emp Apr': 27, 'Female Cov Emp May': 28, 'Female Cov Emp Jun': 29, 'Female Cov Emp Jul': 30, 'Female Cov Emp Aug': 31, 'Female Cov Emp Sep': 32, 'Female Cov Emp Oct': 33, 'Female Cov Emp Nov': 34, 'Female Cov Emp Dec': 35, ' Total Wage ': 36, ' Total Wages (Cov Emp) ': 37, ' ER Contribution ': 38, ' EE Contribution ': 39, 'Male Benefits Paid': 40, 'Male Emp Paid Count': 41, 'Male Weeks Benefits Paid Count': 42, 'Male Benefits Paid Periods': 43, 'Males Denied Claims Count': 44, 'Female Benefits Paid': 45, 'Female Emp Paid Count': 46, 'Female Weeks Benefits Paid Count': 47, 'Female Benefits Paid Periods': 48, 'Females Denied Claims Count': 49, 'Subro Payment Amount': 50, 'Reporting Agency Name': 51, 'TDI Reporting No': 52, 'Reporting Agency Street Address': 53, 'Reporting Agency City & State': 54, 'Reporting Agency Zipcode': 55, 'Comments': 56}
+
+f"{spreadsheet_dict['Zip Code']}, {spreadsheet_dict['City & State']}",
+
+
+
+
+
+<!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://hemic.jotform.com/212789005662055?&&clientName=Ashki, Inc.&address[0]=3923 South Tavistock Place&policyNo5=FakeValue&nEmployees[0][0]=&nEmployees[0][1]=&nEmployees[0][2]=&nEmployees[0][3]=&nEmployees[0][4]=&nEmployees[0][5]=&nEmployees[0][6]=N/A&nEmployees[0][7]=N/A&nEmployees[0][8]=N/A&nEmployees[0][9]=N/A&nEmployees[0][10]=N/A&nEmployees[0][11]=N/A&nEmployees[1][0]=&nEmployees[1][1]=&nEmployees[1][2]=&nEmployees[1][3]=&nEmployees[1][4]=&nEmployees[1][5]=&nEmployees[1][6]=N/A&nEmployees[1][7]=N/A&nEmployees[1][8]=N/A&nEmployees[1][9]=N/A&nEmployees[1][10]=N/A&nEmployees[1][11]=N/A&address[2]=83642, Meridian ID" style="height:42px;width:171px;v-text-anchor:middle;" arcsize="10%" stroke="false" fillcolor="#fd8300"><w:anchorlock/><v:textbox inset="0px,0px,0px,0px"><center style="color:#ffffff; font-family:Arial, sans-serif; font-size:16px"><![endif]--><a href="https://hemic.jotform.com/212789005662055?&&clientName=Ashki, Inc.&address[0]=3923 South Tavistock Place&policyNo5=FakeValue&nEmployees[0][0]=&nEmployees[0][1]=&nEmployees[0][2]=&nEmployees[0][3]=&nEmployees[0][4]=&nEmployees[0][5]=&nEmployees[0][6]=N/A&nEmployees[0][7]=N/A&nEmployees[0][8]=N/A&nEmployees[0][9]=N/A&nEmployees[0][10]=N/A&nEmployees[0][11]=N/A&nEmployees[1][0]=&nEmployees[1][1]=&nEmployees[1][2]=&nEmployees[1][3]=&nEmployees[1][4]=&nEmployees[1][5]=&nEmployees[1][6]=N/A&nEmployees[1][7]=N/A&nEmployees[1][8]=N/A&nEmployees[1][9]=N/A&nEmployees[1][10]=N/A&nEmployees[1][11]=N/A&address[2]=83642, Meridian ID" style="text-decoration:none;display:inline-block;color:#ffffff;background-color:#fd8300;border-radius:4px;width:auto;border-top:1px solid #fd8300;border-right:1px solid #fd8300;border-bottom:1px solid #fd8300;border-left:1px solid #fd8300;padding-top:5px;padding-bottom:5px;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;text-align:center;mso-border-alt:none;word-break:keep-all;" target="_blank"><span style="padding-left:20px;padding-right:20px;font-size:16px;display:inline-block;letter-spacing:normal;"><span style="font-size: 16px; line-height: 2; word-break: break-word; mso-line-height-alt: 32px;">TDI Annual Report</span></span></a>
+<!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
+
+
+
+https://hemic.jotform.com/212789005662055?&&clientName=Ashki, Inc.&address[0]=3923 South Tavistock Place&policyNo5=FakeValue&nEmployees[0][0]=&nEmployees[0][1]=&nEmployees[0][2]=&nEmployees[0][3]=&nEmployees[0][4]=&nEmployees[0][5]=&nEmployees[0][6]=N/A&nEmployees[0][7]=N/A&nEmployees[0][8]=N/A&nEmployees[0][9]=N/A&nEmployees[0][10]=N/A&nEmployees[0][11]=N/A&nEmployees[1][0]=&nEmployees[1][1]=&nEmployees[1][2]=&nEmployees[1][3]=&nEmployees[1][4]=&nEmployees[1][5]=&nEmployees[1][6]=N/A&nEmployees[1][7]=N/A&nEmployees[1][8]=N/A&nEmployees[1][9]=N/A&nEmployees[1][10]=N/A&nEmployees[1][11]=N/A&address[2]=83642, Meridian ID
