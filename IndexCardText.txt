@@ -4,74 +4,9 @@
 
 
 
-11
-General
-A warrant gives the holder the right, but not the obligation, to buy common shares of stock directly from the company at a fixed price for a pre-defined time period.
 
 
 
-
-12
-General
-Strike price or exercise price – The guaranteed price at which the warrant or option buyer has the right to buy the underlying asset from the seller (technically, the writer of the call). “Exercise price” is the preferred term with reference to warrants.
-
-
-
-13
-General
-Verboten
-not permitted or allowed : forbidden or prohibited by or as if by authority
-
-
-
-14
-General
-abend
-(computing)
-: the unexpected failure of a piece of computer software
-
-
-
-15
-General
-eschatology
-1: a branch of theology concerned with the final events in the history of the world or of humankind
-2: a belief concerning death, the end of the world, or the ultimate destiny of humankind
-specifically : any of various Christian doctrines concerning the Second Coming, the resurrection of the dead, or the Last Judgment
-
-
-
-
-16
-Microsoft Exchange
-Exchange Web Services (EWS) is an application program interface (API) that allows programmers to access Microsoft Exchange items such as calendars, contacts and email. ... EWS can be useful for migrating Exchange data on-premises or to a third-party host in the cloud.
-
-
-
-17
-Microsoft Exchange
-SOAP (Simple Object Access Protocol) is a standards-based web services access protocol that has been around for a long time. Originally developed by Microsoft, SOAP isn’t as simple as the acronym would suggest.
-
-
-
-
-18
-KACE Appliance
-Labels are containers that organize and categorize items, such as devices, so that you can manage them as a group. For example, you can use labels to identify devices that have the same operating system or that are in the same geographic location.
-
-
-
-19
-KACE Appliance
-You can create reports while viewing list pages, such as the Devices page. Choose Action > Create Report
-
-
-
-
-20
-KACE Appliance
-YOu can add work information to Service Desk tickets, such as the date the work started or stopped, the total number of hours spent on the ticket, and notes about the work performed. This information is available to ticket submitters and owners.
-Work tab on bottom of tickets page
 
 
 
@@ -100,15 +35,15 @@ KACE Appliance
 Format for timing scans
 * * * * *
 minute, hour, day, month, day of week
-eg 30 8,12 * * 1-5 Run weekdays at 8:30 and 2:30
+eg 30 8,12 * * 1-5 Run weekdays at 8:30 and 12:30
 
 
 
 25
 KACE Appliance
 Scheduling things:
-Spaces (): Separate each field with a space
-Asterisks (): Includes the entire range of values in a field within an asterisk. For example, an asterisk in the hour field indicates every hour.
+Spaces ( ): Separate each field with a space
+Asterisks (*): Includes the entire range of values in a field within an asterisk. For example, an asterisk in the hour field indicates every hour.
 Commas (,): Separate multiple values in a field with a comma. For example, 0, 6 in the day of th week field indicates sunday and saturday.
 
 
@@ -291,8 +226,10 @@ A local variable is one that is decalared with a procedure. A member variable is
 
 
 21
-KACE Appliance
-
+VB.NET
+The As clause in the declaration statement allows you to define the data type or object type of the vaiable you are declaring, eg
+    An elementary data type, such as Boolean, Long, or Decimal
+    A composite data type, such as an array or structure
 
 
 
