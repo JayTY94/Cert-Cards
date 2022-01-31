@@ -4,34 +4,6 @@
 
 
 
-4
-Power BI
-Datasets in push mode don't access any data sources directly but expect you to push the data into Power BI.
-
-
-
-5
-Power BI
-A Power BI refresh operation can consists of multiple refresh types, including data refresh, OneDrive refresh, refresh of query caches, tile refresh, and refresh of report visuals.
-
-
-
-6
-Power BI
-You can trigger an on-demand refresh by selecting Refresh now in the dataset menu. On-demand refreshes are not included in the refresh limitation.
-
-
-
-7
-Power BI
-Data refreshes must complete in less than 2 hours on shared capacity. On Premium, the maximum refresh duration is 5 hours.
-
-
-
-8
-Power BI
-If you created your datasets and reports based on a Power BI Desktop file, Excel workbook, or comma separated value (.csv) file on OneDrive or SharePoint Online, Power BI performs another type of refresh, known as OneDrive refresh.
-
 
 9
 Power BI
@@ -180,6 +152,7 @@ The default action of the play button in the ribbon is to debug the current file
 
 30
 UiPath Advanced Developer
+VisualBasic is a case-insensitive language.
 
 
 
@@ -224,7 +197,7 @@ For this year, priorities will go Guidewire > Audit Stuff > Everything Else
 6
 General
 white-glove
-adjectiveNORTH AMERICAN
+adjective
 providing or involving meticulous care, attention, or service.
 "you went to the best restaurant in town where they gave you white-glove service"
 
@@ -241,7 +214,7 @@ Module, Class, and Structure
 
 8
 UiPath Advanced Developer
-VisualBasic is a case-insensitive language.
+
 
 
 
