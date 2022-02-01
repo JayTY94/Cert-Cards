@@ -5,75 +5,8 @@
 
 
 
-9
-Power BI
-Power BI maintains a cache for every tile visual on your dashboards and proactively updates the tile caches when data changes. In other words, tile refresh happens automatically following a data refresh.
 
 
-
-10
-Power BI
-A data source definition provides Power BI with the connection information for a given source, including connection endpoints, authentication mode, and credentials.
-
-
-
-C:\Users\jayoshimi\PycharmProjects\pythonProject\venv\Scripts\python.exe "C:/Users/jayoshimi/PycharmProjects/pythonProject/cards document.py"
-11
-KACE Appliance
-Provisioning scheudles configure the appliance to periodically check devices in a specified IP address range and install, reinstall, or uninstall the KACE Agent as needed.
-
-
-
-
-12
-KACE Appliance
-In addition, if the Organization component is enabled, the Administrator Console has two levels: The Admin level, which shows organization-related features, and the System level, which shows appliance-related features.
-
-If the Organization component is not enabled, Admin- and System-level features are available at the Admin level.
-
-
-
-13
-VB.NET
-In Visual Basic, an attribute is enclosed in angle brackets (<>). It must appear immediately before the element to which it is applied, on the same line.
-
-
-
-14
-VB.NET
-Metadata is information about the types defined in a program. All .NET assemblies contain a specified set of metadata that describes the types and type members defined in the assembly.
-
-
-
-
-15
-hemic
-Medical Records are Confidential Medical Information (CMI)
-
-
-
-16
-hemic
-Types of helpdesk tickets:
-Break/fix: something was working and now it's broken
-request: anything else small enough it's not a project
-
-
-
-
-17
-hemic
-helpdesk ticket statuses
-Open: has not been looked at
-Assigned: assigned to a team memeber who hasn't read it yet
-In Progress: assigned and team member has started working on it
-
-
-
-
-18
-hemic
-SB1100 is the state law that lays out the data security measures with which we must comply.
 
 
 
@@ -214,49 +147,57 @@ Module, Class, and Structure
 
 8
 UiPath Advanced Developer
-
+What is recommended to have in a Catch block?
+A Log Message Activity
+An alternative to the approach that fails
 
 
 
 9
 UiPath Advanced Developer
+If you have more than one exception type defined in the Catch block and an execution occurs that fits two types, the block with the most specific match is executed.
+
 
 
 
 
 10
 UiPath Advanced Developer
-
+Can you store a Selector in a variable in the Selector property of an activity?
+Yes, of type String
 
 
 
 11
 UiPath Advanced Developer
-
+The Retry Scope activity can be used without a termination condition. In this case, it will retry the activities until no exception occurs (or the provided number of attempts is exceeded).
 
 
 
 12
 UiPath Advanced Developer
-
+When the Extract as Workflow option is used, variables are automatically turned into arguments.
 
 
 
 13
 UiPath Advanced Developer
-
+What is the most effective way to handle the click on a UI Element that is not always available?
+Place the click activity inside a Try/Catch block
 
 
 
 14
 UiPath Advanced Developer
-
+What is the maximum number of catches you can have in a Try/Catch block?
+There is no limit on the number of catches.
 
 
 
 15
 UiPath Advanced Developer
-
+What can you use to make sure that the execution continues even if an activity fails?
+The Try/Catch activity
 
 
 
