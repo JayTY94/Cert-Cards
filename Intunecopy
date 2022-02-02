@@ -1,0 +1,222 @@
+page 257
+Windows 10 in cloud configuration is a Microsoft-recommended device configuration. You can turn any Windows 10 Professional, Enterprise, and Education device into a cloud-optimized device.
+
+It's ideal for:
+Frontline workers
+Remote workers
+Other users with focused workflow needs, like productivity and browsing
+
+Cloud config makes these devices easy to use, and secures these devices with Microsoft-recommended security features.
+
+With Windows 10 in cloud configuration:
+You can configure new deivces, or reuse existing hardware.
+End users get an easy-to-use and familiar Windows experience.
+Administrators get a uniform device configuration across devices, which makes management and troubleshooting easier.
+You can customize the names of your resources, so they're easy to see and monitor.
+
+Tip
+To learn more abouut WIndows 10 in cloud configuration, see Windows 10 in cloud configuration.
+
+What this guided scenario does
+
+Using Microsoft Endpoint Manager, you can use a guided scenario to deploy a cloud configuration. The guided scenario automatically creates all the resources you need, including the following resources:
+
+Creates a new Azure AD security group, or uses an existing Azure AD security group.
+Deploys the Microsoft Edge and Microsoft Teams apps. For more information on deploying these apps individually, see:
+    Add Microsoft Edge for Windows 10
+    Add Microsoft 365 apps to Windows devices
+Creates a Windows 10 security baseline policy with recommended security settings that are already configured.
+For more information about security baselines and what they do, see Use security baselines to configure Windows 10 devices.
+Creates a Windows Autopilot enrollment profile that automatically enrolls devices in Microsoft Intune.
+For more information on creating your own Autopilot profile, see Configure Autopilot profiles.
+Turns on and configures the Autopilot environment status page (ESP). This page shows users the enrollment process.
+
+=================================
+page 789
+
+Instructions for iPads or something
+
+page 42
+
+Monitor and troubleshoot
+
+New operational report providing app install status
+The new App Install Status report provides a list of apps with versions and installation details. App installation details are included as separate columns in the list. Additionally, the installation details provide the app install and failure tools for devices and users. You have the ability to sort and search this report as well. In the Microsoft Endpoint Manager admin center, select Apps > Monitor > App Install Status. For more information about reports in Intune, see Intune Reports.
+
+New operational report providing app insall status based on device
+Based on a selected app, the new Device Install Status report provides a list of devices and status information related to the specific app. App installation details related to the device includes UPN, Platform, Version, Status, Status details, and Last check-in. You have the ability to sort, filter, and search this report as well. In the Microsoft Endpoint Manager admin center, select Apps > All Apps > select an app > Device Install status. For more information about reports in Intune, see Intune Reports.
+
+
+New operational report providing app install status based on user
+Based on a selected app, the new User Install Status report provides a list of users and status information related to the specific app. App installation details related to teh user include Name, UPN, Failures, Installs, Pending, Not Installed, and Not Applicable. You have the ability to to sort, filter, and search this report as well. In the Microsoft Endpoint Manager admin center, select Apps > All Apps > select an app > User Install Status. ...
+
+Export Intune reports using Graph API v1.0 or better
+Intune reporting export API now is available in Graph v1.0 and continues to be available in Graph beta. For related information, see Intune reports and Export Intune reports using Graph APIs.
+
+Scripts
+
+New property value supported for Android Open Source Project devices
+The InuneAosp property value is now supported in the [managementAgentType] enum. The [managementAgentTypeID] value for this property is 2048. It represents the device type that is managed by Intune's MEM for AOSP (Android Open Source Project) devices. For related information, see managementAgentType in the beta section of the Intune Data Warehouse API.
+
+
+Week of May 10, 2021
+
+App management
+Improved Conditional Access messaging for Android and iOS/iPad users
+Azure Active Directory has updated the wording on a Conditional Access screen to better explain acess and setup requirements to users. Android and iOS/iPadOS users will see this screen when they try to access corporate resources from a device that's not enrolled in Intune management. For more information about this change, see What's new in Azure Active Directory.
+
+Device security
+Windows Security experience profiles support tri-state settings
+For Windows 10 devices, we've updated the bi-state settings to be tri-state settings in the Windows Security experience profile for Endpoint security and Antivirus policy.
+
+Most settings in the profile previously supported only two options of Yes and Not configured. Moving forward, those same settings now include Yes, Not configured, and a new option of No.
+
+    For existing profiles, settings that are set to Not configured remain as Not configured. When you create new profiles or edit an existing profile, you can now choose to explicitly set No.
+
+In addition, the following applies to configuration of the setting Hide the Virus and threat protection area in the Windows Security app and its child setting Hide the Ransomware data recovery option in the Windows Security app.
+
+page 751
+Stuff about controlling apps on iPads managed in Intune
+===================================
+
+
+page 521
+
+Running the diagnostics can identify issues for that account in your Azure AD. In this example, the user wasn't assigned a license for Intune, preventing the device enrollment, and a link to the relevant content is provided.
+
+This user cannot use Intune because an Intune license is not assigned.
+The user Jo@contoso.onmicrosoft.com does not have an intune license assigned. Users cannot enroll devices into Intune until an Intune licesnse is assigned.
+How to license intune users.
+
+From the contact support pane, you can submit a request for assistance. This pane is available after you provide some basic keywords on the find solutions pane.
+
+When requesting assistance, provide a description of the problem with as much detail as needed. After confirming your phone and email contact information, select the method of contact you prefer. The windows displays a response time for each contact method, which gives you an expectation of when you'll be contacted. Before submitting your request, attach files like logs or screenshots that can help fill in details about the issue.+
+
+===================================
+page 336
+
+about enrolling Apple products to Intune, which seems kind of strange to me.
+
+===================================
+C:\Users\jayoshimi\PycharmProjects\pythonProject\venv\Scripts\python.exe C:/Users/jayoshimi/PycharmProjects/pythonProject/picking.py
+page 402
+
+Supported operating systems and browsers in Intune
+
+Before setting up Microsoft Intune, review the supported operating systems and browsers.
+
+For more information on configuration service provider support, visit the Configuration Service provider reference.
+
+Intune Supported operating systems
+Intune supports devices running the following operating systems (OS):
+    iOS
+    Android
+    Windows
+    MacOS
+Apple
+    Apple iOS 13.0 and later
+    Apple iPadOS 13.0 and later
+    macOS 10.15 and later
+Google
+    Android 8.0 and later (including Samsung KNOX Standard 2.4 and higher: requirements)
+    Android enterprise: requirements
+
+Note
+Intune requires Android 8.x or higher for device enrollment scenarios. For Intune app protection policies, Intune requires Android 9.0 or higher. These requirements do not apply to Microsoft Teams certified Polycom devices running Android 4.4. These devices continue to be supported.
+
+Microsoft
+Windows 11 (Home, S, Pro, Education, and Enterprise editions)
+
+Note
+You can continue to use Microft Endpoint Manager to manage devices running Windows 11 the same as with Windows 10. If another article doesn't explicitly reference Windows 11, assume that feature support for Windows 10 also includes Windows ll. Some features may not be available on Windows 11. This article lists some known issues. As always, test your policies before broadly deploying them across your devices.
+
+Surface Hub
+Windows 10 (Home, S, Pro, Education, and Enterprise versions)
+Windows 10 and Windows 11 Cloud PCs on Windows 365
+
+===================================
+
+page 388
+
+Something about how iOS users will get their apps and the popup they will see.
+
+===================================
+
+page 464
+
+[permission: description]
+Remote help app/Elevation: Elevation allows the helper to enter UAC credentials when prompted on the sharer's device when remote help is enabled. Enabling elevation also allows the helper to view and control the sharer's device when the sharer grants the helper access.
+
+Roles/Assign: Assign Intune built-in or custom roles to Azure AD security groups
+
+Roles/Create: Create new Intune custom roles. Built-in roles are created by Intune automatically.
+
+Roles/Delete: Delete a custom Intune role. You cannot delete built-in roles.
+
+Roles/Read: View permissions, role assignments, member groups, and scope groups for any built-in or custom Intune role
+
+Roles/Update: Update custom role permissions and role assignments for built-in or custom roles. Role assignments define the administrators and end user scope for the role.
+
+Intune data warehouse/Read: View all data and reports from the data warehouse. Data can be used by Power Bi or other reporting services.
+
+Android for work/Read: View the Android for Work configuration used to sync applications with the Play for Work store or view the Android of Work enrollment prerequisites and enrollment profiles.
+
+Android of work/Update onboarding: Manage or change the Android for work configuration used to enroll Android for Work devices or manage the Android fo Work enrollment profiles.
+
+Android for work/Update app sync: Manage or change the Android for Work configuration used to sync applications with the Play for Work store, or sync the apps you've approved from the store with Intune.
+
+Audit data/Read: View all Intune audit data for this tenant.
+
+Security baselines/Create: Create new Security Baseline profiles.
+
+Security baselines/Read: View Security Baseline profiels or profiles reporting or Template reporting for all Security Baseline workspace.
+
+Security baselines/Update: Update Security Baseline profiles.
+
+Security baselines/Delete: Delete Security Baseline profiles.
+
+Security baselines/Assign: Assign Security Baseline profiles to Azure AD security groups.
+
+Remote tasks/Get filevault key: Get Mac FileVault key
+
+Remote tasks/Rotate filevault key: Rotate Mac FileVault key.
+
+===================================
+
+page 658
+rules for naming a device 
+
+===================================
+
+page 212
+Part of instructions for trying out Intune. I'm getting to think that this document doesn't have a lot of help for me. Shit.
+
+===================================
+
+page 515
+
+
+===================================
+
+page 22
+
+
+===================================
+
+page 77
+
+
+===================================
+
+page 447
+
+
+===================================
+
+page 777
+
+
+===================================
+
+
+Process finished with exit code 0
