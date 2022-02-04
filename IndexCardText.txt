@@ -10,41 +10,6 @@
 
 
 
-19
-VB.NET
-The declaration statement for variables is the Dim Statement. Its location and contents determine the variable's characteristics.
-
-
-
-
-20
-VB.NET
-A local variable is one that is decalared with a procedure. A member variable is a member of a Visual Basic type; it is declared at module level, inside a class, structure, or model, but not within any procedure internal to that class, structure, or module.
-
-
-
-21
-VB.NET
-The As clause in the declaration statement allows you to define the data type or object type of the vaiable you are declaring, eg
-    An elementary data type, such as Boolean, Long, or Decimal
-    A composite data type, such as an array or structure
-
-
-
-C:\Users\jayoshimi\PycharmProjects\pythonProject\venv\Scripts\python.exe "C:/Users/jayoshimi/PycharmProjects/pythonProject/cards document.py"
-22
-UiPath Advanced Developer
-When you close a Test Bench tab without saving the workflow, you lose that workflow.
-
-
-
-23
-UiPath Advanced Developer
-WHere will changing a variable in the Immediate Panel be reflected?
-The Watch Panel
-The Locals Panel
-The further execution of the workflow in debug mode
-
 
 
 24
