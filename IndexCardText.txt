@@ -1,61 +1,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-24
-UiPath Advanced Developer
-The key combination to activate IntelliPrompt is ctrl + Space
-
-
-
-25
-UiPath Advanced Developer
-The output of Log Message and Write Line activities are displayed in the Output panel, not the Call Stack panel.
-
-
-
-26
-UiPath Advanced Developer
-In breakpoint settings, you can include log messages instead of using log message or write line to debug.
-
-
-
-27
-UiPath Advanced Developer
-You can find Run from this Activity, Run to this Activity, and Test Activity from the activity contextual menu (right click) in the Designer Panel
-
-
-
-28
-UiPath Advanced Developer
-Conditional Breakpoints pause the debugging process when their set condition has been triggered the appropriate number of times.
-
-
-
-29
-UiPath Advanced Developer
-The default action of the play button in the ribbon is to debug the current file.
-
-
-
-30
-UiPath Advanced Developer
-VisualBasic is a case-insensitive language.
-
-
-
-
-
 Process finished with exit code 0
 C:\Users\jayoshimi\PycharmProjects\pythonProject\venv\Scripts\python.exe "C:/Users/jayoshimi/PycharmProjects/pythonProject/cards document.py"
 1
@@ -168,84 +113,114 @@ The Try/Catch activity
 
 16
 UiPath Advanced Developer
-
+The types of logs generated while running processes in the studio are a subset of Robot logs, called Robot Execution logs.
 
 
 
 17
 UiPath Advanced Developer
+Default logs are generated automatically when certain events take place. The events logged by this category are:
 
+Execution start
+Execution end
+Transaction start
+Transaction end
+Error log
+Debugging log
 
 
 
 18
 UiPath Advanced Developer
+Trace logs:
+Information useful while developing/debugging, however not useful and needed in production.
 
 
 
 
 19
 UiPath Advanced Developer
+Logs are in the form of JSON, key-value pairs where the field is the key and the information in that field is the value.
+
+
 
 
 
 
 20
 UiPath Advanced Developer
-
+Logs are accessed locally by clicking Debug, selecting Open Logs and accessing the Execution file for the desired date.
 
 
 
 21
 UiPath Advanced Developer
-
+Setps to activate and look at Verbose level logging in Studio
+Navigate to Debug tab > Enable Log activities >
+Run process in debug mode > Click Open Logs >
+Open correct execution log file
 
 
 
 22
 UiPath Advanced Developer
-
+You want to filter logs in the Output panel to check Fatal level logs. What category in the Output panel would you leave enabled?
+Trace
 
 
 
 23
 UiPath Advanced Developer
+What is the keyboard shortcut for accessing the Log folder?
+ctrl + L
 
 
 
 
 24
 UiPath Advanced Developer
+Log messages should be used at the beginning and the end of every workflow (Log level = Information).
+
 
 
 
 
 25
 UiPath Advanced Developer
+Log messsages should be used each time an exception is caught in a Catch block (Log level = Error).
+
 
 
 
 
 26
 UiPath Advanced Developer
+Log messages should be used each time a Business Rule Exception is thrown (Log Level = Error).
+
 
 
 
 
 27
 UiPath Advanced Developer
+Log messages should be used when data is read from external sources, for example, log a message at Information level when an Excel file is read (Log Level = Information).
+
 
 
 
 
 28
 UiPath Advanced Developer
+Log messages should be used in Parallel or Pick activities, log messages on every branch, in order to trace the branch is taken (Log Level = Information).
+
 
 
 
 
 29
 UiPath Advanced Developer
+Log messages should be used in If/Flowchart Decision/Switch/Flow Switch activities (however, since processes might have a lot of these activities, we can decrease the Log Level from Information to Trace, so we don't have a lot of these logs in the database).
+
 
 
 
