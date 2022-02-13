@@ -1,56 +1,12 @@
 
 
 
-Process finished with exit code 0
-C:\Users\jayoshimi\PycharmProjects\pythonProject\venv\Scripts\python.exe "C:/Users/jayoshimi/PycharmProjects/pythonProject/cards document.py"
-1
-UiPath Advanced Developer
-The Call Stack Panel displays the next activity to be executed and its parent containers.
-
-
-
-2
-UiPath Advanced Developer
-The Watch Panel displays the values of Variables or arguments and the values of user-defined expressions that are in scope.
-
-
-
-3
-UiPath Advanced Developer
-The following can be used to add variables to the watch panel
-The Variables Panel
-The Watch Panel
-The Locals Panel
-
-
-
-4
-UiPath Advanced Developer
-When you click an activity or container in the Call Stack Panel, you focus on it.
-
-
-
-5
-hemic
-For this year, priorities will go Guidewire > Audit Stuff > Everything Else
 
 
 
 
-6
-General
-white-glove
-adjective
-providing or involving meticulous care, attention, or service.
-"you went to the best restaurant in town where they gave you white-glove service"
 
 
-
-
-7
-UiPath Advanced Developer
-In Visual Basic all code is written inside “containers." What is the formal name for these containers?
-Module, Class, and Structure
 
 
 
