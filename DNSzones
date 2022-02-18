@@ -1,0 +1,123 @@
+https://www.godaddy.com/help/add-a-subdomain-4080
+
+Add a subdomain
+
+Add a subdomain record to your DNS zone file when your domain is using GoDaddy nameservers. Subdomains use a domain prefix, such as blog.mycoolnewbussiness.com, as an A record to point to an IP address. To add a subdomain that points to a domain name,  you'll need to add a CNAME record.
+
+1. Log in to your GoDaddy Domain Control Center.
+2. Select your domain to access the Domain Settings page.
+3. Select Manage DNS under Additional Settings.
+4. Select Add to add a new record.
+5. Select A from the Type menu options.
+6. Enter the details for your new subdomain A record:
+    Name: the host name or prefix for the subdomain. For example, enter blog to create a subdomain for blog.mycoolnewbussiness.com
+    Value: the IP address for your subdomain. This will usually be the IP address of your hosting account.
+    TTL: How long the server should cache information. The default setting is 1 hour.
+7. Select Add Record to save your new subdomain A record.
+
+Most DNS updates take effect within an hour, but could take up to 48 hours to update globally.
+
+https://www.cloudflare.com/learning/dns/glossary/dns-zone/#:~:text=What%20is%20a%20DNS%20zone%20file%3F,every%20domain%20within%20the%20zone.
+
+What is a DNS zone?
+
+The DNS is broken up into many different zones. These zones differentiate between distinctly managed areas in the DNS namespace. A DNS zone is a portion of hte DNS namespace that is managed by a specific organization or an administrator. A DNS zone is an administrative space which allows for more granular control of DNS components, such as authoritative nameservers. The domain name space is a hierarchical tree, with teh DNS root domain at the top. A DNS zone starts at a domain with the tree and can also extend down into subdomains so that multiple subdomains can be managed by one entity.
+
+A common mistake is to associate a DNS zone with a domain name or a single DNS server. In fact, a DNS zone can contain multiple subdomains and multiple zones can exist on the same server. DNS zones are not necessarily physically separated from one another, zones are strictly used for delegating control.
+
+...
+
+What is a DNS zone file?
+
+A zone file is a plain text file stored in a DNS server that contains an actual representation of the zone and contains all the records for every domain within the zone. Zone files must always start with a Start of Authority (SOA) record, which contains important information including contact information for the zone adminsitrator.
+
+What is a Reverse Lookup Zone?
+
+A reverse lookup zone contains mapping from an IP address to the host (the opposite function of DNS zones). These zones are used for troubleshooting, spam filtering, and bot detection.
+
+https://en.wikipedia.org/wiki/Zone_file
+
+Zone File
+
+A Domain Name System (DNS) zone file is a text file that describes a DNS zone. A DNS zone is a subset, often a single domain, of the hierarchical domain name structure of the DNS. The zone file contains mappings between domain names and IP addresses and other resources, organized in the form of text representations of resource records (RR). A zone file may be either a DNS master file, authoritatively describing a zone, or it may be used to list the contents of a DNS cache.
+
+File Format
+
+The format of a zone file is defined in RFC 1035 (section 5) and RFC 1034 (section 3.6.1). This format was originally used by the Berkeley Internet Name Domain (BIND) software package, but has been widely adopted by other DNS server software - through some of them (e.g. NSD, PowerDNS) are using the zone files only as  a starting point to compile them into database format. See also Micorsoft DNS with Active Directory-database integration.
+
+A zone file is a sequence of line-oriented entries, each of which is either a directive ro a text description that defines a single resource record (RR). An entry is composed of fields spearated by any combination of white space (tabs and spaces), and ends at a line boundary except inside a quoted string field value or a pair of enclsoing formatting parenthesis. Any line many end with comment text preceded by a semicolon, and the file may also contain any number of blank lines.
+
+...
+
+The ttl field specifies the number of seconds after which a caching client must discard the record and perform a new resolution operation to obtain fresh information. Some name servers, including BIND, allow nonstandard representations that use time unit abbreviations (for example, "2d" meaning two 24-hour days or "1h30m" meaning one hour and 30 minutes). It may be omitted, in which case the resulting value will be set from the default TTL (if defined) or from the preceding record.
+
+The record class fieled indicates the namespace fo the record information. It may be omitted, in which ase the resulting value will be set from the preceding record. The most commonly used namespace is that of the Internet, indicated by parameter IN, but others exist and are in use, e.g. CHAOS.
+
+The record type field is an abbreviationf or the type of information stored in the last field, record data. For example: an address record (type A for IPv4, or type AAAA for IPv6) maps the domain name from the first field to an IP address in the record data; a mail exchanger record (type MX) specifies the Simple Mail Transfer Protocol (SMTP) mail host for a domain.
+
+The record data field may consist of one or more information elements, depending on the requirments of each record type. For example, an address record only requires a priority and a domainname. Such information elements are represented as field spearaeted by whitespace.
+
+Example file
+
+...
+
+example.com. IN NS ns.somewhere.example. ; ns.somewhere.example is a backup nameserver for example.com
+example.com. IN MX 10 mail.example.com. ; mail.example.com is the mailserver for example.com
+@       IN MX 20 mail2.example.com. ; equivalate to line abov, "@" represents zone origin
+@       IN MX 50 mail3              ; equivalte to line above, but using a relative host name
+example.com. IN A 192.0.2.1         ; IPv4 address for example.com
+             IN AAAA 2001:db8:10::2 ; IPv6 address for example.com
+ns           IN A 192.0.2.2         ; IPv4 address for ns.example.com
+             IN AAAA 2001:db8:10::2 ; IPv6 address for ns.example.com
+www          IN CNAME example.com.  ; www.example.com is an alias for example.com
+wwwtest      IN CNAME www           ; wwwtest.example.com is an alias for www.example.com
+
+...
+
+Root zone and top-level domains
+
+The zone files for DNS root zone and for the set of top-level domains contain resource records only for the authoritative domain name servers for each domain name.
+
+Localhost
+
+Some server software automatically configures resource records for specifically recognized domains or hostnames, such as localhost, but a customized zone master file may be used.
+
+An example for manual configuration of the forward zone for local host is the following:
+
+...
+
+The corresponding reverse zone definition is:
+
+  ;; reverse zone file for 127.0.0.1 and ::1
+  $TTL 1814400 ; 3 weeks
+  @    1814400 in SOA     localhost. root.localhost.    (
+                          1999010100 ; serial
+                          10800 ; refresh (3 hours)
+                          900 ; retry (15 minutes)
+                          604800 ; expire (1 week)
+                          86400 ; minimum (1day)
+  )
+  @    1814400 IN NS      localhost.
+  1    1814400 IN PTR     localhost.
+
+This file does nto specify the origin so that it may be used for both IPV4 and IPv6 with this configuration:
+
+...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+How to create subdomain with a cname record

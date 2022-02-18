@@ -1,39 +1,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-8
-UiPath Advanced Developer
-What is recommended to have in a Catch block?
-A Log Message Activity
-An alternative to the approach that fails
-
-
-
-9
-UiPath Advanced Developer
-If you have more than one exception type defined in the Catch block and an execution occurs that fits two types, the block with the most specific match is executed.
-
-
-
-
-
-10
-UiPath Advanced Developer
-Can you store a Selector in a variable in the Selector property of an activity?
-Yes, of type String
-
-
-
 11
 UiPath Advanced Developer
 The Retry Scope activity can be used without a termination condition. In this case, it will retry the activities until no exception occurs (or the provided number of attempts is exceeded).
