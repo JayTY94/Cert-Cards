@@ -44,153 +44,380 @@ In | String | scrapedText
 Out | Int32 | invoiceAmount
 
 
-
+C:\Users\jayoshimi\PycharmProjects\pythonProject\venv\Scripts\python.exe "C:/Users/jayoshimi/PycharmProjects/pythonProject/cards document.py"
 6
-UiPath Advanced Developer
-
+AWS SysOps Admin
+AWS Systems Manager is also known as AWS Simple Systems Manager (SSM)
+It is an umbrella of AWS services used to automate the management of Virtual Machines.
 
 
 
 7
-UiPath Advanced Developer
+AWS SysOps Admin
+In order for VMs to use SSM, you need two things:
+1. SSM Agent installed on EC2 instances
+2. SSM AWS Managed Policy attached to your EC2 IAM Role (AmazonSSMManagedInstanceCore)
 
 
 
 
 8
-UiPath Advanced Developer
+AWS SysOps Admin
+AWS Systems Manager (SSM) agent is already installed on AWS managed AMIs eg. Amazon Linux 1/2, Ubuntu 16/18
 
 
 
 
 9
-UiPath Advanced Developer
+AWS SysOps Admin
+SSM explorer is a customizable operations dashbaord that reports information about your AWS resources.
 
 
 
 
 10
-UiPath Advanced Developer
+AWS SysOps Admin
+SSM OpsCenter is a consolidation of your operational work items (OpsItems) for your IT team to: View, Investigate, Resolve.
+    OpsItems represent operational work that needs to be performed eg "EC2 instance disk full"
 
 
 
 
 11
-UiPath Advanced Developer
+AWS SysOps Admin
+SSM Run command lets you remotely and securely manage the configuration of your managed instances. It lets you execute a bash or PowerShell Command, Run Chef Recipes, or Ansible Playbooks...
 
 
 
 
 12
-UiPath Advanced Developer
+AWS SysOps Admin
+SSM Automation is a service that allows you to define documents (workbooks) that execute a sequence of commands carrying out the runbook actions. A runbook is a document that contains a series of instructional steps to perform an operation.
 
 
 
 
 13
-UiPath Advanced Developer
+AWS SysOps Admin
+Resource Groups are a collection of AWS resources that share one or more tag. In SSM, Resource Groups can display details about a group of resources based on Metrics, Alarms, and Configuration Settings.
 
 
 
 
 14
-UiPath Advanced Developer
+AWS SysOps Admin
+SSM AppConfig is used to create, manage, and quickly deploy application configuration. When you need to rollout changes to your application configuration files, you need to avoid errors such as typos that could break your production environment.
 
 
 
 
 15
-UiPath Advanced Developer
+AWS SysOps Admin
+SSM Chang Calendars allow you to define when SSM Automations are allowed/not allowed to be executed by your team.
 
 
 
 
 16
-UiPath Advanced Developer
+AWS SysOps Admin
+SSM Maintenance Windows let you define a schedule for when to perform potentially disruptive actions on  your instances such as patching an OP, updating drivers, or installing/patching software.
 
 
 
 
 17
-UiPath Advanced Developer
+AWS SysOps Admin
+SSM Configuration Compliance scans your fleet of managed instances for patch compliance and configuration inconsistencies.
 
 
 
 
 18
-UiPath Advanced Developer
+AWS SysOps Admin
+SSM Inventory provides visibility into your Amazon EC2 and on-premises computing environment
 
 
 
 
 19
-UiPath Advanced Developer
+AWS SysOps Admin
+SSM Activations allows you to register external resources to be managed by AWS Systems Manager. They issue you a Code and ID that functions like an EC2 Access ID and Secret to your managed external instances
 
 
 
 
 20
-UiPath Advanced Developer
+AWS SysOps Admin
+SSM Session Manager lets you manage your EC2 instances, on-premises instances, and virtual machines (VMs) through an interactive one-click browser-based shell or through AWS CLI.
 
 
 
 
 21
-UiPath Advanced Developer
+AWS SysOps Admin
+SSM State Manager is a secure and scalable configuration management service that automates the process of keeping your Amazon EC2 and hybrid infrastructure in a state that you can define
 
 
 
 
 22
-UiPath Advanced Developer
+AWS SysOps Admin
+SSM Patch Manager automates the process of patching managed instances with both security related and other types of updates.
 
 
 
 
 23
-UiPath Advanced Developer
+AWS SysOps Admin
+SSM Distributor lets you package your own software or install AWS-provided agent software packages, such as AmazonCloudWatchAgent to install on AWS Systems Manager managed instances.
 
 
 
 
 24
-UiPath Advanced Developer
+AWS SysOps Admin
+SSM Documents are a variety of code management documents relating to different SSM services. SSM Documents are either YAML or JSON files with parameters and a series of steps.
 
 
 
 
 25
-UiPath Advanced Developer
+AWS SysOps Admin
+The following command will determine if the SSM Agent is running on a Linux instance. It should return the message aws-ssm-agent is running.
+
+>>> sudo systemctl status amazon-ssm-agent
 
 
 
 
 26
-UiPath Advanced Developer
+AWS SysOps Admin
+Exerpt from runbook in YAML format:
+...
+- name: createDCSubnet2
+  action: aws:executeAwsApi
+  onFailure: Abort
+  inputs:
+    Service: ec2
+    Api: CreateSubnet
+    CidrBlock: 10.0.101.0/24
+    AvailabilityZone: us-west-2b
+    VpcId: '{{ createVpc.vpcId }}'
+  outputs:
+...
+
+
+
+27
+AWS SysOps Admin
+To create the runbook
+1. Open the AWS Systems Manager console at https://console.aws.amazon.com/systems-manager/.
+2. In the navigation pane, choose Documents.
+-or-
+If the AWS Systems Manager home page opens first, choose the menu icon ( ) to open the
+navigation pane, and then choose Documents in the navigation pane.
+
+...
+
+
+
+28
+AWS SysOps Admin
+By default, Session Manager uses TLS 1.2 to encrypt session data transmitted between local machines of users in your account and your EC2 instances. You can also choose to further encrpt the data in transit using an AWS KMS key.
+
+
+
+29
+AWS SysOps Admin
+Groups in Systems Manager Inventory allow you to quickly see a count of which managed nodes are and aren't configured to collect one or more inventory types. With groups, you specify one or more inventory types and a filter that uses the exists operator.
+
+
+
+30
+AWS SysOps Admin
+In a Chef Recipe, for Chef client version, specify a Chev version. Valid values are 11, 12, 13, 14, or None. If you specify 11 through 14, Systems Manager installs the correct Chef client version on your target instances.
+
+
+
+
+Process finished with exit code 0
+C:\Users\jayoshimi\PycharmProjects\pythonProject\venv\Scripts\python.exe "C:/Users/jayoshimi/PycharmProjects/pythonProject/cards document.py"
+1
+AWS SysOps Admin
+
+
+
+
+2
+AWS SysOps Admin
+
+
+
+
+3
+AWS SysOps Admin
+
+
+
+
+4
+AWS SysOps Admin
+
+
+
+
+5
+AWS SysOps Admin
+
+
+
+
+6
+AWS SysOps Admin
+
+
+
+
+7
+AWS SysOps Admin
+
+
+
+
+8
+AWS SysOps Admin
+
+
+
+
+9
+AWS SysOps Admin
+
+
+
+
+10
+AWS SysOps Admin
+
+
+
+
+11
+AWS SysOps Admin
+
+
+
+
+12
+AWS SysOps Admin
+
+
+
+
+13
+AWS SysOps Admin
+
+
+
+
+14
+AWS SysOps Admin
+
+
+
+
+15
+AWS SysOps Admin
+
+
+
+
+16
+AWS SysOps Admin
+
+
+
+
+17
+AWS SysOps Admin
+
+
+
+
+18
+AWS SysOps Admin
+
+
+
+
+19
+AWS SysOps Admin
+
+
+
+
+20
+AWS SysOps Admin
+
+
+
+
+21
+AWS SysOps Admin
+
+
+
+
+22
+AWS SysOps Admin
+
+
+
+
+23
+AWS SysOps Admin
+
+
+
+
+24
+AWS SysOps Admin
+
+
+
+
+25
+AWS SysOps Admin
+
+
+
+
+26
+AWS SysOps Admin
 
 
 
 
 27
-UiPath Advanced Developer
+AWS SysOps Admin
 
 
 
 
 28
-UiPath Advanced Developer
+AWS SysOps Admin
 
 
 
 
 29
-UiPath Advanced Developer
+AWS SysOps Admin
 
 
 
 
 30
-UiPath Advanced Developer
+AWS SysOps Admin
 
 
 
