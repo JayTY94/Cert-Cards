@@ -241,7 +241,7 @@ In a Chef Recipe, for Chef client version, specify a Chev version. Valid values 
 
 
 Process finished with exit code 0
-C:\Users\jayoshimi\PycharmProjects\pythonProject\venv\Scripts\python.exe "C:/Users/jayoshimi/PycharmProjects/pythonProject/cards document.py"
+C:\Users\jayoshimi\PycharmProjects\pythonProj
 1
 AWS SysOps Admin
 
