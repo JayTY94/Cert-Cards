@@ -1,84 +1,9 @@
 
 
 
-Process finished with exit code 0
-C:\Users\jayoshimi\PycharmProjects\pythonProject\venv\Scripts\python.exe "C:/Users/jayoshimi/PycharmProjects/pythonProject/cards document.py"
-1
-UiPath Advanced Developer
-Which of the following are situations where you should use the Invoke Method activity?
-
-When we have a class library/DLL in vb.net or c# and want to call that method
-When we want to use a method which does not generate an output
-When we want to use a method which generates several pieces of output
 
 
 
-2
-UiPath Advanced Developer
-Which of the following are situations where you should use the Invoke Code activity?
-When we need to write custom code for some steps in a process
-WHen we want to reduce the number of Assign and invoke method activities by replacing them with a single invoke code activity
-When we want to simplify data manipulation procedures in our workflow
-
-
-
-3
-UiPath Advanced Developer
-When using VB.NET code in an invoke code activity, make sure you Import the Namespaces.
-
-
-
-4
-UiPath Advanced Developer
-You want to use the Round(Decimal) method in an Invoke Method activity. What do you need to conigure?
-
-The TargetType
-
-
-
-5
-UiPath Advanced Developer
-Your workflow contains a string variable scrapedText="220". You want to use an Invoke Method activity to call the Parse Method to convert the values and save it to an Int32 variable called Invoice Amount. How would you define the arguments?
-
-In | String | scrapedText
-Out | Int32 | invoiceAmount
-
-
-C:\Users\jayoshimi\PycharmProjects\pythonProject\venv\Scripts\python.exe "C:/Users/jayoshimi/PycharmProjects/pythonProject/cards document.py"
-6
-AWS SysOps Admin
-AWS Systems Manager is also known as AWS Simple Systems Manager (SSM)
-It is an umbrella of AWS services used to automate the management of Virtual Machines.
-
-
-
-7
-AWS SysOps Admin
-In order for VMs to use SSM, you need two things:
-1. SSM Agent installed on EC2 instances
-2. SSM AWS Managed Policy attached to your EC2 IAM Role (AmazonSSMManagedInstanceCore)
-
-
-
-
-8
-AWS SysOps Admin
-AWS Systems Manager (SSM) agent is already installed on AWS managed AMIs eg. Amazon Linux 1/2, Ubuntu 16/18
-
-
-
-
-9
-AWS SysOps Admin
-SSM explorer is a customizable operations dashbaord that reports information about your AWS resources.
-
-
-
-
-10
-AWS SysOps Admin
-SSM OpsCenter is a consolidation of your operational work items (OpsItems) for your IT team to: View, Investigate, Resolve.
-    OpsItems represent operational work that needs to be performed eg "EC2 instance disk full"
 
 
 
@@ -282,7 +207,7 @@ An authoritative answer is when the DNS server hosting the primary copy of the D
 
 7
 DNS
-A resource record, commonly referred to as an RR, is the unit of information entry in DNS zone files; RRs are the basic building blocks of host-name and IP information and are used to resolve all DNS queries. Types include A, AAAA, NS, MX, CNAME, etc. 
+A resource record, commonly referred to as an RR, is the unit of information entry in DNS zone files; RRs are the basic building blocks of host-name and IP information and are used to resolve all DNS queries. Types include A, AAAA, NS, MX, CNAME, etc.
 
 
 
