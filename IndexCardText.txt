@@ -8,65 +8,8 @@
 
 
 
-11
-AWS SysOps Admin
-SSM Run command lets you remotely and securely manage the configuration of your managed instances. It lets you execute a bash or PowerShell Command, Run Chef Recipes, or Ansible Playbooks...
 
 
-
-
-12
-AWS SysOps Admin
-SSM Automation is a service that allows you to define documents (workbooks) that execute a sequence of commands carrying out the runbook actions. A runbook is a document that contains a series of instructional steps to perform an operation.
-
-
-
-
-13
-AWS SysOps Admin
-Resource Groups are a collection of AWS resources that share one or more tag. In SSM, Resource Groups can display details about a group of resources based on Metrics, Alarms, and Configuration Settings.
-
-
-
-
-14
-AWS SysOps Admin
-SSM AppConfig is used to create, manage, and quickly deploy application configuration. When you need to rollout changes to your application configuration files, you need to avoid errors such as typos that could break your production environment.
-
-
-
-
-15
-AWS SysOps Admin
-SSM Chang Calendars allow you to define when SSM Automations are allowed/not allowed to be executed by your team.
-
-
-
-
-16
-AWS SysOps Admin
-SSM Maintenance Windows let you define a schedule for when to perform potentially disruptive actions on  your instances such as patching an OP, updating drivers, or installing/patching software.
-
-
-
-
-17
-AWS SysOps Admin
-SSM Configuration Compliance scans your fleet of managed instances for patch compliance and configuration inconsistencies.
-
-
-
-
-18
-AWS SysOps Admin
-SSM Inventory provides visibility into your Amazon EC2 and on-premises computing environment
-
-
-
-
-19
-AWS SysOps Admin
-SSM Activations allows you to register external resources to be managed by AWS Systems Manager. They issue you a Code and ID that functions like an EC2 Access ID and Secret to your managed external instances
 
 
 
