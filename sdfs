@@ -1,55 +1,38 @@
+(in_dtCurrentSheet.rows(j).item(0).ToString <> "") and (in_dtCurrentSheet.rows(j).item(7).tostring.Replace("$", "").IsNumeric or in_dtCurrentSheet.rows(j).item(7).tostring.contains("$"))
+
+<wnd app='excel.exe' cls='XLMAIN' title='123BotOutput.xls  -  Compatibility Mode - Excel' />
+<uia automationid='123BotOutput.xls' cls='ExcelBookTabControl' name='123BotOutput' />
+<uia automationid='SheetTab' name='{{strSheetName}}' role='Sheet Tab' />
+
+List<string>(2)
+{
+  "H18",
+  "J25"
+}
+
+The following cards
 
 
-"Consultant","Policy Number","Written Premium","Named Insured","Policy Effective Date","January 2021","February 2021","March 2021","April 2021","May 2021","June 2021","July 2021","August 2021","September 2021","October 2021","November 2021","December 2021","Totals",
+These cards got reassigned to the Verkada user Lost Cards last weekend when Eric and Jay were cleaning up the users and making sure that users had only one card assigned.
+191
+    Deactivated
+152
+    Deactivated
+47
+    Deactivated
+10
+    Deactivated
 
-arguments created
-
-in_dtCombinedData | in | datatable | dtCombinedData
-in_strColumnName | in | string | "Totals"
-out_dtCorrectOrder | out | datatable | new Datatable
-
-dim listLeftColumns as new list<Of String> from {"Consultant","Policy Number","Written Premium","Named Insured","Policy Effective Date"}
-
-JFSheet.columns
-Index(['Submission Date', 'Date:', 'Client Name', 'Street Address',
-       'City, State, Zip', 'Policy No:', 'Agent No', 'Agent Name',
-       'Male >> Jan', 'Male >> Feb', 'Male >> Mar', 'Male >> Apr',
-       'Male >> May', 'Male >> June', 'Male >> July', 'Male >> Aug',
-       'Male >> Sept', 'Male >> Oct', 'Male >> Nov', 'Male >> Dec',
-       'Female >> Jan', 'Female >> Feb', 'Female >> Mar', 'Female >> Apr',
-       'Female >> May', 'Female >> June', 'Female >> July', 'Female >> Aug',
-       'Female >> Sept', 'Female >> Oct', 'Female >> Nov', 'Female >> Dec',
-       '1. Total Wages including board, lodging or other remuneration paid to eligible employees during the above time period.',
-       '2. Total Amount of Covered Wages on which premium is based.',
-       '3. Amount of Employer Contributions paid in the year.',
-       '4. Amount of Employee Contributions withheld in the year from all covered employees, if applicable.',
-       'Group's Authorized Representative Name:', 'Title',
-       'Group's Authorized Representative Signature', 'Email', 'Date',
-       'Submission IP', 'Last Update Date', 'Submission ID'],
-      dtype='object')
-joined.columns
-Index(['Policy No:', 'Version', 'Client Name', 'Billing Contract: Start Date',
-       'Billing Contract: End Date', 'Total Contract Value', 'Policy Status',
-       'All Employees Covered', 'Employee Lives', 'Employer Contribution %',
-       'Initial Premium',
-       '1. Total Wages including board, lodging or other remuneration paid to eligible employees during the above time period.',
-       'Group's Authorized Representative Name:', 'Email', 'Street Address',
-       'City & State', 'Zip Code', 'Agent No', 'Agent Name', 'Title',
-       'Group's Authorized Representative Signature', 'Date', 'Submission IP',
-       'Last Update Date', 'Submission ID', 'City, State, Zip', 'Male >> Jan',
-       'Male >> Feb', 'Male >> Mar', 'Male >> Apr', 'Male >> May',
-       'Male >> June', 'Male >> July', 'Male >> Aug', 'Male >> Sept',
-       'Male >> Oct', 'Male >> Nov', 'Male >> Dec', 'Female >> Jan',
-       'Female >> Feb', 'Female >> Mar', 'Female >> Apr', 'Female >> May',
-       'Female >> June', 'Female >> July', 'Female >> Aug', 'Female >> Sept',
-       'Female >> Oct', 'Female >> Nov', 'Female >> Dec'],
-      dtype='object')
-
-String.Format("<uia automationid='*.xls' cls='ExcelBookTabControl' name='*' /><uia automationid='SheetTab' name='{0}' role='Sheet Tab' />", strSheetName)
+I'm looking into which account exactly they belonged to. Going to take more time.
 
 
-TargetAnchorable { Accuracy=0.8, Anchor0=null, Anchor1=null, Anchor2=null, Anchor3=null, AnchorCount=0, Anchors=null, BrowserURL=null, CheckVisibility=false, ContentHash=null, DesignTimeRectangle=[{X=217,Y=1358,Width=92,Height=28}], ElementType=None, FriendlyName="'Operations'", FullSelector="<wnd app='excel.exe' cls='XLMAIN' title='*.xls  -  Compatibility Mode - Excel' /><uia automationid='*.xls' cls='ExcelBookTabControl' name='*' /><uia automationid='SheetTab' name='ss portrait' role='Sheet Tab' />", FullSelectorArgument=InArgument<string> { ArgumentType=[System.String], Direction=In, EvaluationOrder=-1, Expression=[1.28: VisualBasicValue<String>], Expression=[1.28: VisualBasicValue<String>] }, FuzzyAccuracy=0.5, FuzzyPartialSelector="<uia automationid='Test H Path One.xls' cls='ExcelBookTabControl' name='Test H Path One' /><uia automationid='SheetTab' name='Operations' role='Sheet Tab' check:fulltext='Operations' />", FuzzySelector="<wnd app='excel.exe' cls='XLMAIN' title='*.xls  -  Compatibility Mode - Excel' /><uia automationid='Test H Path One.xls' cls='ExcelBookTabControl' name='Test H Path One' /><uia automationid='SheetTab' name='Operations' role='Sheet Tab' check:fulltext='Operations' />", FuzzySelectorArgument=InArgument<string> { ArgumentType=[System.String], Direction=In, EvaluationOrder=-1, Expression=[<uia automationid='Test H Path One.xls' cls='ExcelBookTabControl' name='Test H Path One' /><uia automationid='SheetTab' name='Operations' role='Sheet Tab' check:fulltext='Operations' />], Expression=[<uia automationid='Test H Path One.xls' cls='ExcelBookTabControl' name='Test H Path One' /><uia automationid='SheetTab' name='Operations' role='Sheet Tab' check:fulltext='Operations' />] }, Guid="e2709ce6-a3f0-44c0-b2a4-daa7add0a0f0", Id="a7c03ddd-e34f-4adf-840c-2df178de46c6", ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGAAAAAgCAYAAADtwH1UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIKSURBVGhD7ZU7csJADIZ9FRpqki5Jn46DUDMcghkuYGoKDuGaC9BT0HGKDfuQrNXuYgd7LJLRP/MPg/chWZ92XRmVqBSAsKq6rg1YNZ2g5tV8PjfWCmBa2XrbuisAISkAYSkAYSkAYSkAYSkAYY0I4GQ2628zQ6/M/haGXkKQ32vlNQ6A85YUPvayuYZJ0+rSrFz8zTk8+L8ASOcfTuFZW4DZemua8GxKNQefUwvgNTUcAHY/L/TV7HekCLejWdp5u6O5kBMTnxB2jQFQsnbvCmtjtfuDfbHT5y4m7k3zZPHoWI98ATL4GdiDAWCnk+4HQYIuaXyhlf9Fw5XAi+EdrUXbQuXm2736AsjHw/FivmE8c+3+DQDkDqbjyT60AzNrufiVw/+3BfcFxHgOjlXhxCYN4v+PdcUOBvDUFeQn4EtEALgpALK2LVDs3wJwzREUPUtiwvtwIOByczzScAA0kUcfYSwYgIoB4fzMScrBiwvMYN/V+wRgvK6G4QBaQaxs7h0aAcBdmfsQjAUodGwKKHa+GBRwZv5dWBRrty4GkHYwmOVTAJCLT09TX40DwCopIOsU8kINJl+YQ1wCwE9e0vF0rywAKw6BjCUxOwA80f1W4wHoUraIKgUgLAUgrOkAqLJSAMJKAERfdvUkVgDCjgCoZawAhK0AhF19fX4YtZyr97eFUUt5YX4A85YrHYX//q4AAAAASUVORK5CYII=", InformativeScreenshot="2cdaf82b0992608f07857c6a341fe84f.png", IsInApplicationCardSingleWindow=false, IsNativeTextCaseSensitive=false, IsOffsetPointEnabled=false, IsResponsive=false, NativeText=null, NativeTextArgument=null, OCRAccuracy=0.7, OCRText=null, OwnerTarget=TargetAnchorable { ... }, OwnerTarget=TargetAnchorable { ... }, PartialSelector="<uia automationid='*.xls' cls='ExcelBookTabControl' name='*' /><uia automationid='SheetTab' name='ss portrait' role='Sheet Tab' />", PointOffset=null, PositioningType=Default, Reference=null, ScopeSelector="<wnd app='excel.exe' cls='XLMAIN' title='*.xls  -  Compatibility Mode - Excel' />", ScopeSelector="<wnd app='excel.exe' cls='XLMAIN' title='*.xls  -  Compatibility Mode - Excel' />", ScopeSelectorArgument=InArgument<string> { ArgumentType=[System.String], Direction=In, EvaluationOrder=-1, Expression=[<wnd app='excel.exe' cls='XLMAIN' title='*.xls  -  Compatibility Mode - Excel' />], Expression=[<wnd app='excel.exe' cls='XLMAIN' title='*.xls  -  Compatibility Mode - Excel' />] }, SearchSteps=Selector, SelectionStrategy=Default, TargetType=SelectorBased, TelemetryData=null, Text=null, TextMethod=None, TextSelector=null, WaitForReady=Interactive, WaitForReadyArgument=null }
+List of the something something
+
+List of the URLs to find the reports that need updates on them.
 
 
+http://support.hemic.com/adminui/analysis_report_list.php?CATEGORY_ID=&SEARCH_SELECTION_TEXT=table+HD_Ticket+2022&SEARCH_SELECTION=table+HD_Ticket+2022
 
-TargetAnchorable { Accuracy=0.8, Anchor0=null, Anchor1=null, Anchor2=null, Anchor3=null, AnchorCount=0, Anchors=null, BrowserURL=null, CheckVisibility=false, ContentHash=null, DesignTimeRectangle=[{X=217,Y=1358,Width=92,Height=28}], ElementType=None, FriendlyName="'Operations'", FullSelector="<wnd app='excel.exe' cls='XLMAIN' title='*.xls  -  Compatibility Mode - Excel' /><uia automationid='*.xls' cls='ExcelBookTabControl' name='*' /><uia automationid='SheetTab' name='ss portrait' role='Sheet Tab' />", FullSelectorArgument=InArgument<string> { ArgumentType=[System.String], Direction=In, EvaluationOrder=-1, Expression=[1.28: VisualBasicValue<String>], Expression=[1.28: VisualBasicValue<String>] }, FuzzyAccuracy=0.5, FuzzyPartialSelector="<uia automationid='Test H Path One.xls' cls='ExcelBookTabControl' name='Test H Path One' /><uia automationid='SheetTab' name='Operations' role='Sheet Tab' check:fulltext='Operations' />", FuzzySelector="<wnd app='excel.exe' cls='XLMAIN' title='*.xls  -  Compatibility Mode - Excel' /><uia automationid='*.xls' cls='ExcelBookTabControl' name='*' /><uia automationid='SheetTab' name='Operations' role='Sheet Tab' check:fulltext='Operations' />", FuzzySelectorArgument=InArgument<string> { ArgumentType=[System.String], Direction=In, EvaluationOrder=-1, Expression=[<uia automationid='Test H Path One.xls' cls='ExcelBookTabControl' name='Test H Path One' /><uia automationid='SheetTab' name='Operations' role='Sheet Tab' check:fulltext='Operations' />], Expression=[<uia automationid='*.xls' cls='ExcelBookTabControl' name='Test H Path One' /><uia automationid='SheetTab' name='Operations' role='Sheet Tab' check:fulltext='Operations' />] }, Guid="e2709ce6-a3f0-44c0-b2a4-daa7add0a0f0", Id="780ae231-6679-4661-b883-fa8c6c3ed9e4", ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGAAAAAgCAYAAADtwH1UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIKSURBVGhD7ZU7csJADIZ9FRpqki5Jn46DUDMcghkuYGoKDuGaC9BT0HGKDfuQrNXuYgd7LJLRP/MPg/chWZ92XRmVqBSAsKq6rg1YNZ2g5tV8PjfWCmBa2XrbuisAISkAYSkAYSkAYSkAYSkAYY0I4GQ2628zQ6/M/haGXkKQ32vlNQ6A85YUPvayuYZJ0+rSrFz8zTk8+L8ASOcfTuFZW4DZemua8GxKNQefUwvgNTUcAHY/L/TV7HekCLejWdp5u6O5kBMTnxB2jQFQsnbvCmtjtfuDfbHT5y4m7k3zZPHoWI98ATL4GdiDAWCnk+4HQYIuaXyhlf9Fw5XAi+EdrUXbQuXm2736AsjHw/FivmE8c+3+DQDkDqbjyT60AzNrufiVw/+3BfcFxHgOjlXhxCYN4v+PdcUOBvDUFeQn4EtEALgpALK2LVDs3wJwzREUPUtiwvtwIOByczzScAA0kUcfYSwYgIoB4fzMScrBiwvMYN/V+wRgvK6G4QBaQaxs7h0aAcBdmfsQjAUodGwKKHa+GBRwZv5dWBRrty4GkHYwmOVTAJCLT09TX40DwCopIOsU8kINJl+YQ1wCwE9e0vF0rywAKw6BjCUxOwA80f1W4wHoUraIKgUgLAUgrOkAqLJSAMJKAERfdvUkVgDCjgCoZawAhK0AhF19fX4YtZyr97eFUUt5YX4A85YrHYX//q4AAAAASUVORK5CYII=", InformativeScreenshot="2cdaf82b0992608f07857c6a341fe84f.png", IsInApplicationCardSingleWindow=false, IsNativeTextCaseSensitive=false, IsOffsetPointEnabled=false, IsResponsive=false, NativeText=null, NativeTextArgument=null, OCRAccuracy=0.7, OCRText=null, OwnerTarget=TargetAnchorable { ... }, OwnerTarget=TargetAnchorable { ... }, PartialSelector="<uia automationid='*.xls' cls='ExcelBookTabControl' name='*' /><uia automationid='SheetTab' name='ss portrait' role='Sheet Tab' />", PointOffset=null, PositioningType=Default, Reference=null, ScopeSelector="<wnd app='excel.exe' cls='XLMAIN' title='*.xls  -  Compatibility Mode - Excel' />", ScopeSelector="<wnd app='excel.exe' cls='XLMAIN' title='*.xls  -  Compatibility Mode - Excel' />", ScopeSelectorArgument=InArgument<string> { ArgumentType=[System.String], Direction=In, EvaluationOrder=-1, Expression=[<wnd app='excel.exe' cls='XLMAIN' title='*.xls  -  Compatibility Mode - Excel' />], Expression=[<wnd app='excel.exe' cls='XLMAIN' title='*.xls  -  Compatibility Mode - Excel' />] }, SearchSteps=Selector, SelectionStrategy=Default, TargetType=SelectorBased, TelemetryData=null, Text=null, TextMethod=None, TextSelector=null, WaitForReady=Interactive, WaitForReadyArgument=null }
+http://support.hemic.com/adminui/analysis_report_list.php?CATEGORY_ID=&SEARCH_SELECTION_TEXT=table+USER&SEARCH_SELECTION=table+USER
+
+http://support.hemic.com/adminui/analysis_report_list.php?CATEGORY_ID=Service+Desk&SEARCH_SELECTION_TEXT=table+HD_WORK+2022&SEARCH_SELECTION=table+HD_WORK+2022

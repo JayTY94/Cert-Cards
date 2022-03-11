@@ -4,16 +4,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 20
 AWS SysOps Admin
 SSM Session Manager lets you manage your EC2 instances, on-premises instances, and virtual machines (VMs) through an interactive one-click browser-based shell or through AWS CLI.
