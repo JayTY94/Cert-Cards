@@ -1,0 +1,66 @@
+"<wnd app='winword.exe' cls='OpusApp' title='*EditCopy.doc*Word' /><wnd app='winword.exe' title='Paragraph' aastate='moveable, focusable' /><ctrl name='Mirror indents' role='check box' />"
+
+
+<wnd app='winword.exe' cls='bosa_sdm_msword' title='Paragraph' />
+<ctrl name='Mirror indents' role='check box' />
+
+
+Why is this full selector broken?
+"<wnd app='winword.exe' cls='OpusApp' title='*EditCopy.doc*Word' /><wnd app='winword.exe' cls='*_msword' title='Paragraph' /><ctrl name='Mirror indents' role='check box' />"
+<wnd app='winword.exe' cls='OpusApp' title='*EditCopy.doc*Word' />
+<wnd app='winword.exe' cls='*_msword' title='Paragraph' />
+<ctrl name='Mirror indents' role='check box' />
+
+
+Partial selector. I've tested the full selector and it's broken.
+"<wnd app='winword.exe' cls='*_msword' title='Paragraph' /><ctrl name='Mirror indents' role='check box' />"
+
+and the partial selector works when I try it in the Ui Explorer! What the heck!
+Trying the full selector again?
+
+
+Here's what I get when I indicate the element.
+<wnd app='winword.exe' cls='bosa_sdm_msword' title='Paragraph' />
+<ctrl name='Mirror indents' role='check box' />
+
+
+
+
+Here's the thing that I want to see if it works. Does the full selector work with this known to work partial selector tied to teh scope selector?
+<wnd app='winword.exe' cls='OpusApp' title='*EditCopy.doc*Word' />
+<wnd app='winword.exe' cls='bosa_sdm_msword' title='Paragraph' />
+<ctrl name='Mirror indents' role='check box' />
+
+
+ok when we combine the first line with the partial selector, it stops working... so am I selecting two items at the same node level?
+
+I have tried to change the top level selector for the whole card. Let's see what the full selector looks like now.
+"<wnd app='winword.exe' cls='OpusApp' title='*EditCopy.doc*Word' /><wnd app='winword.exe' cls='*_msword' title='Paragraph' /><ctrl name='Mirror indents' role='check box' />"
+
+here's that full selector so that I can copy it into ui explorer.
+<wnd app='winword.exe' cls='OpusApp' title='*EditCopy.doc*Word' />
+<wnd app='winword.exe' cls='*_msword' title='Paragraph' />
+<ctrl name='Mirror indents' role='check box' />
+
+And ^^^ does not work. at least that's consistant. Let's look at the click selector for the right click. That one I know works, so maybe it'll help.
+"<uia cls='_WwG' name='*EditCopy.doc*' />"
+
+
+it's a different uia cls. fioadjfoiawefohfasdohfdalskhjfclkjh;jga. Is the paragraph dialog box to be thought of as an entirely new application. I thought that it was tied into the MS Word window somehow.
+
+I tried getting rid of the window selector for the click activity. Ran again.
+"<wnd app='winword.exe' cls='OpusApp' title='*EditCopy.doc*Word' /><wnd app='winword.exe' cls='*_msword' title='Paragraph' /><ctrl name='Mirror indents' role='check box' />"
+
+It looks like it got put right back because the field was empty when I hit ok.
+
+MAYBE I should use
+
+<wnd app='winword.exe' cls='*_msword' title='Paragraph' />
+
+instead of the default window selector...
+
+then this would go in the selector box.
+<ctrl name='Mirror indents' role='check box' />
+
+
+IT WORKED YEAHHHHHHH
