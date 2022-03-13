@@ -2,15 +2,6 @@
 
 
 
-
-
-20
-AWS SysOps Admin
-SSM Session Manager lets you manage your EC2 instances, on-premises instances, and virtual machines (VMs) through an interactive one-click browser-based shell or through AWS CLI.
-
-
-
-
 21
 AWS SysOps Admin
 SSM State Manager is a secure and scalable configuration management service that automates the process of keeping your Amazon EC2 and hybrid infrastructure in a state that you can define
@@ -151,8 +142,8 @@ A negative cache is a cache that also stores "negative" responses, i.e. failures
 
 
 9
-AWS SysOps Admin
-
+DNS
+A DNS zone is a portion of the DNS namespace that is managed by a specific organization or administrator. It is an administrative space which allows for granular control of DNS components such as authoritative nameservers.
 
 
 
