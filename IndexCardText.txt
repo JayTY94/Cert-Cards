@@ -212,8 +212,8 @@ A resource record, commonly referred to as an RR, is the unit of information ent
 
 
 8
-AWS SysOps Admin
-
+DNS
+A negative cache is a cache that also stores "negative" responses, i.e. failures. This means that a program remembers the result indicating a failure even after the cause has been corrected. Usually negative caching is a design choice, but it can also be a design bug.
 
 
 
