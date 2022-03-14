@@ -30,9 +30,12 @@ List of the something something
 
 List of the URLs to find the reports that need updates on them.
 
-
-http://support.hemic.com/adminui/analysis_report_list.php?CATEGORY_ID=&SEARCH_SELECTION_TEXT=table+HD_Ticket+2022&SEARCH_SELECTION=table+HD_Ticket+2022
-
-http://support.hemic.com/adminui/analysis_report_list.php?CATEGORY_ID=&SEARCH_SELECTION_TEXT=table+USER&SEARCH_SELECTION=table+USER
-
-http://support.hemic.com/adminui/analysis_report_list.php?CATEGORY_ID=Service+Desk&SEARCH_SELECTION_TEXT=table+HD_WORK+2022&SEARCH_SELECTION=table+HD_WORK+2022
+New Dictionary(of String, String)
+{
+{"Table HD_Ticket 2022",
+"http://support.hemic.com/adminui/analysis_report_list.php?CATEGORY_ID=&SEARCH_SELECTION_TEXT=table+HD_Ticket+2022&SEARCH_SELECTION=table+HD_Ticket+2022"},
+{"Table USER",
+"http://support.hemic.com/adminui/analysis_report_list.php?CATEGORY_ID=&SEARCH_SELECTION_TEXT=table+USER&SEARCH_SELECTION=table+USER"},
+{"Table HD_WORK 2022",
+"http://support.hemic.com/adminui/analysis_report_list.php?CATEGORY_ID=Service+Desk&SEARCH_SELECTION_TEXT=table+HD_WORK+2022&SEARCH_SELECTION=table+HD_WORK+2022"}
+}
