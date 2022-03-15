@@ -63,126 +63,147 @@ A DNS zone is a portion of the DNS namespace that is managed by a specific organ
 
 10
 AWS SysOps Admin
-
+If your Internet-facing load balancer in a VPC is not responding to requests, check for the following:
+Your Internet-facing load balancer is attached to a private subnet – Verify that you specified public subnets for your load balancer. A public subnet has a route to the Internet Gateway for your virtual private cloud (VPC).
 
 
 
 11
 AWS SysOps Admin
+If your Internet-facing load balancer in a VPC is not responding to requests, check for the following:
+· A security group or network ACL does not allow traffic – The security group for the load balancer and any network ACLs for the load balancer subnets must allow inbound traffic from the clients and outbound traffic to the clients on the listener ports
 
 
 
 
 12
 AWS SysOps Admin
+AWS WAF can be executed at edge locations on Amazon CloudFront or at Application Load Balancers at regional level. A question asked that a Web ACL be executed at farthest point from Web application. It needs to apply at an Amazon CloudFront edge location at Global level.
 
 
 
 
 13
 AWS SysOps Admin
-
+The Amazon EC2 instances you launch into a nondefault VPC are private by default; they’re not assigned a public IPv4 address unless you specifically assign one during launch, or you modify the subnet’s public IPv4 address attribute.
 
 
 
 14
 AWS SysOps Admin
+By default, all EC2 instances in a nondefault VPC receive an unresolvable host name that AWS assigns (for example, ip-10-0-0-202). You can assign your own domain name to your instances and use up to four of your own DNS servers. To do that, you must specify a special set of DHCP options to use with the VPC.
 
 
 
 
 15
 AWS SysOps Admin
-
+To increase availability & enable users to enhance Read performance by reading data from the nearest Regions, Read Replicas can be created for Amazon Aurora MySQL database. Up to 5 Read Replicas can be created for both encrypted & unencrypted DB clusters in different AWS regions.
 
 
 
 16
 AWS SysOps Admin
+While ordinary Amazon Route 53 records are standard DNS records, alias records provide a Route 53-specific extension to DNS functionality. Instaed of an IP address or a domain name, an alias record contains a pointer to an AWS resource such as a CloudFront distribution or an Amazon S3 bucket.
 
 
 
 
 17
 AWS SysOps Admin
+Listeners
 
+Incoming traffic is evaluated against listeners. Listeners evaluate any traffic that matches the Listener's port. For Classic Load Balancers, EC2 instances are directly registered to the Load Balancer.
 
 
 
 18
 AWS SysOps Admin
-
+ELB Rules (Not available for Classic Load Balancer)
+Listeners will then invoke rules to decide what to do with new traffic. Generally, the next step is to forward traffic to a Target Group.
+Example: redirect traffic headed for port 80 to port 443.
 
 
 
 19
 AWS SysOps Admin
-
+ELB Target Groups  (Not available for CLassic Load Balancer)
+EC2 instances are registered as targets to a Target Group.
 
 
 
 20
 AWS SysOps Admin
+For Classic Load Balancers (CLB), traffic is sent to Listeners. When the port matches it, it then forwards the traffic to any EC2 instances that are registered to teh Classic Laod Balancer. CLB does nto allow you to apply rules to listeners.
 
 
 
 
 21
 AWS SysOps Admin
+Application Load Balancers (ALB) are designed to balance HTTP and HTTPS traffic. They operate at Layer 7 of the OSI model.
 
 
 
 
 22
 AWS SysOps Admin
+ALB has a feature called Request Routing which allows you to add routing rules to yoru listeners based on the HTTP protocol.
 
 
 
 
 23
 AWS SysOps Admin
+Web Application Firewall (WAF) can be attached to an Application Load Balancer (ALB). ALBs are great for Web Applications.
 
 
 
 
 24
 AWS SysOps Admin
-
+Network Load Balancers (NLB) are designed to balance TCP/UDP traffic. They operate at Layer 4 of the OSI model.
 
 
 
 25
 AWS SysOps Admin
+Network Load Balancers (NLB) can handle millions of requests per second while maintaining extremely low latency. They are great for Multiplayer video games or when network performance is critical.
 
 
 
 
 26
 AWS SysOps Admin
+Classic Load Balancers (CLB) was AWS' first load balancer (legacy). It is not recommended for use; instead use NLB or ALB.
 
 
 
 
 27
 AWS SysOps Admin
+Classic Load Balancers (CLB) can balance HTTP, HTTPS, or TCP traffic (not at the same time)
 
 
 
 
 28
 AWS SysOps Admin
+Classic Load Balancers (CLB) can use Layer 7-specific features such as sticky sessions. It can also use strict layer 4 balancing fore purely TCP applications.
 
 
 
 
 29
 AWS SysOps Admin
+NLBs and CLBs can be used for cross-zone laod balancing.
 
 
 
 
 30
 AWS SysOps Admin
+Classic Load Balancers (CLB) will respond with a 504 error (timeout) if the underlying application is not responding at the web-server or database level.
 
 
 
