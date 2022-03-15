@@ -209,4 +209,197 @@ Classic Load Balancers (CLB) will respond with a 504 error (timeout) if the unde
 
 
 
+Process finished with exit code 0C:\Users\jayoshimi\PycharmProjects\pythonProject\venv\Scripts\python.exe "C:/Users/jayoshimi/PycharmProjects/pythonProject/cards document.py"
+1
+AWS SysOps Admin
+Sticky Sessions is an advanced load balancing method that allows you to bind a user's session to a specific EC2 instance. It ensures all requests from that session are sent to the same instance.
+
+
+
+2
+AWS SysOps Admin
+Sticky Sessions are typically used with a Classic Load Balancer (CLB). It can be used with an ALB, though it can only be set to a target group; not individual EC2 instances. It is not available for NLB.
+
+
+
+3
+AWS SysOps Admin
+With sticy sessions, cookies are used to remember which EC2 instance the user is working wiht. It is usefull when specific information isn only stored locally on a single instance.
+
+
+
+
+4
+AWS SysOps Admin
+The X-Forwarded-For (XXF) header is a command method for identifying the originating IP address of a client connecting to a web server through an HTTP proxy or a load balancer. Use it if you need the IPv4 address of a user.
+
+
+
+
+5
+AWS SysOps Admin
+Instances that are monitored by the Elastic Load Balancer (ELB) report back Health Checks as InService or OutofService. Health Checks communicate directly with the instance to determine its state.
+
+
+
+6
+AWS SysOps Admin
+ELB does not terminate (kill) unhealthy instances. It will just redirect traffic to healthy instances.
+
+
+
+
+7
+AWS SysOps Admin
+For ALB and NLB, the Health Checkcs are found on the Target Group.
+
+
+
+
+8
+AWS SysOps Admin
+Cross-Zone Load Balancing only works for Classic and Network Load Balancers.
+
+
+
+
+9
+AWS SysOps Admin
+When Cross-Zone Load balancing is enabled, requests are distributed evently across the instances in all enabled Availability Zones. The example for this shows an ELB sending traffic to other ELB nodes in different AZs.
+
+
+
+10
+AWS SysOps Admin
+ALB Request Routing: Applies rules to incoming requests and hten forwards or redirects traffic. It can look at the following:
+Host header
+Source IP
+Path
+Http header
+Http header method
+Query String
+
+
+
+11
+AWS SysOps Admin
+
+
+
+
+12
+AWS SysOps Admin
+
+
+
+
+13
+AWS SysOps Admin
+
+
+
+
+14
+AWS SysOps Admin
+
+
+
+
+15
+AWS SysOps Admin
+
+
+
+
+16
+AWS SysOps Admin
+
+
+
+
+17
+AWS SysOps Admin
+
+
+
+
+18
+AWS SysOps Admin
+
+
+
+
+19
+AWS SysOps Admin
+
+
+
+
+20
+AWS SysOps Admin
+
+
+
+
+21
+AWS SysOps Admin
+
+
+
+
+22
+AWS SysOps Admin
+
+
+
+
+23
+AWS SysOps Admin
+
+
+
+
+24
+AWS SysOps Admin
+
+
+
+
+25
+AWS SysOps Admin
+
+
+
+
+26
+AWS SysOps Admin
+
+
+
+
+27
+AWS SysOps Admin
+
+
+
+
+28
+AWS SysOps Admin
+
+
+
+
+29
+AWS SysOps Admin
+
+
+
+
+30
+AWS SysOps Admin
+
+
+
+
+
 Process finished with exit code 0
