@@ -2,68 +2,6 @@
 
 
 
-6
-DNS
-An authoritative answer is when the DNS server hosting the primary copy of the DNS record responds to your lookup. The primary server doesn't always respond to a DNS query to save on network load. Usually, a secondary server will return a cached answer instead.
-
-
-
-7
-DNS
-A resource record, commonly referred to as an RR, is the unit of information entry in DNS zone files; RRs are the basic building blocks of host-name and IP information and are used to resolve all DNS queries. Types include A, AAAA, NS, MX, CNAME, etc.
-
-
-
-8
-DNS
-A negative cache is a cache that also stores "negative" responses, i.e. failures. This means that a program remembers the result indicating a failure even after the cause has been corrected. Usually negative caching is a design choice, but it can also be a design bug.
-
-
-
-9
-DNS
-A DNS zone is a portion of the DNS namespace that is managed by a specific organization or administrator. It is an administrative space which allows for granular control of DNS components such as authoritative nameservers.
-
-
-
-10
-AWS SysOps Admin
-If your Internet-facing load balancer in a VPC is not responding to requests, check for the following:
-Your Internet-facing load balancer is attached to a private subnet – Verify that you specified public subnets for your load balancer. A public subnet has a route to the Internet Gateway for your virtual private cloud (VPC).
-
-
-
-11
-AWS SysOps Admin
-If your Internet-facing load balancer in a VPC is not responding to requests, check for the following:
-· A security group or network ACL does not allow traffic – The security group for the load balancer and any network ACLs for the load balancer subnets must allow inbound traffic from the clients and outbound traffic to the clients on the listener ports
-
-
-
-
-12
-AWS SysOps Admin
-AWS WAF can be executed at edge locations on Amazon CloudFront or at Application Load Balancers at regional level. A question asked that a Web ACL be executed at farthest point from Web application. It needs to apply at an Amazon CloudFront edge location at Global level.
-
-
-
-
-13
-AWS SysOps Admin
-The Amazon EC2 instances you launch into a nondefault VPC are private by default; they’re not assigned a public IPv4 address unless you specifically assign one during launch, or you modify the subnet’s public IPv4 address attribute.
-
-
-
-14
-AWS SysOps Admin
-By default, all EC2 instances in a nondefault VPC receive an unresolvable host name that AWS assigns (for example, ip-10-0-0-202). You can assign your own domain name to your instances and use up to four of your own DNS servers. To do that, you must specify a special set of DHCP options to use with the VPC.
-
-
-
-
-15
-AWS SysOps Admin
-To increase availability & enable users to enhance Read performance by reading data from the nearest Regions, Read Replicas can be created for Amazon Aurora MySQL database. Up to 5 Read Replicas can be created for both encrypted & unencrypted DB clusters in different AWS regions.
 
 
 
@@ -265,7 +203,7 @@ The keyboard shortcut for Step Into is F11.
 
 
 13
-Ui Path
+UiPath
 Unlike the Step Into action, Step Over does not open the current container. When used, the action debugs the next activity, highlighting containers (such as flowcharts, sequences or Invoke Workflow File activities) without opening thme.
 
 This action comes in handy for skipping analysis of large containers which are unlikely to trigger any issues during execution.
