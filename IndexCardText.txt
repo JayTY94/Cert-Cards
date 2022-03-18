@@ -2,41 +2,6 @@
 
 
 
-
-Process finished with exit code 0
-C:\Users\jayoshimi\PycharmProjects\pythonProj
-1
-DNS
-An NS record delegates a subdomain to a set of name servers. Whenever you delegate a domain to DNSimple, the TLD authorities place NS records for your domain in the TLD name servers pointing to us.
-
-
-
-2
-DNS
-DNS zone transfers using the AXFR protocol are the simplest mechanism to replicate DNS records across DNS servers. To avoid the need to edit information on multiple DNS servers, you can edit information on one server and use AXFR to copy information to other servers
-
-
-
-3
-DNS
-A channel is a logging method, a way to funnel log messages somewhere, usually the syslog daemon or a file. The general syntax for a chanel is quite complex.
-
-
-
-4
-DNS
-The DNS Start of Authority (SOA) record stores important information about a domain or zone such as the email address of the administrator, when the domain was last updated, and how long the server should wait between refreshes.
-
-
-
-
-5
-DNS
-A PTR (or Pointer) record is a security tool. Essentially, when you receive an email, your mail server uses the PTR record that coms with the email to check that the mail server that sent the message matches the IP address that it claims to be using. This is also known as a reverse DNS lookup.
-
-
-
-
 6
 DNS
 An authoritative answer is when the DNS server hosting the primary copy of the DNS record responds to your lookup. The primary server doesn't always respond to a DNS query to save on network load. Usually, a secondary server will return a cached answer instead.
@@ -282,20 +247,30 @@ Query String
 
 
 11
-AWS SysOps Admin
+UiPath
+The Run to this Activity option is avialable when right-clicking an activity in the Designer panel.
 
+This option starts the debugging process and pauses before teh selected activity is executed while highlighting it in the panel. If Run to this Activity is triggered when debugging is already paused, the execution continues until the activity is reached.
 
 
 
 12
-AWS SysOps Admin
+UiPath
+Use Step Into to debug activities one at a time. When this action is triggered, the debugger opens and highlights hte activity before it is executed.
 
+When Step Into is used with Invoke Workflow File activities, the workflow is opened in a new tab in ReadOnly mode and each activity is executed one by one.
+
+The keyboard shortcut for Step Into is F11.
 
 
 
 13
-AWS SysOps Admin
+Ui Path
+Unlike the Step Into action, Step Over does not open the current container. When used, the action debugs the next activity, highlighting containers (such as flowcharts, sequences or Invoke Workflow File activities) without opening thme.
 
+This action comes in handy for skipping analysis of large containers which are unlikely to trigger any issues during execution.
+
+Step Over is available using the F10 keybaord shortcut.
 
 
 
