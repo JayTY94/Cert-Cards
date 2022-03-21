@@ -3,39 +3,6 @@
 
 
 
-26
-AWS SysOps Admin
-Classic Load Balancers (CLB) was AWS' first load balancer (legacy). It is not recommended for use; instead use NLB or ALB.
-
-
-
-
-27
-AWS SysOps Admin
-Classic Load Balancers (CLB) can balance HTTP, HTTPS, or TCP traffic (not at the same time)
-
-
-
-
-28
-AWS SysOps Admin
-Classic Load Balancers (CLB) can use Layer 7-specific features such as sticky sessions. It can also use strict layer 4 balancing fore purely TCP applications.
-
-
-
-
-29
-AWS SysOps Admin
-NLBs and CLBs can be used for cross-zone laod balancing.
-
-
-
-
-30
-AWS SysOps Admin
-Classic Load Balancers (CLB) will respond with a 504 error (timeout) if the underlying application is not responding at the web-server or database level.
-
-
 
 
 
