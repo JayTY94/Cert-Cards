@@ -1,0 +1,3 @@
+READ ME regarding 2022-03-18_9-00-47.mp4
+
+Unfortunately, the file cuts off at the end because a selector threw an exception. I will need to address this, but I thought you might want to see the recording anyway.

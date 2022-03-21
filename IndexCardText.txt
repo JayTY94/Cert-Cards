@@ -5,39 +5,6 @@
 
 
 
-16
-AWS SysOps Admin
-While ordinary Amazon Route 53 records are standard DNS records, alias records provide a Route 53-specific extension to DNS functionality. Instaed of an IP address or a domain name, an alias record contains a pointer to an AWS resource such as a CloudFront distribution or an Amazon S3 bucket.
-
-
-
-
-17
-AWS SysOps Admin
-Listeners
-
-Incoming traffic is evaluated against listeners. Listeners evaluate any traffic that matches the Listener's port. For Classic Load Balancers, EC2 instances are directly registered to the Load Balancer.
-
-
-
-18
-AWS SysOps Admin
-ELB Rules (Not available for Classic Load Balancer)
-Listeners will then invoke rules to decide what to do with new traffic. Generally, the next step is to forward traffic to a Target Group.
-Example: redirect traffic headed for port 80 to port 443.
-
-
-
-19
-AWS SysOps Admin
-ELB Target Groups  (Not available for CLassic Load Balancer)
-EC2 instances are registered as targets to a Target Group.
-
-
-
-20
-AWS SysOps Admin
-For Classic Load Balancers (CLB), traffic is sent to Listeners. When the port matches it, it then forwards the traffic to any EC2 instances that are registered to teh Classic Laod Balancer. CLB does nto allow you to apply rules to listeners.
 
 
 
@@ -213,8 +180,18 @@ Step Over is available using the F10 keybaord shortcut.
 
 
 14
-AWS SysOps Admin
+UiPath
+Escaping XML Data
+Adding control characters ('<', '>', ''', '"', '&') into xml data can cause the parser to miss understand the resulting data. The solution is to escape the control characters so that the parser can interpret them correctly as data, and not confuse them for markup.
 
+The following is a list of all the built in replacements
+
+Char	Escape String
+<	&lt;
+>	&gt;
+"	&quot;
+'	&apos;
+&	&amp;
 
 
 

@@ -106,7 +106,7 @@ Please note that teh Create Test Bench does not work with the Pick Branch activi
 
 Run to this Activity
 
-The Run to this Activity option is avialable when right-clickign an activity in the Designer panel.
+The Run to this Activity option is avialable when right-clicking an activity in the Designer panel.
 
 This option starts the debugging process and pauses before teh selected activity is executed while highlighting it in the panel. If Run to this Activity is triggered when debugging is already paused, the execution continues until the activity is reached.
 
@@ -119,17 +119,133 @@ An error occurs if you use Run from this Activity for an activity added inside o
 
 
 
+https://docs.uipath.com/studio/docs/debugging-actions
 
+Debugging Actions
 
+Debugging of a single file or the whole project can be performed both form the Design or Debug ribbon tabs. However, the debugging process is not available if hte project files have validation errors.
 
+Step Into
 
+Use Step Into to debug activities one at a time. When this action is triggered, the debugger opens and highlights hte activity before it is executed.
 
+When Step Into is used with Invoke Workflow File activities, the workflow is opened in a new tab in ReadOnly mode and each activity is executed one by one.
 
+The keyboard shortcut for Step Into is F11.
 
+Step Over
 
+Unlike the Step Into action, Step Over does not open the current container. When used, the action debugs the next activity, highlighting containers (such as flowcharts, sequences or Invoke Workflow File activities) without opening thme.
 
+This action comes in handy for skipping analysis of large containers which are unlikely to trigger any issues during execution.
 
+Step Over is available using the F10 keybaord shortcut.
 
+Step Out
+
+As the name suggests, this action is used for stepping out and pausing the execution at the level of the current container. Step Out completes the execution activities of the current container before pausing the debugging. This option works well with nested sequences.
+
+Step out is available using the Shift + F11 keyboard shortcut.
+
+Retry
+
+Retry re-executes the previous activity, and throws the exception if it's encountered again. The activity which threw the exception is highlighted and details about the error are shown in the Locals adn Call Stack Panels.
+
+Ignore
+
+The Ignore action can be used to ignore an encountered exception and continue the execution from the next activity so that the rest of the workflow can be debugged.
+
+This action is useful when jumping over the activity that threw the exception and continuing debugging the remaining part of the project.
+
+Restart
+
+Restart is available after an exception was thrown and the debug process is paused. The action is used after restarting the debugging process from the first activity of the project. Use Slow Step to slow down the debugging speed and properly inspect activities as they are executed.
+
+Please take into consideration that when using this option after using hte Run from this Activity action, the debugging is restarted from the previously indicated activity.
+
+Break
+
+Break allows you to pause the debugging process at any given moment. The activity which is being debugged remains highlighted when paused. Once this happens, you can choose to Continue, Step Into, Step Over, or Stop the debugging process.
+
+It is recommended to use Break along with Slow Step so that you know exactly when debugging needs to be paused.
+
+An alternative to using Slow Step in this situation is to keep an eye on the Output panel an duse Break on the activity that is currently being debugged.
+
+Focus
+
+Focus Execution Point helps you return to the current breakpoint or the activity that caused an error during debugging. The Focus button is used after navigating through the process, as an easy way to return to the activity that caused the error and resumes the debugging process.
+
+Alternatively, when debugging is paused because a breakpoint was reached, Focus can be used for returning to said breakpoint, after navigating through activities contained in the automation process.
+
+A third case is when the debugging is paused either after usign Step Into or Step Over and then navigating through the process. In this case, Focus returns to teh activity that paused the debugging process.
+
+From the Breakpoints context menu, you can select focus to highlight the activity with the breakpoint.
+
+Slow Step
+
+Slow Step enables you to take a closer look at any activity during debugging. While this action is enabled, activities are highlighted in the debugging process. Moreover, containers such as flowcharts, sequences, or Invoke Workflow File activities are opened. This is simiar to using Step Into, but without having to pause the debugging process.
+
+Slow Step can be activated both before or during the debugging process. Activating teh action does not pause debugging.
+
+Although called Slow Step, the action comes with 4 different speeds. The selected speed step runs the debugging process slower than the previous one. For example, debugging with Slow Step at 1x runs it the slowest, and fastest at 4x. In other words, the speed dictates how fast teh debugger jumps from one activity to the next.
+
+Each time you click Slow Step the speed changes by one step. You can easily tell by the icon, which updates accordingly.
+
+Execution Trail
+
+The Execution Trail ribbon button is disabled by default. When enabled, it shows the exact execution path at debugging. As the process is executed, each activity is highlighted and marked in the Designer panel, showing you the execution as it happens.
+
+    executed activities are marked and highlighted in green.
+
+    activities that were not executed are not marked in any way.
+
+    activities that threw an exception are marked and highlighted in red.
+
+https://docs.uipath.com/activities/docs/retry-scope
+
+Retry Scope
+
+UiPath.Core.Activities.RetryScope
+
+Retries the contained activities as long as the condition  is not met or an error is thrown.
+
+Important! Due to internal changes, this activity will no longer be visible in the Favorites list when upgrading to v20.4 or newer, if it was added to the Favorites list with a 19.4 or older version of UiPath.System.Activities.
+
+Properties
+Options
+    NumberofRetries - The number of times that teh sequence is to be retried.
+
+    RetryInterval - Specifies the amount of time (in seconds) between each retry.
+
+Common
+    DisplayName - The display name of this activity
+    ContinueOnError - Specifies if the automation should continue even when the activity throws an error. This field only supports Boolean values (True, False). The default value is False. As a result, if the field is blank and an error is thrown, the execution of the project stops. If the value is set to True, the execution of the project continues regardless of any error.
+
+Note:
+If this activity is included in Try Catch and the value of ContinueOnError is True, no error is caught when the project is executed.
+
+Misc
+Private - If selected, the values of variables and arguments are no longer logged at Verbose level.
+
+The Retry Scope activity is used for catching and handling an error, which is why it's similar to the Try Catch one. The following workflow attempts to open the Notepad window 3 times and uses the condition set in the Retry Scope activity to stop the loop.
+
+    1. Create a new sequence and add the Retry Scope activity.
+    2. In the Properties panel, leave the default NumberOfRetries of 3 and the Retry Interval of 5. This means that we attempt to open the Notepad window 3 times and the interval between tries is 5 seconds.
+    3. In the Action section, add an Assign activity.
+    4. Create a GernericValue variable, named for example Random and add it to the To field of the Assign activity.
+    5. Add the Now.Millisecond mod 5 value to the variable by adding it to the Value field of the Assign activity.
+    6. Add an if activity and as a condition enter Random <> 0. This means that you check if your variable is different than 0.
+    7. In the Then section of this activity (the condition above is true):
+        Add a Message Box stating "Notepad Window failed to start.".
+        Under the Message Box, add a Throw activity to throw an error.
+        Type in New System.Exception("Notepad failed to start.") in the Exception field, under Properties.
+    8. In the Else section of the If activity (the condition above is false):
+        Add an Open Application activity and indicate Notepad on the screen. Provide the full path of the Notepad executable file in the FileName field part of Properties.
+    9. To exit the loop, add an Element Exists activity in the Condition section of Retry Scope and indicate the Notepad window.
+
+This workflow simulates a failing Notepad window. If the value of the Random variable is 0 three times in a row, the "Notepad Window Failed to start" message is displayed every time and the entire workflow fails with the "Notepad failed to start" error. The latter message is the one added in the Throw activity.
+
+If the value of the Random variable is 0, the Robot opens Notepad and because the exist condition of this loop is to find the Notepad window, teh workflow is successfully completed.
 
 
 
@@ -178,6 +294,5 @@ An error occurs if you use Run from this Activity for an activity added inside o
 
 end of copii
 
-What exactly did the step into action do again?
 What are automation building blocks, exactly?
 What is the Pick Branch Activity?
