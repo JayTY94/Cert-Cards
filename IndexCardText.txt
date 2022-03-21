@@ -5,6 +5,7 @@
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -78,6 +79,8 @@ Classic Load Balancers (CLB) will respond with a 504 error (timeout) if the unde
 
 
 
+=======
+>>>>>>> 730940a88e49f7bdd0232004ed4b58e85065867f
 
 Process finished with exit code 0C:\Users\jayoshimi\PycharmProjects\pythonProject\venv\Scripts\python.exe "C:/Users/jayoshimi/PycharmProjects/pythonProject/cards document.py"
 1
