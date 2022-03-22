@@ -5,82 +5,6 @@
 
 
 
-<<<<<<< HEAD
-
-
-
-
-21
-AWS SysOps Admin
-Application Load Balancers (ALB) are designed to balance HTTP and HTTPS traffic. They operate at Layer 7 of the OSI model.
-
-
-
-
-22
-AWS SysOps Admin
-ALB has a feature called Request Routing which allows you to add routing rules to yoru listeners based on the HTTP protocol.
-
-
-
-
-23
-AWS SysOps Admin
-Web Application Firewall (WAF) can be attached to an Application Load Balancer (ALB). ALBs are great for Web Applications.
-
-
-
-
-24
-AWS SysOps Admin
-Network Load Balancers (NLB) are designed to balance TCP/UDP traffic. They operate at Layer 4 of the OSI model.
-
-
-
-25
-AWS SysOps Admin
-Network Load Balancers (NLB) can handle millions of requests per second while maintaining extremely low latency. They are great for Multiplayer video games or when network performance is critical.
-
-
-
-
-26
-AWS SysOps Admin
-Classic Load Balancers (CLB) was AWS' first load balancer (legacy). It is not recommended for use; instead use NLB or ALB.
-
-
-
-
-27
-AWS SysOps Admin
-Classic Load Balancers (CLB) can balance HTTP, HTTPS, or TCP traffic (not at the same time)
-
-
-
-
-28
-AWS SysOps Admin
-Classic Load Balancers (CLB) can use Layer 7-specific features such as sticky sessions. It can also use strict layer 4 balancing fore purely TCP applications.
-
-
-
-
-29
-AWS SysOps Admin
-NLBs and CLBs can be used for cross-zone laod balancing.
-
-
-
-
-30
-AWS SysOps Admin
-Classic Load Balancers (CLB) will respond with a 504 error (timeout) if the underlying application is not responding at the web-server or database level.
-
-
-
-
-=======
->>>>>>> 730940a88e49f7bdd0232004ed4b58e85065867f
 
 Process finished with exit code 0C:\Users\jayoshimi\PycharmProjects\pythonProject\venv\Scripts\python.exe "C:/Users/jayoshimi/PycharmProjects/pythonProject/cards document.py"
 1
@@ -200,60 +124,83 @@ Char	Escape String
 
 15
 AWS SysOps Admin
+If you get an InsufficientInstanceCapacity error when you try to launch an instance or restart a stopped instance, AWS does not currently have enough available On-Demand capacity to service your request.
+
+To resolve the issue, try the following.
+Wait a few minutes and then submit your request again; Capacity can shift frequently.
 
 
 
 
 16
 AWS SysOps Admin
+If you get an InsufficientInstanceCapacity error when you try to launch an instance or restart a stopped instance, AWS does not currently have enough available On-Demand capacity to service your request.
 
+To resolve the issue, try the following.
+If you're launching an instance, submit a new request using a different instance type (which you can resize at a later stage)
 
 
 
 17
 AWS SysOps Admin
+With step scaling policies, you can specify the number of seconds that it takes for a newly launched instance to warm up. Until its specified warm-up time has expired, an instance is not counted toward the aggregated metrics of the Auto Scaling group.
 
 
 
 
 18
 AWS SysOps Admin
+While scaling out, AWS also does not consider instances that are warming up as part of hte current capacity of the group. Therefore, multiple alarm breaches that fall in the range of the same step adjustment result in a single scaling activity. This ensures that we don't add more instances than you need.
 
 
 
 
 19
 AWS SysOps Admin
+Your company is planning on hosting a set of databases using AWS RDS. The IT security department has mandated that all traffic is encrypted in transit. How can you achieve this?
+
+Use the SSL certificates provided by the AWS RDS service.
+Set the Parameter Group for the RDS instance.
 
 
 
 
 20
 AWS SysOps Admin
+An archive is any object, such as a photo, video, or document, that you store in a vault. It is a base unit of storage in Amazon S3 Glacier (S3 Glacier). Each archive has a unique ID and an optional description.
+
+Example archive ID:
+TJgHcrOSfAkV6hdPqOATYfp_0ZaxL1pIBOc02iZ0gDPMr2ig-nhwd_PafstsdIf6HSrjHnP-3p6LCJClYytFT_CBhT9CwNxbRaM5MetS3I-GqwxI3Y8QtgbJbhEQPs0mJ3KExample
 
 
 
 
 21
 AWS SysOps Admin
+You can upload the files to Amazon S3 either directly or using a snowball device. By using Lifecycle policies to transition the storage class of the object to Glacier, you can ensure that the filename will be preserved.
 
 
 
 
 22
 AWS SysOps Admin
-
+AWS Personal Health Dashboard provides alerts and remediation guidance when AWS is experiencing events that may impact you. While the Service Health Dashbaord displays the general status of AWS services, Personal Health Dashboard gives you a personalized view into the performance and availability of AWS services underlying your AWS resources.
 
 
 
 23
 AWS SysOps Admin
+You work as a SysOps Administrator for a company. There is a security requirement to ensure that API calls for EC2 instances be logged. YOu also need to be notified of any Termination API calls for EC2 instances. How can you automate this requirement?
+
+Create a trail in CloudTrail
+Create a Lambda function and add it as an event destination for the S3 bucket. Use an SNS topic for notification.
 
 
 
 
 24
 AWS SysOps Admin
+CloudTrail captures API calls as events. For an ongoing record of events in your AWS account, you create a trail. A trail enables CloudTrail to deliver log files of events to an Amazon S3 bucket.
 
 
 

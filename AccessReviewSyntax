@@ -21,3 +21,42 @@ Get-ADUser -Identity 9c674743-e42d-4d7f-b261-007fbb334c12
 Get-ADUser -Filter 'enabled -eq $true' -Properties 'Enabled', 'LastLogon', 'PasswordNeverExpires', 'PasswordLastSet', 'PasswordNotRequired', 'ObjectGUID' | Select -Property UserPrincipalName,ObjectGUID,Enabled,@{Name="LastLogonDate_FromTimestamp";Expression={ $date = [datetime]::FromFileTime( $_.lastlogon);$date}},PasswordNeverExpires,PasswordLastSet,PasswordNotRequired,DistinguishedName | Export-CSV "C:\temp\AccessReview.csv" -NoTypeInformation -Encoding UTF8
 
 Get-ADUser -Filter 'enabled -eq $true' -Properties 'Name', 'Enabled', 'LastLogon', 'PasswordNeverExpires', 'PasswordLastSet', 'PasswordNotRequired', 'ObjectGUID' | Select -Property Name,UserPrincipalName,ObjectGUID,Enabled,@{Name="LastLogonDate_FromTimestamp";Expression={ $date = [datetime]::FromFileTime( $_.lastlogon);$date}},PasswordNeverExpires,PasswordLastSet,PasswordNotRequired,DistinguishedName | Export-CSV "C:\temp\AccessReview.csv" -NoTypeInformation -Encoding UTF8
+
+
+...
+So I think that this is fixed.
+
+I just noted in the highlighted cell that it's always the last file in the process that isn't moved, but...
+
+maybe adding a delay at the end of the process should...
+
+I don't see this being a huge problem. Josh, do you agree?...
+
+I think it's a syncing issue in box.
+
+It doesn't pick it up as a valid input file because...
+
+So um I haven't seen an issue where it reprocesses a previously processed file. So do you see that being an issue, Josh?
+
+Potentially won't get processed...
+
+...
+
+and only filtering out the stuff that is less than the minimum
+so this issue is one that was occurring before, so I think we talked to Alison, and she said that we needed to delete everything form the temporal path...
+I don't know if the bot is supposed to be deleting the temporal path files and it's not, or that it's not deleting the temporal path files and it's something something that it is.
+
+...
+
+we just wanted to delete that tab. Below 1k.
+Because below 100 and below 1k should be the same thing.
+We don't foresee it being a big issue, but it might be confusing to the recipient of the emails
+If we could just remove the below -100 tab to afer the above 500000 tab so that the tab structure can be the same.
+
+...
+
+And then for the changes on the changelog, I think that I added a few more things.
+I think I only added one since last week. Um.
+and then that's for an update to the input worksheet, so um.
+I don't know if you're able to open...
+We were brainstorming ways to update the processes.
