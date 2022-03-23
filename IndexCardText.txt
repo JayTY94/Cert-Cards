@@ -4,41 +4,6 @@
 
 
 
-
-
-Process finished with exit code 0C:\Users\jayoshimi\PycharmProjects\pythonProject\venv\Scripts\python.exe "C:/Users/jayoshimi/PycharmProjects/pythonProject/cards document.py"
-1
-AWS SysOps Admin
-Sticky Sessions is an advanced load balancing method that allows you to bind a user's session to a specific EC2 instance. It ensures all requests from that session are sent to the same instance.
-
-
-
-2
-AWS SysOps Admin
-Sticky Sessions are typically used with a Classic Load Balancer (CLB). It can be used with an ALB, though it can only be set to a target group; not individual EC2 instances. It is not available for NLB.
-
-
-
-3
-AWS SysOps Admin
-With sticy sessions, cookies are used to remember which EC2 instance the user is working wiht. It is usefull when specific information isn only stored locally on a single instance.
-
-
-
-
-4
-AWS SysOps Admin
-The X-Forwarded-For (XXF) header is a command method for identifying the originating IP address of a client connecting to a web server through an HTTP proxy or a load balancer. Use it if you need the IPv4 address of a user.
-
-
-
-
-5
-AWS SysOps Admin
-Instances that are monitored by the Elastic Load Balancer (ELB) report back Health Checks as InService or OutofService. Health Checks communicate directly with the instance to determine its state.
-
-
-
 6
 AWS SysOps Admin
 ELB does not terminate (kill) unhealthy instances. It will just redirect traffic to healthy instances.
@@ -207,36 +172,47 @@ CloudTrail captures API calls as events. For an ongoing record of events in your
 
 25
 AWS SysOps Admin
+You can take advantage of Amazon S3's bucket notification feature and direct S3 to publish object-created events to AWS Lambda. Whenever CloudTrail writes a log to your S3 bucket, S3 can then invoke your lambda function by passing the S3 object-created event as a parameter.
 
 
 
 
 26
 AWS SysOps Admin
+A company has a set of files in an S3 bucket. Recently, some employees inadvertently deleted some files from the bucket. THe CIO has now informed you that all measures should be taken to ensure that objects in the bucket are protected from such incidents in the future. How can this be accomplished?
+
+Enable MFA delete by using root credentials and by using the AWS CLI.
 
 
 
 
 27
 AWS SysOps Admin
+You can add another layer of protection in S3 by enabling MFA Delete on a versioned bucket. Once you do so, you mush provide your AWS account's access keys and a valid code from teh account's MFA device in order to permanently delete an object version or suspend or reactivate versioning on the bucket.
 
 
 
 
 28
 AWS SysOps Admin
+A company wants to get an aggreate of the CPU utilization of all their EC2 instances accross multiple regions. How can they achieve this in the easiest way posisble?
+
+Create a custom dashboard. Add wigits for each region. Aggregate the CPU utilization for all Instances in a region to each wigit.
+Ensure detailed montoring is enabled for all instances.
 
 
 
 
 29
 AWS SysOps Admin
+You can aggreate the metrics for AWS resources across multiple resources. Amazon CloudWatch cannot aggregate data across Regions. Metrics are completely separate between Regions.
 
 
 
 
 30
 AWS SysOps Admin
+You can aggregate statistics for your EC2 instances that have detailed monitoring enabled. Instances that use basic montoring are not included. Therefore, you must enable detailed monitoring (at an additional charge), which provides data in 1-minute periods.
 
 
 
