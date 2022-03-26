@@ -4,95 +4,11 @@
 
 
 
-6
-AWS SysOps Admin
-ELB does not terminate (kill) unhealthy instances. It will just redirect traffic to healthy instances.
 
 
 
 
-7
-AWS SysOps Admin
-For ALB and NLB, the Health Checkcs are found on the Target Group.
 
-
-
-
-8
-AWS SysOps Admin
-Cross-Zone Load Balancing only works for Classic and Network Load Balancers.
-
-
-
-
-9
-AWS SysOps Admin
-When Cross-Zone Load balancing is enabled, requests are distributed evently across the instances in all enabled Availability Zones. The example for this shows an ELB sending traffic to other ELB nodes in different AZs.
-
-
-
-10
-AWS SysOps Admin
-ALB Request Routing: Applies rules to incoming requests and hten forwards or redirects traffic. It can look at the following:
-Host header
-Source IP
-Path
-Http header
-Http header method
-Query String
-
-
-
-11
-UiPath
-The Run to this Activity option is avialable when right-clicking an activity in the Designer panel.
-
-This option starts the debugging process and pauses before teh selected activity is executed while highlighting it in the panel. If Run to this Activity is triggered when debugging is already paused, the execution continues until the activity is reached.
-
-
-
-12
-UiPath
-Use Step Into to debug activities one at a time. When this action is triggered, the debugger opens and highlights hte activity before it is executed.
-
-When Step Into is used with Invoke Workflow File activities, the workflow is opened in a new tab in ReadOnly mode and each activity is executed one by one.
-
-The keyboard shortcut for Step Into is F11.
-
-
-
-13
-UiPath
-Unlike the Step Into action, Step Over does not open the current container. When used, the action debugs the next activity, highlighting containers (such as flowcharts, sequences or Invoke Workflow File activities) without opening thme.
-
-This action comes in handy for skipping analysis of large containers which are unlikely to trigger any issues during execution.
-
-Step Over is available using the F10 keybaord shortcut.
-
-
-
-14
-UiPath
-Escaping XML Data
-Adding control characters ('<', '>', ''', '"', '&') into xml data can cause the parser to miss understand the resulting data. The solution is to escape the control characters so that the parser can interpret them correctly as data, and not confuse them for markup.
-
-The following is a list of all the built in replacements
-
-Char	Escape String
-<	&lt;
->	&gt;
-"	&quot;
-'	&apos;
-&	&amp;
-
-
-
-15
-AWS SysOps Admin
-If you get an InsufficientInstanceCapacity error when you try to launch an instance or restart a stopped instance, AWS does not currently have enough available On-Demand capacity to service your request.
-
-To resolve the issue, try the following.
-Wait a few minutes and then submit your request again; Capacity can shift frequently.
 
 
 

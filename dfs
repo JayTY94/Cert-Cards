@@ -4,3 +4,86 @@ Client Survey, Meeting recap, walkthroughs, webinar sign-in
 Mbeardeaux@employersprotectiveinsurance.com Sdelbarrio@employersprotectiveinsurance.com jayoshimi@hemic.com jikeda@hemic.com
 
 Martin Beardeaux, ARM, AINS <Mbeardeaux@employersprotectiveinsurance.com>; Sheri del Barrio <Sdelbarrio@employersprotectiveinsurance.com>; Jay Yoshimi <jayoshimi@hemic.com>; Jamie Ikeda <jikeda@hemic.com>
+
+writing something here about something something just passing time I guess.
+
+
+https://docs.uipath.com/automation-ops/docs/introduction
+
+Introduction
+
+UiPath Automation Ops is a centralized, web-based platform that enables a simple and convenient way to manage and implement governance policies based on user profiles, and to manage the feeds available in the organization. Automation Ops is an admin feature available in the UiPath Automation Cloud.
+
+Automation Ops consists of two main areas: governance and feeds management.
+
+Governance
+
+With Automation Ops, you can configure and deploy governance policies for UiPath Studio, UiPath Robot, and UiPath Assistant. Governance policies offer control over various functionalities, ensure that standards are met, and that rules are followed. Main features include:
+
+    For StudioX, Studio, and StudioPro:
+        Control which package sources are available in the Studio package manager.
+        Enforce organizational standards using Workflow Analyzer rules. For example, you can determine which applications and URLs users are allowed to automate.
+        Enforce Studio design and location settings. For example, you can require that projects pass workflow analysis before being run or published.
+        Enable the collection of Studio usage data in your organization's Application Insights instance in Azure.
+        Control what repositories are allowed when working with GIT source control
+        Prevent production runs from StudioX by limiting the number of consecutive executions that can be initiated from StudioX projects with no changes.
+        Control what activities are available in StudioX
+
+    For Robot:
+        Control the behavior of the Robot at runtime by enforcing Runtime Analyzer rules to prevent sending emails to certain addresses or using certain applications and web pages in automations.
+
+    For Assistant:
+        Manage access to widgets in UiPath Assistant.
+
+Automation Ops is flexible and easy to use, enabling you to quickly govern large deployments:
+
+    1. Select the policy templates to use depending on the product versions installed in your organization.
+    2. Create policies for the products you want to govern. If your organization is already using the file-based governance model for Studio, you can migrate your policies by generating files from Studio and uploading them in Automation Ops.
+    3. Deploy policies at tenant, group, or user level, and any combination thereof.
+
+Automation Ops is compatible with Studio 2020.10.3 and later, Robot 2020.10 and alter, and Assistant 2021.4 and later. Users must be connected to Orchestrator using interactive sign-in.
+
+Feeds management
+
+The feeds management feature enables administrators to:
+
+    View details about the packages available in feeds, including versions, tags, and dependencies.
+
+    Manage the packages and package versions available in Orchestrator library and package feeds at the tenant and folder level.
+
+    Add custom library and package feeds, manage the packages and package versions they contain, and deploy them as external feeds to Orchestrator tenants.
+
+    Copy specific package versions from the UiPath Official and Marketplace feeds to Orchestrator tenant library feeds and custom library feeds.
+
+
+
+https://docs.uipath.com/robot/docs/setting-up-interactive-sign-in
+Setting Up Interactive Sign-in
+
+What is Interactive Sign-in
+
+The Interactive Sign In feature provides an option to connect to Orchestrator, Studio, and UiPath Assistant using the user's account, simplifying the process and offering better sync across the platform. This turns the user's account into the main link between all of the UiPath products, removing the need to use a machine or license key while creating a frictionless experience for deploying and connecting Robots and Studio to Orchestrator.
+
+Benefits of Interactive Sign In
+
+    Instant access to queues, assets, and processes in Orchestrator folders without any complicated steps, provided they have been granted access to them. Simply authenticate in Studio or Assistant with your user credentials and everything is there. Syncing all Desktop products to the same Orchestrator tenant is being taken care of as well. All products are connected using a single user account, this includes licensing which is being inherited via Orchestrator removing the need for using a License key.
+
+    You no longer need to create individual machines or machine templates for each robot. These are created automatically and the robots are seamlessly connected to Orchestrator in the authentication process of the user, fully removing the need for users to configure the robots with Machine Keys.
+
+    Processes tied to the user account in Orchestrator (individually or via folders) are found immediately in the UiPath Assistant and a personal workspace is created for that user in Orchestrator. Besides being able to view, configure, and run, you can also remove processes tied to a personal workspace directly from the UiPath Assistant.
+
+Deployment
+
+Attended Robots
+
+Attended Robots need to be installed in User Mode to be able to sign in without a machine key and the work in the same Windows Session as the user is logged in on the machine. The UiPath Assistant connects to Orchestrator to get access to resources in orchestrator (queues, assets) as well as to determine the processes a user has permissions to execute, when the authentication is completed, the user can start and manage processes from the UiPath Assistant.
+
+When the UiPath Assistant connects to Orchestrator via Interactive Sign In, the necessary resources for running attended processes are synced from Orchestrator and a machine key connection is not required.
+
+Note: If you install the Robot in Service Mode, you must first connect to Orchestrator from Studio or Assistant with a machine key, and only afterwards can you use Interactive Sign in.
+
+Unattended Robots
+
+Unattended Robots are installed in Service Mode and they rely on the Robot Service to start a Windows Session every time a job is triggered from Orchestrator to run an Unattended Process. The Robot Services is launched by the Windows Service Control Manager under the Local System. It can open interactive Windows sessions, and has all the rights of a machine administrator. As such, it enables automatic session management (such as log on and log off) for unattended jobs. In this situation, a Machine Key connection is needed as the above is done by having the Robot Service listed under the Windows services in services.msc, not tied to a specific user.
+
+If you want to make use of Interactive Sign In to troubleshoot Unattended Robots, you first need to log on to that machine in a user session, then authenticate with your account in the UiPath Assistant to gain access to processes.
