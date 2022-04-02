@@ -12,50 +12,6 @@
 
 
 
-
-16
-AWS SysOps Admin
-If you get an InsufficientInstanceCapacity error when you try to launch an instance or restart a stopped instance, AWS does not currently have enough available On-Demand capacity to service your request.
-
-To resolve the issue, try the following.
-If you're launching an instance, submit a new request using a different instance type (which you can resize at a later stage)
-
-
-
-17
-AWS SysOps Admin
-With step scaling policies, you can specify the number of seconds that it takes for a newly launched instance to warm up. Until its specified warm-up time has expired, an instance is not counted toward the aggregated metrics of the Auto Scaling group.
-
-
-
-
-18
-AWS SysOps Admin
-While scaling out, AWS also does not consider instances that are warming up as part of hte current capacity of the group. Therefore, multiple alarm breaches that fall in the range of the same step adjustment result in a single scaling activity. This ensures that we don't add more instances than you need.
-
-
-
-
-19
-AWS SysOps Admin
-Your company is planning on hosting a set of databases using AWS RDS. The IT security department has mandated that all traffic is encrypted in transit. How can you achieve this?
-
-Use the SSL certificates provided by the AWS RDS service.
-Set the Parameter Group for the RDS instance.
-
-
-
-
-20
-AWS SysOps Admin
-An archive is any object, such as a photo, video, or document, that you store in a vault. It is a base unit of storage in Amazon S3 Glacier (S3 Glacier). Each archive has a unique ID and an optional description.
-
-Example archive ID:
-TJgHcrOSfAkV6hdPqOATYfp_0ZaxL1pIBOc02iZ0gDPMr2ig-nhwd_PafstsdIf6HSrjHnP-3p6LCJClYytFT_CBhT9CwNxbRaM5MetS3I-GqwxI3Y8QtgbJbhEQPs0mJ3KExample
-
-
-
-
 21
 AWS SysOps Admin
 You can upload the files to Amazon S3 either directly or using a snowball device. By using Lifecycle policies to transition the storage class of the object to Glacier, you can ensure that the filename will be preserved.
@@ -129,6 +85,189 @@ You can aggreate the metrics for AWS resources across multiple resources. Amazon
 30
 AWS SysOps Admin
 You can aggregate statistics for your EC2 instances that have detailed monitoring enabled. Instances that use basic montoring are not included. Therefore, you must enable detailed monitoring (at an additional charge), which provides data in 1-minute periods.
+
+
+
+
+
+Process finished with exit code 0
+C:\Users\m4ple\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:/Users/m4ple/PycharmProjects/pythonProject1/crads.py
+1
+AWS SysOps Admin
+
+
+
+
+2
+AWS SysOps Admin
+
+
+
+
+3
+AWS SysOps Admin
+
+
+
+
+4
+AWS SysOps Admin
+
+
+
+
+5
+AWS SysOps Admin
+
+
+
+
+6
+AWS SysOps Admin
+
+
+
+
+7
+AWS SysOps Admin
+
+
+
+
+8
+AWS SysOps Admin
+
+
+
+
+9
+AWS SysOps Admin
+
+
+
+
+10
+AWS SysOps Admin
+
+
+
+
+11
+AWS SysOps Admin
+
+
+
+
+12
+AWS SysOps Admin
+
+
+
+
+13
+AWS SysOps Admin
+
+
+
+
+14
+AWS SysOps Admin
+
+
+
+
+15
+AWS SysOps Admin
+
+
+
+
+16
+AWS SysOps Admin
+
+
+
+
+17
+AWS SysOps Admin
+
+
+
+
+18
+AWS SysOps Admin
+
+
+
+
+19
+AWS SysOps Admin
+
+
+
+
+20
+AWS SysOps Admin
+
+
+
+
+21
+AWS SysOps Admin
+
+
+
+
+22
+AWS SysOps Admin
+
+
+
+
+23
+AWS SysOps Admin
+
+
+
+
+24
+AWS SysOps Admin
+
+
+
+
+25
+AWS SysOps Admin
+
+
+
+
+26
+AWS SysOps Admin
+
+
+
+
+27
+AWS SysOps Admin
+
+
+
+
+28
+AWS SysOps Admin
+
+
+
+
+29
+AWS SysOps Admin
+
+
+
+
+30
+AWS SysOps Admin
 
 
 
