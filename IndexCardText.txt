@@ -9,47 +9,6 @@
 
 
 
-21
-AWS SysOps Admin
-Using an ALB instead of a CLB allows for host-based routing. You can configure rules for your listener that forward requests based on the host field in the HTTP header. This enables you to route requests to multiple domains using a single load balancer.
-
-
-
-22
-AWS SysOps Admin
-A company has been using an AWS RDS-MySQL Instance. There is a new requirement to disable backups for the AWS RDS instance. You try to set the retention period to 0 to disable backups, but this results in an error. Which of the following could be the possible reason for the error?
-
-There is a Read replica in place.
-
-
-
-
-23
-AWS SysOps Admin
-If you try to disable RDS automatic backups by setting the retention period to 0 and receive a message saying that the retention period must be between 1 and 35, check to make sure that you haven't set up a read replica for the instance. Read replicas require backups for managing read replica logs.
-
-
-
-
-24
-AWS SysOps Admin
-With AWS CloudFormation StackStes, stacks can be created in multiple AWS accounts in different regions using a single AWS CloudFormation Template. The template defines all resources along with all parameters. The Stackset can be used to create, update, and delete stacks in multiple accounts and across regions.
-
-
-
-
-25
-AWS SysOps Admin
-While creating AWS CloudFormation Templates for DB instances or any resource, we can specify NoEcho in parameters to hide the value to be displayed. For example, set NoEcho to True when hiding a password or similar parameter.
-
-
-
-
-26
-AWS SysOps Admin
-RDS instances are managed by AWS. You cannot SSH into the VM running the database.
-
-
 
 
 27
