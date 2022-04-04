@@ -87,3 +87,67 @@ Unattended Robots
 Unattended Robots are installed in Service Mode and they rely on the Robot Service to start a Windows Session every time a job is triggered from Orchestrator to run an Unattended Process. The Robot Services is launched by the Windows Service Control Manager under the Local System. It can open interactive Windows sessions, and has all the rights of a machine administrator. As such, it enables automatic session management (such as log on and log off) for unattended jobs. In this situation, a Machine Key connection is needed as the above is done by having the Robot Service listed under the Windows services in services.msc, not tied to a specific user.
 
 If you want to make use of Interactive Sign In to troubleshoot Unattended Robots, you first need to log on to that machine in a user session, then authenticate with your account in the UiPath Assistant to gain access to processes.
+
+User-Mode and Service-Mode install
+
+During the installation process, it's important to choose the best type of robot deployment in order to take full advantage of the UiPath products.
+
+Depending on the use case, Robots can be deployed in User MOde or Service Mode and the connection to Orchestrator can be done through machine key or Interactive Sign in.
+
+For more information, see Installing the Robot.
+
+Important: User-Mode deployments do not support Secure XAML, meaning that users can access .XAML files without having admin rights.
+
+Recommended Deployment
+
+The following tables describe the recommended deployments for classic folders and modern folders.
+
+Using Classic Folders
+
+Robot type | Installation Type | Orchestrator connection
+Attended | User Mode | Machine Key
+Unattended | Service Mode | Machine Key
+Development (Studio) | User Mode | Machine Key
+
+https://urldefense.proofpoint.com/v2/url?u=https-3A__uipath.zoom.us_j_97370093768-3Fpwd-3DRUVBeHdPenI4KzBYd2I4bTlXbHhlUT09&d=DwQFAw&c=euGZstcaTDllvimEN8b7jXrwqOf-v5A_CdpgnVfiiMM&r=jVbJeJVX5pd9jMd_TzRAMQ&m=jQN5FnMwW8W2x2yjEcdEeiAxsvcjhumRXWOX71xeuso&s=rRBk7hix4SjSIOzqZj-WB5TbqPjSF5kWSKTLq4EoJts&e=
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sdf

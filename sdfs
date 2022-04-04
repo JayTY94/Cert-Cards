@@ -257,6 +257,409 @@ TargetAnchorable { Accuracy=0.8, Anchor0=null, Anchor1=null, Anchor2=null, Ancho
 
 https://hemic365-my.sharepoint.com/personal/jayoshimi_hemic_com/Documents/Documents/UiPath/UiPathAutomations/ReportFormatting/copyTEST%20H%20Path%20TWO.xlsx?web=1
 
+https://docs.aws.amazon.com/vpc/latest/privatelink/endpoint-services-overview.html
+
+AWS PrivateLink and VPC endpoints
+
+AWS PrivateLink is a highly available, scalable technology that enables you to privately connect your VPC to supported AWS services, services hosted by other AWS accounts (VPC endpoint services), and supported AWS Marketplace partner services. You do not need to use an internet gateway, NAT device, public IP address, AWS Direct Connection connection, or AWS Site-to-Site VPN connection to communicate with the service. Therefore, you control the specific API endpoints, sites, and services that are reachable from your VPC.
+
+You can create your own VPC endpoint service, powered by AWS PrivateLink, and enable other AWS customers to access your service.
+
+VPC endpoing concepts
+
+The following are key concepts for VPC endpoints:
+
+    VPC endpoint - The entry point in your VPC that enables you to connect privately to a service. The following are the different types of VPC endpoints. You create the type of VPC endpoint required by the supported service.
+
+        Gateway Endpoint
+        Interface Endpoint
+        Gateway Load Balancer Endpoint
+
+    Endpoint service - Your own application or service in your VPC. Other AWS principals can create an endpoint from their VPC to your endpoint service.
+
+To use AWS PrivateLink, create a VPC endpoint for a service in your VPC. You create the type of VPC endpoing required by the supported service. This creates an elastic network interface in your subnet with a private IP address that serves as an entry point for traffic destined to securely connect your PVC to an AWS service that supports AWS PrivateLink.
+
+Work with VPC Endpoints
+
+You can create, acces, and manage VPC endpoints using any of the following:
+
+    AWS Management Console - Provides a web interface that you can se to access your AWS PrivateLink resources.
+
+    AWS Command Line Interfrace (AWS CLI) - Provides commands for a broad set of AWS services, including AWS PrivateLink. For more information about commands for AWS PrivateLink, see ec2 in the AWS CLI Command Reference.
+
+    AWS CloudFormation - Create templates that describe your AWS resources. You can use teh templates to provision and manage those resources in a single unit. For more information, see the following AWS PrivateLink resources:
+        AWS::EC2::VPCEndpoint
+        AWS::EC2::VPCEndpointConnectionNotification
+        AWS::EC2::VPCEndpointService
+        AWS::EC2::VPCEndpointServicePermissions
+        AWS::ELasticLoadBalancingV2::LoadBalancer
+
+    AWS SDKs - Provide Language-specific APIs. The SDKs take care of many of the connection detils, such as calculating signatures, handling request retries, and handling errors. For more information, see AWS SDKs.
+
+    Query API - Provides low-level API actions that you call using HTTPS requests. Using the Query API is the most direct way to access Amazon VPC. However, it requires that your application handle low-level details such as genearting hte hash to sign the request and handling errors. For more information, see AWS PrivateLink actions in teh Amazon EC2 API Refrence.
+
+Example Endpoint Configurations
+
+For information about AWS PrivateLink and VPC peering examples, see Examples: SErvices using AWS PrivateLink and VPC peering in the Amazon VPC User Guide.
+
+Pricing for endpoints
+
+For information about pricing, see AWS PrivateLink Pricing.
+
+https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints.html
+
+VPC Endpoints
+
+A VPC endpoint enables connections between a virtual private cloud (VPC) and supported services, without requiring you use an internet gateway, NAT Device, VPN connection, or AWS DirectConnect connection. Therefore, you control the specific API endpoints, sites, and services that are reachable from your VPC.
+
+VPC endpoints are virtual devices. They are horizontally scaled, redundant, and highly available VPC components. The following are the different types of VPC endpoints. You create the type of VPC endpoint that's required by the supported service.
+
+Interface endpoints
+
+An interface endpoint is an elastic network interface with a private IP address from the IP address range of your subnet. It serves as an entry point for traffic destined to a service that is owned by AWS or owned by an AWS customer or partner. For a list of AWS services that integrate with AWS PrivateLink, see AWS services that integrate with AWS PrivateLink.
+
+You are billed for hourly usage and data processing charges. For more information, see Interface Endpoint pricing.
+
+Gateway Load Balancer endpoints
+
+A Gateway Load Balancer endpoint is an elastic network interface with a private IP address from the IP address range of your subnet. It serves as an entry point to intercept traffic and route it to a network for security service that you've configured using a Gateway Load Balancer. You specify a Gateway Load Balancer endpoint as a target for a route in the route table. Gateway Load Balancer endpoints are supported only for endpoint services that are configured usin ga Gateway Load Balancer.
+
+You are billed for hourly usage and data processing charges. For more information, see Gateway Load Balancer endpoint pricing.
+
+Gateway endpoints
+
+A gateway endpoint is a gateway that is a target for a route in your route table used for traffic destined to either Amazon S3 or DynamoDB.
+
+There is no charge for using gateweay endpoints.
+
+Amazon S3 supports both gateway endpoints and interface endpoints. For a comparison of the two options, see Types of VPC endpoints for Amazon S3 in the Amazon S3 User Guide.
+
+https://docs.aws.amazon.com/vpc/latest/privatelink/vpce-interface.html
+
+An interface VPC endpoint (interface endpoint) allows you to connect to services powered by AWS PrivateLink. These services include some AWS services, services hosted by other AWS customers and Partners in their own VPCs (referred to as endpoint services), and supported AWS Marketplace Partner services. The owner of the service is the service provider, and you, as the principal creating the interface endpoint, are the service consumer.
+
+The following are the general steps for seting up an inteface endpoint:
+
+    1. Choose the VPC in which to create the interface endpoint, and provide the name of the AWS service, endpoint service, or AWS Marketplace service to which you're connecting.
+
+    2. Choose a subnet in your VPC to use the interface endpoint. We create an endpoint network interface in the subnet. An endpoint network interface is assigned a private IP address from the IP address range of your subnet, and keeps this IP address until the interface endpoint is deleted. You can specify more than one subnet in different Availability Zones (as supported by the service) to help ensure that your interface endpoint is resilient to Availability Zone failures. In that case, we create an endpoint network interface in each subnet you specify.
+
+    Note.
+    An endpoint network interface is a requester-managed network interface. You can view it in your account, but you cannot manage it yourself. For more information, see Requester-managed network interfaces.
+
+    3. Specify the security groups to associate with the endpoint network interface. The security group reules control the traffic to the endpoint network interface from resources in your VPC. If you do not specify a security group, we associate teh default security group for the VPC.
+
+    4. (Optional, AWS services and AWS Marketplace Partner services only) Enable private DNS for the endpoint so you can make requests to the service using its default DNS hostname.
+
+    Important:
+    Private DNS is turned on by default for endpoints created for AWS service and AWS Marketplace Partner services.
+    Private DNS is turned on in the other subnets which are in the same VPC and Availability Zone or Local Zone.
+
+    5. When the service provider and the consumer are in different accounts, see Interface endpoint Availability Zone considerations for information about how to use Availaibilty Zone IDs to identify the interface endpoint Availability Zone.
+
+    6. After you create the interface endpoint, it's available to use when it's accepted by the service provider. The service provider must configure the service to accept requests automatically or manually. AWS services and AWS Marketplace services generally accept all endpoint requests automatically. For more information about the lifecycle of the endpoint, see Interface Endpoint lifecycle.
+
+Services cannot initiate requests to requests in your VPC through the endpoint. An endpoint only returns responses to traffic that is initiated from resources in your VPC. Before you integrate a service and an endpoint, review the service-specific VPC endpoint documentation for any service-specific configuration and limitations.
+
+...
+
+Interface endpoint properties and limitations
+
+To use interface endpoints, you need to be aware of their properties and current limitations:
+
+    For each interface endpoint, you can choose only one subnet per availability zone.
+
+    Services might not be available in all Availability Zones through an interface endpoint. To find out which Availability Zones are supported, use the describe-vpc-endpoint-services command or use the Amazon VPC console. For more information, see Create an interface endpoint.
+
+    When you create an interface endpoint, the endpoint is created in the Availability Zone that is mapped to your account and that is independent from other accounts. When the service provider and the consumer are in different accounts, see Interface Endpoint Availability Zone considerations for information about how to use Availibility Zone IDs to identify the interface endpoint Availability Zone.
+
+    When the service provider and the consumer have different accounts and us multiple Availability Zones, and the consumer views the VPC endpoint service information, the response only includes the common Availabilty Zones. For example, when the service provider account uses us-east-1a and us-east-1c and the consumer users us-east-1a and us-east-1b, the response includes the VPC endpoint services in teh common Availability Zone, us-east-1a.
+
+    By default, each interface endpoint can support a bandwidth of up to 10 Gbps per Availability Zone and automatically scales up to 40 Gbps. If your application needs higher throughput per zone, contact AWS support.
+
+    If the network ACXL for your subnet restricts traffic, you might be able to send traffic through the ndpoint netowrk interface. Ensure that you add appropriate rules that allow traffic to and from teh CIDR block of the subnet.
+
+
+https://medium.com/javascript-scene/higher-order-functions-composing-software-5365cf2cbe99
+
+Higher Order Functions (Composing Software)
+
+Note: This is part of the "Composing Software" series (now a book!) on learning functional programming and compositional software techniques in JavaScriptES6+ from the ground  up. Stay tuned. There's a lot more of this to come!
+
+A higher order function is a function that takes a function as an argument or returns a function. Higher order function is in contrast to first order functions, which don't take a function as an argument or return a function as an output.
+
+Earlier, we saw examples of .map() and .filter(). Both of them take a function as an argument. They're both higher order functions.
+
+Let's look at an example of a first-order function which filters all the 4-letter words from a list of words:
+
+    const censor = words => {
+        const filtered = [];
+        for (let i=0, { length } = words; i < length; i++) {
+            const word = words[i];
+            if (word.length !==4) filtered.push(word);
+        }
+        return filtered;
+    };
+
+    censor(['oops', 'gasp', 'shout', 'sun']);
+    // ['shout', 'sun']
+
+
+Now, what if we want to select all the words that begin with 'S'? We could create another function:
+
+    const startsWiths = words => {
+        const filtered = [];
+        for (let i=0, { length } = words; i < length; i ++) {
+            const word = words[i];
+            if (word.startsWith('s')) filtered.push(word) ;
+        }
+        return filtered;
+    }
+
+    startsWithS(['oops', 'gasp', 'shout', 'sun']);
+    // ['shout', 'sun']
+
+You may already be recognizing a lot of repeated code. There's a pattern forming here that could be abstracted into a more generalized solution. These two functions have a whole lot in common. They both iterate over a list and filter it on a given condition.
+
+Both the iteration and the filtering seem like they're begging to be abstracted so they can be shared adn reused to build all sorts of similar functions. After all, selecting things form lists of things is a very common task.
+
+Luckily for us, JavaScript has first class functions. What does that mean? Just like numbers, strings, or objects, functions can be:
+
+    Assigned as an identifier (variable) value
+    Assigned to object property values
+    Passed as arguments
+    Returned from functions
+
+Basically, we can use functions just like any other bits of data in our programs, and that makes abstraction a lot easier. For instance, we can create a function that abstracts the process of iterating over a list and accumulating a return value by passing in a function that handles the bits that are different. We'll call that function reducer:
+
+    const reduce = (reducer, initial, arr) => {
+        //shared stuff
+        let acc = initial;
+        for (let i = 0, { length } = arr; i < length; i++) {
+
+            //unique stuff in reducer() call
+            acc = reducer(acc, arr[i]);
+
+        //more shared stuff
+        }
+        return acc;
+    };
+
+    reduce((acc, curr)) => acc + cur, 0, [1,2,3]); // 6
+
+This reduce() implementation takes a reducer function, an intial value for the accumulator, and an array of data to iterate over. For each item in hte array, the reducer is called, passing it the accumulator and the current arrray element. The return value
+
+
+https://forum.uipath.com/t/whitelisting-requirements-for-uipath-studio-and-uipath-robot/307527
+Whitelisting Requirements For UiPath Studio and UiPath Robot
+
+What are the whitelisting requirements for UiPath Studio and UiPath Robot?
+
+Reason and Intention: the purpose of this guide is to document the whitelisting requirements for UiPath Studio and UiPath Robot in desktop environments where there is strict enforcement of Group Policies that prevent UiPath Studio and UiPath Robot from functioning properly. This document aims to highlight the whitelisting requirements when the following restrictions are put in place:
+
+    1. Prevention of any executable (.exe) file from being executed when the file is not residing in "C:\Program Files" or "C:\Program Files (x86)"
+    2. Prevention of extensions from being loaded on Google Chrome and Microsoft Edge (Chromium)
+
+The whitelisting is not something
+
+
+
+https://docs.aws.amazon.com/whitepapers/latest/using-power-bi-with-aws-cloud/the-microsoft-power-bi-suite.html
+The Microsoft Power BI Suite
+
+To reduce confusion due to product naming similarities, this whitepaper presents what each Microsoft Power BI product and service is.
+
+Power BI Desktop
+
+Power BI Desktop is a free application you install on your local computer. It lets you connect to, transform, and visualize your data. With Power BI Desktop, you can connect to multiple different sources of data and combine them (often called modeling) into a data model. This data model lets you build visuals and collections of visuals you can share as reports inside your organization.
+
+...
+
+Power BI Service
+
+Power BI is a collection of software services, apps, and connectors that work together to help you create, share, and consume business insights in a way that serves you and your business more effectively.
+
+The Power BI Service is a cloud-based service. It supports light report editing and collaboration for teams and organizations. You can connect to data sources in teh Power BI service too, but modeling is limited.
+
+
+https://docs.aws.amazon.com/controltower/latest/userguide/what-is-control-tower.html
+
+What is AWS Control Tower?
+
+AWS Control Tower offers a straightforward way to set up and govern an AWS multi-account environment, following precriptive best practices. AWS Control Tower orchestrates the capabilities of several other AWS services, including AWS Organizations, AWS Service Catalog, and AWS Single Sign-on, to build a landing zone in less than an hour. Resources are set up and managed on your behalf.
+
+AWS Control Tower orchestration extends the capabilities of AWS Organizations. To help keep your organizations and accounts from drift, which is divergence from best practices, AWS Control Tower applies preventive and detective controls (guardrails). For example, you can use guardrails to help ensure that security logs and necessary cross-account access permissions are created, and not altered.
+
+...
+
+Features
+
+AWS Control Tower has the following features:
+
+    Landing Zone - A landing zone is a well architectured, multi-account environment that's based on security and compliance best practices. It is the enterprise-wise container that hold all of your organizational units (OUs), accouts, users, and other resources that you want to be subject to compliance regulation. A landing zone can scale to fit the needs of an enterprise of any size.
+
+    Guardrails - A guardrail is a high-level rule that provides ongoing governance for your overall AWS environment. It's expressed in plain language. Two kinds of guardrails exist: preventative and detective. Three categories of guidance apply to the two kinds of guardrails: mandatory, strongly recommended, and elective. For more information about guardrails, see How Guardrails work.
+
+    Account Factory - An Account Factory is a configurable account template that helps to standardize the provisioning of new accounts with pre-approved account configurations. AWS Control Tower offers a built-in Account Factory that helps automate the account provisioning workflow in your organization. For more information, see Provision and manage accounts with Account Factory.
+
+    Dashboard - The dashboard offers continuous oversight of your landing zone to your team of central cloud administrators. Use the dashboard to see provisioned accounts across  your enterprise, guardrails enabled for policy enforcement, guardrails enabled for continuous detection of policy non-conformance , and noncompliant resources organized by accounts and OUs.
+
+...
+
+Configuration, Governance, and Extensibility
+
+    Automated account configuration: AWS Control Tower automates account deployment and enrollment by means of an Account Factory (or "vending machine"), which is bult as an abstraction on top of provisioned products in AWS Service Catalog. The Account Factory can create and enroll AWS accounts, and it automates the process of applying guardrails and policies to those accounts.
+
+    Centralized governance: By employing the capabilities the cappabilities of AWS Organizations, AWS Control Tower sets up a framework that ensures consistent compliance and governance across your multi-account environment. The AWS Organizations service provides essential capabilities for managing a multi-account environment, including central governance and management of accounts, creation of accounts from APIs, and service control policies (SCPs).
+
+    Extensibility: You can build or extend your own AWS Control Tower environment by working directly in AWS Organizations, as well as in the AWS Control Tower console. You can see your changes reflected in AWS Control Tower after you register your existing organizations and enroll your existing accounts into AWS Control Tower. YOu can update your AWS Control Tower landing zone to reflect your changes. If your workloads require further advanced capabilities, you can leverage other AWS partner solutions along wiht AWS Control Tower
+
+...
+
+https://docs.aws.amazon.com/controltower/latest/userguide/how-control-tower-works.html
+...
+
+Structure of an AWS Control Tower Landing Zone
+
+The structure of a landing zone in AWS Control Tower is as follows:
+
+    Root--The parent that continas all other OUs in your landing zone.
+    Security OU--This OU contians the Log Archive and Audit accounts. These accounts often are referred to as shared accounts. You can choose customized names for these shared accounts when you launch your landing zone. However, they cannot be renamed later.
+    Sandbox OU--The Sandbox OU is created when you launch your landing zone, if you enable it. This and other registered OUs contain the enrolled accounts that your users work with to perform their AWS workloads.
+    AWS SSO directory--This directory houses your AWS SSO users. It defines the scope of permissions for each AWS SSO user.
+    AWS SSO users--These are the identifiers that yoru users can assume to perform their AWS workloads in your landing zone.
+
+
+What happens when you set up a landing zone?
+
+...
+
+Safely Managing Resources Within your AWS Control Tower Landing Zone and Accounts
+
+    When you create your landing zone, a number of AWS resources are created. To use AWS Control Tower, you must not modify or delete these AWS Control Tower managed resources outside of the supported methods described in this guide. Deleting or modifying these resources will cause your landing zone to enter an unknown state. For details, see Guidance for creating and modifying AWS Control Tower resources.
+
+    When you enable optional guardrials (those with strongly recommended or elective guidance), AWS Control Tower creates AWS resources that it manages in your accounts. Do not modify or delete resources creatd by AWS Control Tower. Doing so can result in the guardrails entering an unknown state. For more information, see Guardrail reference.
+
+What are the Shared Accounts?
+
+In AWS Control Tower, three shared accounts in your landing zone are provisioned automatically during setup: the management account, the log archive account, and the audit account.
+
+What is the management account?
+
+This is the account that you created specifically for your landing zone. This account is used for billing for everything in your landing zone. It's also used for Account Factory provisioning for accounts, as well as to manage OUs and guardrails.
+
+Note: It is not recommended to run any type of production workloads from an AWS ControlTower management account. Creating a separate AWS Control Tower account to run your workloads.
+
+When you set up your landing zone, the following AWS resources are created within your management account.
+
+AWS service | Resource type | Resource name
+AWS Organizations | Accounts | audit, log archive
+AWS Organizations | OUs | Security, Sandbox
+AWS organizations
+...
+
+What is the log archive account?
+
+This account works as a repository for logs of the API activities and resource configurations from all accounts in the landing zone.
+
+When you set up your landing zone, the following AWS resources are created within your log archive account.
+
+...
+
+
+What is the audit account?
+
+The audit account is a restricted account that's designed to give your security and compliance teams read and write access to all accounts in your landing zone. From the audit account, you have programmatic access to review accounts, by means of a role that is granted to Lambda functions only. The audit account does not allow you to log in to other accounts manually. For more information about Lambda functiosn and roles, see Configure a Lambda function to assume a role from another AWS account.
+
+When you set up your landing zone, the following AWS resources are created within your audit account.
+
+...
+
+
+Detective guardrails detect specific events when they occur and log the action in CloudTrail. For example, the strongly recommended guardrail called Detect Whether Encryption is Enabled for Amazon EBS Volumes Attached to Amazon EC2 Instances detects whether an unencrypted Amazon EBS volume is attached to an EC2 instance in your landing zone.
+
+For those who are familiar with AWS: In AWS Control Tower preventative guardrails are implemented with Service Control Policies (SCPs). Detective guardrails are implemented with AWS Config rules.
+
+Related Topics:
+    Guardrails in AWS Control Tower
+    Detect and resolve drift in AWS Control Tower
+
+How AWS Control Tower Works With StackSets
+
+AWS Control Tower uses AWS CloudFormation StackSets to set up resources in your accounts. Each Stack Set has StackInstances that correspond to accounts, and to AWS Regions per account. AWS Control Tower deploys one stack set per instance per account per Region.
+
+AWS Control Tower applies updates to certain accounts and AWS Regions selectively, absed on CloudFormation parameters. When updates are applied to some stack instances, other stack instances may be left in Outdated status. This behavior is expected and normal.
+
+When a stack instance goes into Outdated status, it usually means that the stack corresponding to that stack instance is not aligned with the latest template in the stack set. The stack remains in the older template, so it might not include the latest resources or parameters. THe stack is still completely useable.
+
+Here's a quick summary of what behavior to expect, based on AWS CloudFormation parameters there are specified during an update
+
+If the stack set update includes changes to the template (that is, if the TemplateBody or TemplateURL properties are specified), or if the Parameters property is specified, AWS CloudFormation marks all stack instances with a status of Outdated prior to updating the stack instances in the specified accounts and AWS Regions. If the stack set update does not include changes to the template or parameters, AWS CloudFormation updates the stack instances in the specified accounts and Regions, while leaivng all other stack instances with their existing stack instance status. To update all of the stack instances associated with a stack set, do not specify the Accounts or Regions properties.
+
+For more information, see Update your Stack Set in the AWS CloudFormation User Guide.
+
+...
+
+https://docs.aws.amazon.com/controltower/latest/userguide/planning-your-deployment.html
+
+Plan your AWS Control Tower landing zone
+
+WHen you go through the setup process, AWS Control Tower launches a key resource associated with your accoung, called a landing zone, which serves as a home for your organizations and their accounts.
+
+Note: You have one landing zone per organization.
+
+For information about some best practices to follow when you plan and set up your landing zone, see AWS multi-account stragety for your AWS Contol Tower landing zone.
+
+Ways to set up AWS Control Tower
+
+You can set up AWS Control Tower landing zone in an existing organization, or you can start by creating a new organization that contains your AWS Control Tower landing zone.
+
+    Launch AWS Contorl Tower in an Existing Organization:
+
+[I don't think that this page is going to be too important because the landing zone is already set up; going to skim though.]
+
+...
+
+About Extending Governance: Extending governance applies to specific OUs and accounts within a single organization that's already registered with AWS Control Tower, which means that a landing zone already exists for that organization. Extending governance means that AWS Control Tower guardrails are extended so that their constraints apply to the specific OUs and accounts within that registered organization. In this case, you're not launching a new landing zone, you're only expanding teh current landing zone for your organization.
+
+Important:
+    Special consideration: If you currently are using the AWS Landing Zone solution (ALZ) for AWS Organizations, check with your AWS solutions architect before you try to enable AWS Control Tower for your organization. AWS Control Tower cannot perform pre-checks that determine wheter AWS Control Tower  may interfer with your current landing zone deployment. For more information, see Walkthrough: Move form ALZ to AWS Control Tower. Also, for information about moving accounts from one landing zone to anohter, see What if the account does not meet the prerequisites?
+
+https://docs.aws.amazon.com/controltower/latest/userguide/terminology.html
+
+Terminology
+
+Here's a quick review of some terms you'll see in AWS Control Tower documentation.
+
+First, it's good to know that AWS Control Tower shares a lot of terminology with the AWS Organizations service, includign the terms organization and Organizational Unit (OU), which appear throughout this document.
+
+    For more information about organizations and OUs, see AWS Organizations terminology and concepts. If you're new to AWS Control Tower, that terminology is a good place to begin.
+
+    AWS Organizations is an AWS service that helps you centrally govern your environment as you grow and scale your workloads on AWS. AWS Control Tower relies on AWS Organizations to create accounts, to enforce preventative guardrails at the OU level, and to provide centralized billing.
+
+    An AWS Account Factory account is an AWS account provisioned using Account Factory in AWS Control Tower. Sometimes, Account Factory is referred to informally as a "vending machine" for accounts.
+
+    Your AWS Control Tower home Region is the AWS Region in which your AWS Control Tower Landing zone was deployed. You can view your home Region in your landing zone settings.
+
+    AWS Service Catalog allows you to manage commonly deployed IT services, centrally. In the context of this document, Account Facotry uses AWS Service Catalog to provision new AWS accounts.
+
+    AWS CloudFormation StackSets are a type of resource that extends the functionality of stakcs so that you can create, update, or delete stakcs across multiple accounts and Regions with a single operation and a single CloudFormation template.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -299,3 +702,8 @@ end of copii
 
 What are automation building blocks, exactly?
 What is the Pick Branch Activity?
+AWS related questsions:
+    What guardrails do we have in place?
+    Do we have an account factory?
+    How does Control Tower unify billing?
+    https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html
