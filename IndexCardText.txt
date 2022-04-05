@@ -1,51 +1,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-27
-AWS SysOps Admin
-There are 6 relational database options currently available on AWS:
-
-Aurora
-MySQL
-MariaDB
-Postgres
-Oracle
-Microsoft SQL Server
-
-
-
-
-28
-AWS SysOps Admin
-RDS Multi-AZ is an option you can turn on which makes an exact copy of your database in another AZ that is for standby only.
-
-
-
-29
-AWS SysOps Admin
-For RDS Multi-AZ, AWS automatically synchronizes changes in the database over to the standby copy.
-
-
-
-
-30
-AWS SysOps Admin
-RDS Multi-AZ has Automatic Failover protection. If one AZ goes down, failover will occur, and the standby slave will be promoted to master.
-
-
-
-
-
 Process finished with exit code 0
 C:\Users\m4ple\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:/Users/m4ple/PycharmProjects/pythonProject1/crads.py
 1
