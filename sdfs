@@ -645,6 +645,348 @@ First, it's good to know that AWS Control Tower shares a lot of terminology with
 
     AWS CloudFormation StackSets are a type of resource that extends the functionality of stakcs so that you can create, update, or delete stakcs across multiple accounts and Regions with a single operation and a single CloudFormation template.
 
+    A stack instance is a reference to a stack in a target account within a Region.
+
+    A stack is a collection of AWS resources that you can manage as a single unit.
+
+    An aggregator is an AWS Config resource type that collects AWS Config configuration and compliance data from multiple accounts and Regions within the organization, allowing you to view and query this compliance data within a single account.
+
+    A conformance pack is a collection of AWS Config rules and remediation actions that can be deployed as a single entity in an account and a Region, or across an organization in AWS Organizations. You can use a conformance pack to help customize your AWS Control Tower environment. For technical blogs that provide more details, see Related Information.
+
+    Baseline: To baseline an account is to set up its blueprints and guardrails. The baselining process also sets up the centralized logging and security audit roles on the account, as part of deploying the blueprints. AWS Control Tower baselines are contained in the roles that you apply to every enrolled account.
+
+    Drift: A change in a resource installed by and configured by AWS Control Tower. Resources withoutd rive enable AWS Control Tower to function properly.
+
+    Non-compliant resource: A resource that is in violation of an AWS Config rule that defines a particular detective guardrail.
+
+    Shared account: One of the three accounts that AWS Control Tower creates automatically when you set up your landing zone: the management account, the log archive account, and the audit account. You can choose customized names for the log archive account and hte audit account during setup.
+
+    Member account: A member account belongs to the AWS Control Tower organization. The member account can be enrolled or unenrolled in AWS Control Tower. WHen a registered OU contains a mix of enrolled and unenrolled accounts:
+
+        Preventative guardrails enabled on the OU apply to all accounts within it, including unenrolled ones. This is true because preventative guardrails are enforced with SCPs at the OU level, not the account level. For more information, see Inheritance for service control plicies in the AWS Organizations documentation.
+
+        Detective gueardrails enabled on the OU do not apply to unenrolled accounts.
+
+    An account can be a member of only one organization at a time, and its charges are billed to the management account for that organization. A member account can be moved to the root container of an organization.
+
+    AWS account: An AWS account acts as a resource container and resource isolation boundary. An AWS account can be associated with billing and payment. An AWS account is different than a user accou nt (sometimes called an IAM account) in AWS Control Tower. Accounts created through the Account Factory provisioning process are AWS accounts. AWS Accounts also can be added to AWS Control Tower by means of the account enrollment or OU registration process.
+
+    Guardrail: A guardrail is a high-level rule that provides ongoing governance for your overall AWS Control Tower environment. Each guardrail enforces a single rule. Preventative guardrails are implemented with SCPs. Detective guardrails are implemented with AWS Config rules. For more information, see How Guardrails Work.
+
+    Landing Zone: A landing zone is a cloud environment that offers a recommended starting point, including default accounts, account structure, network and security layouts, and so forth. From a landing zone, you can deploy workloads that utilize your solutions and applications.
+
+    Nested OU: A nested OU in AWS Control Tower is an OU contained in another OU. A nested OU can have excactly one parent OU, and each account can be a member of exactly one OU. Nested OUs create a heirarchy. When you attach a policy to one of the OUs in the hierarchy, it flows down and affects all the OUs and accounts beneath it. A nested OU hierarchy in AWS Control Tower can be a maximum of five levels deep.
+
+    Parent OU: The OU immediately above the current OU in the hierarchy. An OU can have many child OUs.
+
+    Child OU: Any OU below the current OU in teh hierarchy. An OU can have many child OUs.
+
+...
+
+https://docs.aws.amazon.com/controltower/latest/userguide/best-practices.html
+
+Best practices for AWS Control Tower
+
+This topic is intended primarily for management account administrators.
+
+Management account administrators are responsible for explaining some tasks that AWS Control Tower Guardrails prevent their member account administrators from doing. This topic describes some best practices and procedures for transfering this knowledge, and it gives other tips for setting up and maintaining your AWS Control Tower environment efficiently.
+
+Explaining Access to Users
+
+The AWS Control Tower console is available only to users with the management account administrator permissions. Only these users can perform administrative work within your landing zone. In accordance with best practices, this means that the majority of your users and member account administrators will never see the AWS Control Tower console. As a member of the management account administrator group, it's your responsibility to explain the following information to users anda dministrators of your member accounts, as appropriate.
+
+    Explain which AWS resources users and administrators have acces to within the landing zone.
+    List the preventative guardrails that apply to each Organizational Unit (OU) so that the other adminsitrators can plan and execute their AWS workloads accordingly.
+
+Explaining Resource Access
+
+Some administrators and other users may need an explanation of the AWS resources to which they have access within your landing zone. This access can include programmatic access and console-based access. Generally speaking, read access and write access for AWS resources is allowed. To perform work within AWS, your users require some level of access to specific services they need to do their jobs.
+
+Some users, such as your AWS developers, may need to know about the resources to which they have access, so they can create engineering solutions. Other users, such as the end users of applications that run on AWS services, do not need to know about AWS resources in your landing zone.
+
+AWS offers tools to identify the scope of a user's AWS resource access. After you identify the scope of a user's access, you can share that information with the user, in accordance with your organization's information management policies. For more information about these tools, see the links that follow.
+
+
+    AWS access advisor - The AWS Identity and Access Management (IAM) access advisor tool lets you determine the permissions that your developers have by analyzing the last timestamp when an IAM entity, such as a user, role, or group, called an AWS service. Youc an audit service access and remove uneccessary permisions, and you can automate the process if needed. For more information, see our AWS Security blog post.
+
+    IAM policy simulator - With the IAM policy simulator, you can test and troubleshoot IAM-based and resource-based policies. For more information, see Testing IAM Policies with the IAM Policy Simulator.
+
+    AWS CloutTrail logs - You can review AWS CloudTrail logs to see actions taken by a user, role, or AWS service. For more information about CloudTrail, see the AWS CloudTrail User Guide.
+
+    Actions taken by CloudTrail landing zone administrator are logged in the landing zone management account. Actions taken by member account administrators and users are logge din the shared log archive account.
+
+    You can view a summary table of AWS Control Tower events in the Activities page.
+
+Explaining Preventative Guardrails
+
+A preventative guardrail ensures that your organization's accounts maintain compliance
+
+
+https://docs.aws.amazon.com/controltower/latest/userguide/provision-and-manage-accounts.html
+
+Methods of provisioning
+
+AWS Control Tower provides four methods for creating and updating member accounts. Two methods are primarily console-based, and two methods are primarily automated.
+
+Overview
+
+The standard way to create member accounts is through Account Factory, a console-based product that's part of the AWS Service Catalog. If your landing zone is not in a state of drift, you can use Enroll account as a method to add new accounts form teh console, as well as to enroll existing AWS accounts into AWS ControlTower.
+
+If you intend to set up or manage many accounts as a group, you may prefer an automated method: either to configure new accounts programmatically using IAM roles and Lambda functions, or to use a GitOps approach with AFT.
+
+Console-based methods:
+    Through the Account Factory console that is part of AWS Service Catalog. See Provision and mange accounts through Account Factory.
+    From the AWS Control Tower Account Factory for Terraform (AFT), which relies on Account Factory and a GitOps model to allow automation of account provisioning and updating. See Provisiona ccounts with AWS Control Tower Account Factory for Terraform.
+
+What happens when AWS Control Tower creates an account
+
+New accounts in AWS Control Tower are created and then provisioned by an interaction among AWS Control Tower, AWS Organizations, and AWS Service Catalog. For steps to create an account through the AWS Control Tower see Create or Enroll An Individual Account.
+
+Behind the scenes of account creation
+
+    1. You initiate the request, for example, from the AWS Control Tower Account Factory page, or directly from the AWS Service Catalog console, or by calling the AWS Service Catalog ProvisionProductAPI.
+    2. AWS Service Catalog calls Control Tower.
+    3. AWS Control Tower begins a workflow, which as a first step calls the AWS Organizations CreateAccount API.
+    4. After AWS Organizations creates the account, AWS Control Tower completes the provisioning process by applying blueprints and guardrails.
+    5. AWS Service Catalog continues to poll AWS Control Tower to check for completion of the provisioning process.
+    6. When the workflow in AWS Control Tower is complete, AWS Service Catalog finalizes the account's state and informs you (the requester) of the result.
+
+https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html
+
+AWS Organizations terminology and concepts
+
+To help you get started with AWS Organizations, this topic explains some of the key concepts.
+
+The following diagram shows a basic organization that consists of five accounts that are organized into four organizational units (OUs) under the root. The organization also has several policies that are attached to some of the OUs or directly to the accounts. For a description of each of tehse items, srefer to the definitions ni this topic.
+
+Organization
+An entity that you create to consolidate your AWS accounts so that you can administer them as a single unit. You can use the AWS Organizations console to centrally view and manage all of your accounts within your organization. An organization has one management account along with zero or more member accounts. You can organize the accounts in a hierarchical, tree-like structure with a root at the top and organizational units nested under the root. Each acount can be directly in the root or placed in one of the OUs in the hierarchy. An organization has the functionality that is determined by the feature set you enable.
+
+Root
+The parent container for all the accounts in your organization. If you apply a policy to the root, it applies to all organizational units (OUs) and accounts in the organization.
+
+Note: Currently, you can have only one root. AWS Organizations automatically creates it for you when you create an organization.
+
+Organizational Unit (OU)
+A container for accounts within a root. An OU can also contain other OUs, enabling you to create a hierarchy that resembles an upside-down tree, with a root at the top and branches of OUs that reach down, ending in accounts that are the leaves of the tree. When you attach a policy to one of hte nodes in the hierarchy, it flows down and affects all the branches (OUs) and leaves (accounts) beneath it. An OU can have exactly one parent, and currently each account can be a member of exactly one OU.
+
+Account
+An account in Organizations is a standard AWS account that contains your AWS resoureces and the identities that can access those resources.
+
+tip: An AWS account is not the same thing as a "user account". An AWS user is an identity that you create using AWS Identity and Access Management (IAM) and takes the form of either an IAM user with long-term credentials, or an IAM role with short-term credentials. A single AWS account can, and typeically does contain many users and roles.
+
+There are two types of acconts in an organization: a signle account that is designated as the management account, and one or more member accounts.
+
+    The management account is the account that you use to create the organization. From the organization's management account, you can do the following:
+        Create accounts in the organization
+        Invite other existing accounts ot the organization
+        Remove accounts from the organization
+        Manage invitations
+        Apply policies to entities (roots, OUs, or accounts) within the organization
+        Enable integration with supported AWS services to provide service functionality across all of the accounts in the organization
+    Member accounts make up all of the rest of the accounts in an organization. An account can be a member of only one organization at a time. You can attach a policy to an account to apply controls to only that one account.
+
+Invitation
+The process of asking another account to join your organization. An invitation can be issued only by the organiztion's management account. The invitation is extended to either the account ID or the email address that is associated with the invited account. After the invited account accepts an invitation, it becomes a member account in the organization. Invitations also can be sent to all current member accounts when the organization needs all members to approve the change from supporting only consolidating billing features to supporting all features in the organization. Invitations work by accounts exchanging handshakes. You might not see handshakes when you work in the AWS Organizations console. But if you use the AWS CLI or AWS Organizations API, you must work directly with handshakes.
+
+...
+
+Available feature sets
+    All features - The default feature set that is available in AWS Organizations. It includes all the functionality of consolidated billing, plus advanced features that give you more control over accounts in your organization. For example, when all features are enabled, the management account of the organization has full control over what member accounts can do. The management account can apply SCPs to restrict the services and actionst hat users (including the root user) and roles in an account can access. The management account can also prevent member accounts form leaving the organization. You can also enable integration with support AWS services to let those services provide fucnctionality across all of the accounts in your organization.
+
+    You can create an organization with all features already enabled, or you can enable all features in an organization that orginallly supported only the consolidated billing features. To enable all features, all invited member accounts must approve the change by accepting the invitation that is sent when the management account starts the process.
+
+    Consolidated billing - This feature set provides shared billing functionality, but does not incldue the more advanced features of AWS Organizations. For example, you can't enable other AWS services to integrate with your organization to work across all of its accounts, or use policies to restrict what users and roles in different accounts can do. To use the advanced AWS Organizations features, you must enable all features in your organization.
+
+Service Control Policy (SCP)
+A policy that specifies the services and actions that users and roles can use in teh accounts that the SCP affects. SCPs are similar to IAM permissions policies except that they don't grant any permissions. Instead, SCPs specify the maximum permissions for an organization, organizational unit (OU), or account. When you attach an SCP to your organization root or an OU, the SCP limits permissions for entities in the member account.
+
+Allow lists vs deny lists
+Aloos lists and deny lists are complementary strategies that you can use to apply SCPs to filter the permissions that are available to accounts
+
+    Allow list strategy -- You explicitly specify the access that is allowed. All other access is implicitly blocked. By default, AWS Organizations attaches an AWS managed policy called FullAWSAccess to all roots, OUs, and accounts. This helps ensure that, as you build your organization, nothing is blocked until you want it to be. In other words, by default all permissions are allowed. HWne you are ready to restrict permissions, you replace the FullAWSAccess policy with one that allows only the more limited, desired set of permissions. Users and roles in the affected accounts can then exercise only that level of access, even if their IAM policies allow all actions. If you replace the default policy on the root, all accounts in the organization are affected by the restrictions. You can't add permissions back at a lower level in hte hierarchy because an SCP never grants permissions; it only filters them.
+
+    Deny list strategy -- You explicitly specify the access that is not allowed. All other access is allowed. In this scenario, all permissions are allowed unless explicitly blocked. This is the default behavior of AWS Organizations. By default, AWS Organizations attaches an AWS managed policy called FullAWSAccess to all roots, OUs, and accounts. THis allwos any account to acces any service or operation with no AWS Organizations-imposed restrictions. Unlike the allow list technique described above, when using deny lists, you leave the default FullAWSAccess policy in place (that allow "all"). But then you attach additional policies that deny acces to the unwanted services and actions. Just as with IAM permission policies, an explicit deny of service action overrides any allow of that action.
+
+Artificial intelligence (AI) services opt-out policy
+A type of policy that helps you standardize your opt-out settings for AWS AI services across all accounts in your organization. Certain AWS AI services can store and use customer content processed by those services for the development and continuous improvement of Amazon AI services and technologies. As an AWS customer, you can use AI service opt-out policies to choose to opt out of having your content stored or used for service improvements.
+
+Backup policy
+A type of policy that helps you standardize and implement a backup strategy for the resources across all of the accounts in your organization. In a backup policy, you can configure and deploy backup plans for your resources.
+
+...
+
+https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.Endpoints.html
+
+Amazon Aurora connection management
+
+Amazon Aurora typically involves a cluster of DB instances instead of a single instance. Each connection is handled by a specific DB instance. When you connect to an Aurora cluster, the hsotname and port that you specify point to an intermediate handler called an endpoint. Aurora uses the endpoint mechanism to abstract these connections. Thus, you don't have to hardcode all the hostnames or write your own logic for load-balancing and rerouting connections when some DB instances aren't available.
+
+For certain Aurora tasks, different instances or groups of instances perform different roles. For example, the primary instance handles all data definition language (DDL) and data manipulation language (DML) statements. Up to 15 Aurora Replicas handle read-only query traffic.
+
+Using endpoints, you can map each connection to the appropriate instance or group of instances based on your use case. For example, to perform DDL statements, you can connect to whichever instance is the primary instance. To perform queries, you can connect to the reader endpoint, with Aurora automatically performing load-balancing amoung all the Aurora Replicas. For clusters with DB instances of different capacities or configurations, you can connect to custom endpoints associated with different subsets of DB instances. For diagnosis or tuning, you can connect to a specific instance endpoint to examine details about a specific DB instance.
+
+Types of Aurora endpoints
+
+An endpoint is represented as an Aurora-specific URL that contains a host address and a port. The following types of endpoints are available form an Aurora DB cluster.
+
+Cluster Endpoint
+    A cluster endpoint (or writer endpoint) for an Aurora DB cluster connects to the current primary DB instance for that cluster. This endpoint is the only; one that can perform write operations such as DDL statements. Because of this, the cluster endpoint is the one that you connect to when you first set up a cluster or when your cluster only contains a single DB instance.
+
+    Each Aurora DB cluster has one cluster endpoint and one primary DB instance.
+
+    You use the cluster endpoint for all write operations on the DB cluster, inlcuding inserts, updates, deletes, and DDL changes. You can also use the cluster endpoint for read operations, such as queries.
+
+    The cluster endpoint provides failover support for read/write connections to the DB cluster. If teh current primary DB instance of a DB cluster fails, Aurora automatically fails over to a new primary DB instance. During a failover, the DB cluster continues to serve connection requests to the cluster endpoint from the new primary DB instance, with minimal interruption to service.
+
+    The following example illustrates a cluster endpoint for an Aurora MySQL DB cluster
+
+    mydbcluster.cluster-123456789012.us-east-1.rds.amazonaws.com:3306
+
+Reader endpoint
+    A reader endpoint for an Aurora DB cluster provides load-balancing support for read-only connections to the DB cluster. Use the reader endpoint for read operations, such as queries. By processing those statements on the read-only Aurora Replicas, this endpoint reduces the overhead on the primary instance. it also helsp the cluster to scale the capacity to handle simultaneous SELECT queries, proportional to the number of Aurora Replicas in the cluster. Each Aurora DB cluster has one reader endpoint.
+
+    If the cluster contains one or more Aurora Replicas, the reader endpoint load-balances each connection request among the Aurora Replicas. In that case, you can only perform read-only statements such as SELECT in that session. If the cluster only contains a primary instance and no Aurora Replicas, the reader endpoint connects to the primary instance. In that case, you can perform write operations through the endpoint.
+
+    The following example illustrates a reader endpoint for an Aurora MySQL DB cluster.
+
+    mydbcluster.cluster-ro-123456789012.us-east-1.rds.amazonaws.com:3306
+
+Custom endpoints
+    A custom endpoint for an Aurora cluster represents a set of DB instances that you choose. When you connect to the endpoint, Aurora performs load balancing and chooses one of the instances in the group to handle the connection. You define which instances this endpoint refers to, and you decide what purpose the endpoint serves.
+
+    An Aurora DB cluster has no custom endpoints until you create one. You can create up to five custom endpoints for each provisioned Aurora cluster. YOu cant' use custom enpoints for Aurora Serverless clusters.
+
+    The custom endpoint provides load-balanced database connections based on criteria other than the read-only or read/write capability of hte DB instances. For example, you might define a custom endpoint to connect to isntances that use a particular AWS instance class or a particular DB parameter group. Then you might tell particular groups of users about this custom endpoint. For example, you might direct internal users to low-capacity instances for report generation or ad hoc (one-time) querying, and direct production traffic to high-capacity instances.
+
+    Because the connection can go to any DB instance that is associated with the custom endpoint, we recommend that you make sure that all DB instances within that group share some simialr characteristic. Doing so ensures that the performance, memory capacity, and so on, are consistent for everyone who connects to that endpoint.
+
+    This feature is intended for advanced users with specialized kinds of workloads where it isn't practical to keep all the Aurora Replicas in the cluster identical. With custom endpoints, you can predict the capacity of the DB instance used for each connection. When you use custom endpoints, you typically don't use the reader endpoint for that cluster.
+
+    The following example illustrates a custom endpoint for a DB instance in an Aurora MySQL DB cluster.
+
+    myendpoint.cluster-custom-123456789012.us-east-1.rds.amazonaws.com:3306
+
+Instance endpoint
+    An instance endpoint connects to a specific DB instance within an Aurora cluster. Each DB instance in a DB cluster has its own unique instance endpoint. So there is one instance endpoint for the current primary DB instance of the DB cluster, and there is one instance endpoint for each fo the Aurora Replicas in the DB cluster.
+
+    The instance endpoint provides direct control over connections to the DB cluster, for scenarios where using the cluster endpoint or reader endpoint might not be appropriate. For example, your client application might require more fine-grained load balancing absed on workload type. In this case, you can configure multiple clients to connect to different Aurora Replicas in a DB cluster to distribute read workloads. For an example, that uses instance endpoints to improve connection speed after a failover for Aurora PostgreSQL, see Fast failover with Amazon Aurora PostgresSQL. For an example that uses instance endpoints to improve connection speed after a failover for Aurora MySQL, see MarioDB Connector/J failover support - case Amazon Aurora.
+
+    The following example illustrates an instance endpoint for a DB instance in an Aurora MySQL DB cluster.
+
+    mydbinstance.123456789012.us-east-1.rds.amazonaws.com:3306
+
+Viewing the endpoints for an Aurora cluster
+
+In the AWS Management Console, you see the cluster endpoint, the reader endpoint, and any custom endpoints in the detail page for each cluster. You see the instance endpoint in the detail page for each instance. When you connect, you must append the associated port number, following a colon, to the endpoint name shown on this detail page.
+
+With the AWS CLI, you see the writer, reader, and any custom endpoints in teh output of the describe-db-clusters command. For example, the following command shows the endpoint attributes for all clusters in your current AWS Region.
+
+aws rds describe-db-clusters --query '*[].{Endpoint:Endpoint,ReaderEndpoint:ReaderEndpoint,CustomEndpoints:CustomEndpoints}'
+
+With the Amazon RDS API, you retrieve the endpoints by calling the DescribeDBClusterEndpoints function.
+
+Using the cluster endpoint
+
+Because each Aurora cluster has a single built-in cluster endpoint, whose name and other attributes are managed by Aurora, you can't create, delete, or modify this kind of endpoint.
+
+You use the cluster endpoint when you administer your cluster, perform extract, transform, load (ETL) operations, or develop and test applications. The cluster endpoint connects to the primary instance of the cluster. The primary instance is the only DB instance where you can create tables and indexes, run INSERT statements, and perform other DDL and DML operations.
+
+The physical IP address pointed to by the cluster endpoint changes when the failover mechanism promotes a new DB isntance to be the read/write primary instance for the cluster. If you use any form of connection pooling or other multiplexing, be preapred to flush or reduce the time-to-live for any cached DNS information. Doing so ensures that you don't wtry to establish a read/write connection to a DB instance that became unavailable or is now read-only after a failover.
+
+Using the reader endpoint
+
+...
+
+====================
+https://aws.amazon.com/blogs/networking-and-content-delivery/secure-hybrid-access-to-amazon-s3-using-aws-privatelink/
+
+Secure hybrid access to Amazon S3 using AWS PrivateLink
+
+AWS PrivateLink for Amazon S3 enables on-premises applications to privately and securely access Amazon S3 over AWS Direct Connect private virtual interface or AWS Site to Site VPN. The Interface VPC Endpoints for Amazon S3 allow security administrators to control which users can access which data in S3 from on premises and cross-Region using their own private IP addresses over a private network.
+
+To privately access Amazon S3 from inside a Amazon Virtual Private Cloud (VPC), you can use Gateway VPC Endpoints for Amazon S3. These allow applications running in a VPC to access S3 without an Internet Gateway or NAT Gateway. When using Gateway VPC Endpoints, VPC endpoint policies are used to restrict access allowing requests to S3 Buckets from a particular VPC. This is the recommended model for accesssing S3 from a VPC in the same region. However, to use a Gateway VPC endpoint from on-premises applications, or to access S3 from a VPC in a different AWS Region, you must set up a fleet of proxy servers with private IP addresses in your VPC. This results in changes to your on-premise applications sot hat they direct requests to the proxy servers, and then forward them to S3 through your VPC endpoint. This comes with administrative overhead, adds the cost of running the proxy servers, and increases the operational complexity of your application.
+
+AWS PrivateLink for Amazon S3 solves these challenges and enables multiple use cases:
+
+    1. Privately accessing S3 from on premises: This feature lets you to allow on-premises users and applications access to S3 buckets, AWS Accounts, or AWS Organizations. Corresponding S3 bucket policies can restrict access from only specific Interface VPC Endpoints.
+
+    2. Accessing s3 from other Regions: allows adminsitrators to use existing private networks for inter-region connectivity (for example, Amazon VPC peering connectiosn of AWS Transit Gateway) while still enforcing VPC, bucket, account, and organizational access policies.
+
+In this blog post, we show how to access Amazon S3 buckets from on-premise networks. For example, AWS DirectConnect or VPN over private connectivity using AWS PrivateLink for S3. We discuss and walk you through how to use various DNS options to enable the onnectivity from on-premise applcations. We also show how to configure your on-premises DNS resolvers to direct S3 domain names to teh interface endpoint IPs by forwarding DNS queries to Amazon Route 53 resolver Inbound Endpoints.
+
+Pre-requisites
+
+Before you begin, make sure you have an Amazon VPC dedicated to this solution. you will also need an AWS DirectConnect connection configured with a private virtual interface (Private VIF), or have AWS-Site-to-Site VPN connection up and running to your VPC.
+
+Create an Interface VPC endpoint for Amazon S3
+
+    1. To create an Inteface VPC endpoint for Amazon S3, first navigate to the VPC console, select Endpoints, and choose Create Endpoint.
+
+    2. For Service Category, ensure that AWS services is selected. Then, filter the service names by entering S3 in the search box. For Service Name, choose the service as "S3" and for Type, ensure that it shows Interface.
+
+    3. Select the VPC, desired AZs, and subnet for each one, and then select the appropriate security groups (this should allow traffic from your networks on port 443) and click on Create endpoint. We show this in the following screenshot (figure 1).
+
+It takes a few moments to go through the interface endpoint lifecycle steps while it is created. After teh interface endpoint is available, you can view its information by choosing Details. The DNS Names field displays the DNS names used to access the service. You will need the DNS names later, so makea note of them now.
+
+Choose subnets to see where the interface endpoint is located, adn the ID of teh endpoint network interface in each subnet. In the following screenshot (figure 3), the private IP address of the endpoint network interface in the VPC are 10.0.1.165 and 10.0.2.19.
+
+DNS considerations for accessing S3 bcukets using AWS PrivateLink
+
+There are a few DNS options to choose form when accessing Amazon S3 over PrivateLink.
+
+Option 1: Access Amazon S3 without modifying your on-premises DNS resolver
+
+AWS Privatelink creates endpoint-specific DNS hostnames that you can use to communicate with the service. These endpoint-specific DNS hostnames resolve to the private IP address of the endpoint network interface in the VPC.
+
+When using endpoint-specific DNS names to access the interface endpoints for Amazon S3, you don't have to update your on-premises DNS resolver. You can resolve the endpoint-specific DNS name to the private IP address of the interface endpoint from the public Amazon S3 DNS hostname, let's say vpce-001760f0be22cd4e2-3ew5rhyv.s3.eu-west-2.vpce.amazonaws.com, from your on-premises applications to access Amazon S3 without modifying your DNS resolver configuration.
+
+
+https://stackoverflow.com/questions/2998215/if-python-is-interpreted-what-are-pyc-files?rq=1
+
+    I've been given to understand that Python is an interpreted language...
+
+This popular meme is incorrect, or, rather, constructed upon a misunderstanding of (natural) language levels: a similar mistake would be to say "the Bible is a hardcover book". Let me explain that comparison.
+
+"The Bible" is "a book" in the sense of being a class of (actualy, physical objects defined as) books; the books identified as "copies of the Bible" are supposed to have something fundamental in common (the contents, although even those can be in different languages, with different acceptable tranlsations, levels of footnotes, and other annotations) -- however, those books are perfectly well allowed to differ in a myriad of aspects that are NOT considered fundamental -- kind of binding, fonts used in printing, illustrations if any, wide writable margins or not, numbers and kinds fo builtin bookmarks and so on.
+
+It's quite possible that a typical printing of the Bible would indeed be in hardcover binding. After all, it's a book that's typically meant to be read over and over, bookmarked at several places, thumbed through looking for given chapter-and-verse pointeers, etc, and a good hardcover binding can make a given copy last longer for such use. However, these are mundane (practical) issues that cannot be used to determin whether a given actual book is a copy of the Bibele or not: paperback printings are possible.
+
+Similarly, Python is "a language" in the sense of defining a class of language implementations which must all be similar in some fundamental respects (syntax, most semantics except those parts of those where they're explicitly allowed to differ) but are fully allowed to differ in just about every "implementation" detail, including how they deal with the source files they're given, wheter they compile the sources to some lower level forms (and, if so, which form and whether they save such compiled forms, to disk or elsewhere), how they execute said forms, and so forth.
+
+The classical implementation, CPython, is often just called "Python" for short -- but it's just one of several production-quality implementations, side by side with Microsoft's IronPython (which compiles to CLR codes, i.e. ".NET"), Jython (which compiles to JVM codes), PyPy (which is written in Python itself and can compile to a huge variety of "back-end" forms including "just-in-time" generated machine language). They're all Python (== "implementations of the Python language") just like many superficially different book objects can all be Bibles (== "copies of The Bible").
+
+If you're interested in CPython specifically: it compiles the source files into a Python-specific lower-level form (known as "bytecode"), does so automatically when needed (when there is no bytecode file corresponding to a source file, or the bytecode file is older than the source or compiled by a different Python version), usually saves the bytecode files to disk (to avoid recompiling them in the future). OTOH IronPython will typically compile to CLR codes (saving them to disk or not, depending) and Jython to JVM codes (saving them to disk or not -- it will use the .class extension if it does save them).
+
+These lower level form sare then executed as appropriate "virtual machines" also known as "interpreters" -- the CPython VM, the .Net runtime, the Java VM (aka JVM), as appropriate.
+
+So, in this sense (what do typical implementations do), Python is an "interpreted language" if and only if C# and Java are: all of them have a typical implementation strategy of producing bytecode first, then executing it via a VM/interpreter.
+
+More likely the focus is on how "heavy", slow, and high-ceremony the compilation process is. CPython is designed to compile as fast as possible, as lightweight as possible, and with as little ceremony as feasible -- The compile does very little error checking and optimization, so it can run fast and in small amounts of memory, which in turn lets it be run automatically and transparently whenever needed, without the user seven needing to be aware that there is a compliation going on, most of the time. Java and C# typically accept more work during compilation (and therefore don't perform automatic compilation) in order to check errors more thoroughly and perform more optimizations. It's a continuum of grey scales, not a black or white situation, and it would be arbitrary to put a threshold at some given level and say that only above that level can you call it "compilation".
+
+
+
+https://aws.amazon.com/blogs/infrastructure-and-automation/deploy-bastion-hosts-into-private-subnets-with-aws-cdk/
+
+Deploy bastion hosts into private subnets with AWS cdk
+
+Deploying bastion hosts in private subnets is a way to provide temporary and limited access to non-production private resources in a virtual private cloud (VPC). Bastion hosts typically sit in public subnets. But in a non-production environment, if you want to allow a group of developers to acces a private resource, you might not want to sue a bastion host accessible from the internet.
+
+In this post, we explain how to provision scalable and extendable secure bastion host in private subnets using AWS Cloud Development Kit (CDK). First, I'll show you how to configure AWS CDK and clone the GitHub repository I've prepared. Second, we demonstrate using AWS CDK to define the target environment and deploy the bastion host stack into a new or existing VPC.
+
+Finally, we create an AWS Identity and Access Management (IAM) policy. We demonstrate how users with that policy can access th bastion host using three operations. We use the AWS Systems Manager Session Manager plugin for the AWS Command Line Interface (AWS CLI), SSH (secure shell), and AWS Mangement Console. Our process follows AWS Security best practices of granting least privilege and using roles to delegate permissions.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -700,10 +1042,8 @@ First, it's good to know that AWS Control Tower shares a lot of terminology with
 
 end of copii
 
-What are automation building blocks, exactly?
 What is the Pick Branch Activity?
 AWS related questsions:
     What guardrails do we have in place?
-    Do we have an account factory?
     How does Control Tower unify billing?
-    https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html
+    https://aws.amazon.com/blogs/security/automate-analyzing-permissions-using-iam-access-advisor/

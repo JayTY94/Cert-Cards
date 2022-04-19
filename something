@@ -1,3 +1,185 @@
 ogTeQOck6Z%dhD4H
 
 2ba0cc4f-8c70-4898-b98e-a188fb342a7f
+
+Extend the Value of File Data in Architecture, Engineering, and Construction Workflows with Nasuni
+
+The architecture, engineering, and construction (AEC) industry is experiencing unprecedented growth in unstructured data. As a result, IT teams have been pushed to consider innovative strategies for file data storage and analytics.
+
+Modern computer-aided design (CAD) and building information modeling (BIM) workflows have contributed to the need for collaboration between building architects and engineers.
+
+In construction, new methods of capturing site information, such as laser scanning, photogrammetry, drone photography, and continuous video monitoring have presented challenges for file storage, analysis, and archiving.
+
+Nasuni is an AWS Storage Competency Partner and file services platform on AWS that provides infinite file storage, backups, disaster recovery, and multi-site file sharing.
+
+...
+
+Automate and improve your security posture using AWS Backup and AWS PrivateLink
+
+Enterprises set up their AWS environment preconfigured in-line with organizational security policies, compliance, and detective and preventive controls codeified right from the beginning. Furthermore, enterprises want to access cloud-native services in a manner simlar to how they have been consuming services in the past, from within their own ssecured networking environment according to their security policies. When consuming cloud-native services via their public endpoint, the request/response traffic (although in encrypted) is still exposed to the public internet. This may not be acceptable to security-conscious enterprises.
+
+In this blog, I demonstrate how enterprises can uplift their security posture when using AWS Backup, helping them comply with thier regulatory requirements. AWS Backup now supports AWS PrivateLink, allowing enterprises to access AWS Backup from their VPC by using a VPC endpoint place within their private network space. In short, it eliminates the need to use the public internet for service access. In addition, extra controlscan be added via security group and VPC endpoint policy when accessing the service through the VPC endpoint.
+
+Background
+
+Orchestration and operations on the various AWS services, using methods such as AWS CLI and/or service API/SDK, are done via the underlying service's endpoint. A service's endpoint is the URL that provides the entry point to that service. These service endpoints are public and accessible over the internet (HTTPS). For example, the Sydney Region's endpoint for the AWS Backup service is backup.ap-southeast-2-amazonaws.com.
+
+...
+
+https://docs.aws.amazon.com/whitepapers/latest/using-power-bi-with-aws-cloud/using-power-bi-with-aws-cloud.pdf#introduction
+
+...
+
+Recommended configuration
+
+AWS recommends that you install the Microsoft on-premises data gateway on an Amazon EC2 instance in the private subnet that contains your data sources. This subnet is configured to route requests to the internet via an Amazon VPC NAT gateway installed in a public subnet. You can use a network address translation (NAT) gateway to enable instances in a private subnet to connect to the internet or to other AWS services, but prevent the internet form connecting to those instances. If you require a highly available digital gateway implementation, we recommend using a cluster of on-premise data gateways installed accross multiple EC2 instances that span different AWS Availability Zones. For information, see Add another data gateway to a create a cluster.
+
+The options presented in this section illustrate Amazon RDS, Amazon Redshift, and Amazon Athena. For a full discussion of all AWS data sources, refer to Appendix: Microsoft Power BI supported AWS data sources.
+
+Additional Considerations
+
+Network connectivity
+
+    Microsoft on-premises data gateway connectivity to data sources is straight forward because both the data consumer and the data sources reside within the AWS Cloud. Data sources that live in an Amazon VPC, such as Amazon RDS and Amazon Redshift, can be accessed directly. Data sources that use regional endpoints can be accessed through the Amazon VPC internet gateway, or by an Amazon VPC endpoint.
+
+    Microsoft on-premises data gateway connectivity to the Microsoft Power BI service occurs over the internet and is an outbound connection only. You can use a combination of routing and security groups to control access to data sources stored within the AWS Cloud.
+
+    Because Microsoft on-premises data gateway is installed on an Amazon EC2 instance, it will have an associated security group that can be used to limit inbound accesss to the operating system. The gateway does not accept inbound requests. The instance does not need a public IP address, and should not be configured with one.
+
+    Encryption in transit
+
+    We recommend that data sources within an Amazon VPC are configured to use encryption for transmission of data. Regional services already make use of TLS encryption.
+
+    Microsoft on-premises data gateway connectivity can be configured to connect to the Microsoft Azure Service Bus using HTTPS instead of TCP. We recommend using HTTPS mode for communication. This is also the default for new gateway installations since the June 2019 gateway software version release.
+
+    Authentication
+
+    AWS recommends that you authenticate with AWS data sources using an identity that has read-only access only to the datasets required. The credentials that you enter for a data source are encrypted and stored in the gateway cloud service. The credentials are decrypted at the gateway on premises. (The credentials that you enter for a data source are encrypted and stored in the gateway cloud service).
+
+    Make sure that Microsoft Power BI credentials are securely controlled. Access to the services permits access to AWS data sources and potentially sensitive information they might contain.
+
+Performance
+
+    Microsoft on-premises data gateway in the AWS cloud typically performs well due to the ability to size and scale up the Amazon EC2 instance. It also performs fast in Region networking and connectivity to the internet.
+
+Cost
+
+    Three factors need to be considered: Amazon EC2 instance charges, transfer charges, and Amazon NAT gateway charges.
+
+    Size your Amazon EC2 instances according to Microsoft's requirements. To reduce costs, you can pruchase Amazon EC2 reserved instances or AWS Savings Plans.
+
+    Data transferred from the Microsoft on-premises data gateway to teh Microsoft Power BI service incurs VPC egress charges. Customers report a 10:1 compression by using the data gateway which will reduce the amount of traffic, but we recommend that you limit queries and use filters to ensure that only relevant data is transferred.
+
+    If the Microsoft on-premises data gateway connects to data sources in different Availability Zones or different AWS Regions, data transfer charges also apply.
+
+    If the Microsoft on-premises data gateways are located in private subnets and make user of an AWS NAT gateway, hourly and data processing charges apply. For more information, see Amazon VPC pricing.
+
+Using Amazon QuickSight
+
+Customers considering using the Microsoft Power BI Suite with AWS are encouraged to evaluate Amazon QuickSight as an alternative. This fully managed cloud service natively connects to data sources in AWS, reducing the complexity and cost when compared to other BI solutions.
+
+How Amazon QuickSight works
+
+When compared with other BI solutions, Amazon QuickSight has the following benefits:
+
+    With Amazon QuickSight, there is no need to download and install a client application. All functionality, including authoring and reporting, can be accessed from any platform (Windows, Mac, Linux, and so forth) by a web browser.
+
+    Amazon QuickSight is delivered as a fully managed, cloud-native SaaS application that is simple to build and deploy dashboards to production. The service is serverless, which means you do not need to calculate how many nodes and servers you need to support your users. QuickSight also takes full advantage of high availabilty features provided by AWS for resliliency.
+
+    It's easy to get started in small or large settings, with the ability to add users from a point-and-click interface within QuickSight. No external administrator intervention is needed.
+
+    Amazon QuickSight is powered by Super-fast, Parallel, in-memory Calculation Engine (SPICE) for a fast response time (in the milliseconds) and interactive visualizations. Datasets can currently scale up to 200 GB.
+
+    Amazon QuickSight pricing is simple, inexpensive, and has two components: report authors and report readers. Report authors, who create and publish interactive dashboards, are priced per user. If users do not log in during a given month, there are no charges for those users. Report readers are charged per 30-minute session, with a maximum of $5.00 per reader per month. A free trial allows you to evaluate Amazon QuickSight without any charges. For more information, see Amazon QuickSight Pricing.
+
+...
+
+Amazon RDS
+
+Amazon RDS makes it easy to set up, operate, and scale a relational database in the cloud. Amazon RDS is available on several database instance types (optimized for memory, performance, or I/O) and provides you with six familiar database engines to choose from, including Amazon Aurora, PostgreSQL, MySQL, MariaDB, Oracle Database, and SQL Server.
+
+You should consider RDS when:
+
+    You are building an operational data store
+    You are migrating SQL Server or Oracle Database data warehouse to the cloud but are not interested in refactoring.
+    Your query workload includes:
+        Queries which acces highly-filtered data on tables that can easily be indexed.
+        Analytics queries on small-to-medium sized tables (gigabytes)
+        A mix of medium-complexity analytical queries and simple, highly-filtered queries used in Dashboards
+
+When using Amazon RDS with Microsoft Power BI, keep the following points in mind:
+
+    Amazon RDS provides multiple database engines including SQL Server, MariaDB, MySQL, Oracle Database, and PostgreSQL. Note that the database engines are listed in Power BI Desktop and Power BI service, not the Amazon RDS service.
+
+    For Amazon Aurora, use the MySQL or PostgreSQL connection type, depending on your selected database engine.
+
+    While an Amazon RDS instance can be launched in a public subnet and configured to allow access from the internet, the majority of customers prefer to launch it in a private subnet to increase security. When using a private subnet to make use of the on-premises data gateway to connect from the Power BI service to RDS.
+
+    With Amazon RDS, you can deploy multiple editions of SQL Server (2012, 2014, 2016, 2017, and 2019) including Express, Web, Standard, and Enterprise
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+end of copii
+What version of SQL Server are we currently running?

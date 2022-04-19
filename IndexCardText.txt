@@ -137,7 +137,7 @@ You can turn on encryption at-rest for RDS via KMS.
 
 14
 AWS SysOps Admin
-
+The management account – The AWS Control Tower management account is part of the Root level. The management account allows for AWS Control Tower billing. The account also has administrator permissions for your landing zone. You cannot create separate accounts for billing and for administrator permissions in AWS Control Tower.
 
 
 
