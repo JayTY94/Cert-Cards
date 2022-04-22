@@ -115,7 +115,255 @@ When using Amazon RDS with Microsoft Power BI, keep the following points in mind
 
     While an Amazon RDS instance can be launched in a public subnet and configured to allow access from the internet, the majority of customers prefer to launch it in a private subnet to increase security. When using a private subnet to make use of the on-premises data gateway to connect from the Power BI service to RDS.
 
-    With Amazon RDS, you can deploy multiple editions of SQL Server (2012, 2014, 2016, 2017, and 2019) including Express, Web, Standard, and Enterprise
+    With Amazon RDS, you can deploy multiple editions of SQL Server (2012, 2014, 2016, 2017, and 2019) including Express, Web, Standard, and Enterprise.
+
+Amazon Athena
+
+Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. Athena is out-of-the-box integrated with AWS Glue Data Catalog, allowing you to create a unified metadata repository across various services, crawl data sources to discover schemas, populate your Data Catalog with new and modified table and partition definitions, and maintain schema versioning.
+
+You should consider Athena as a data source when:
+
+    You want to query your data lake directly.
+    Your query workload includes:
+        Queries which compute aggregations on large (multi-gigabyte and multi-terrabyte) tables
+        Interactive ad hoc SQL, for exploratory purposes.
+
+When using Amazon Athena with Microsoft Power BI, keep the following points in mind:
+
+    With the July 2021 release of Microsoft Power BI, a Microsoft-certified connector has been introduced for Amazon Athena. You can use the Microsoft Power BI connector fo Amazon Athena to analyze data from Amazon Athena in Microsoft Power BI Desktop. After you publish content to the Power BI service, you can use the Microsoft on-premises data gateway to keep the content up to date through on-demand or scheduled resources.
+
+    The Microsoft Power BI connector for Amazon Athena supports both Import and Direct Query data connectivity modes. With the Import mode, selected tables and columns are imported into Power BI Desktop for querying. With Direct Query mode, no data is imported or copied into Power BI Desktop, and instead Power BI Desktop queries the underlying data source directly.
+
+    For more information on the Microsoft Power BI connector for Amazon Athena, refer to Using hte Amazon Athena Power BI Connector.
+
+    Note that the Microsoft Power BI Connector for Amazon Athena requries the use of the Amazon Athena OBDC driver and a valid ODBC DSN configuration on your system to query Amazon Athena. To download the latest OBDC driver and for configuration, refer to Connecting to Amazon Athena with OBDC.
+
+    For a tutorial on the configuration steps and best practices when using the Microsoft Power BI connector for Amazon Athena, refer to creating dashboards quickly on Microsoft Power BI using Amazon Athena.
+
+...
+
+https://aws.amazon.com/blogs/devops/how-marketaxess-uses-aws-developer-tools-to-create-scalable-and-secure-ci-cd-pipelines/
+
+How MarketAxess uses AWS Developer Tools to create scalable and secure CI/CD pipelines
+
+Very often, enterprise organizations strive to adopt modern devops practices, to focus on goverance and security without sacrificing development velocity. In this guest post, Prashant Joshi, Senior Cloud Engineer at Market Axess, explains how they use the AWS Cloud Development Kit (AWS CDK), AWS CodePipeline, and AWS CodeBuild to simplify
+
+...
+
+https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/GettingStarted.Walkthrough.html
+Get started
+
+With the right template, you can deploy all at once all the AWS resources you need for an application. In this section, you'll examine a template that declares the resources for a WordPress blog, creates a WordPress block as a stack, monitors the stack creation processs, examines the resources on the stack, and then deletes the stack. You use the AWS Management Console to complete these tasks.
+
+Step 1: Pick a template
+
+First, you'll need a template that specifies the resources that you want in your stack. For this step, you use a sample template that's already prepared. The sample template creates a basic WordPress blog that uses a single Amaon EC2 instance with a local MySQL database for storage. The template also crates an Amazon EC2 security group to control firewall settings for the Amazon EC2 instance.
+
+Important: AWS CloudFormation is free, but the AWS resources that CloudFormation creates are live (and not running in a sandbox). You will incur the standard usage fees for these resources until you terminate them in the last task of this tutorial. The total charges will be minimal. For information on how you might minimize any charges, go to http://aws.amazon.com/free/
+
+To view the template
+
+    You can view the JSON or YAML Wordpress sample template. You don't need to download it because you will use the template URL later in this guide. For more information about the template formats, see AWS CloudFormation template formats.
+
+A template is a JSON or YAML text file that contains the configuration information about the AWS resources you want to create in the stack. For this walkthrough, the sample template includes six top-level sections: AWSTemplateFormatVersion, Description, Parameters, Mappings, Resources, and Outputs; however, only the Resources section is required.
+
+The Resources template contains the definitions of the AWS resources you want to create with the template. Each resource is listed spearately and specifies the properties that are necessary for creating that particular resource. The following resource declaration is the configuration for the EC2 instance, which in this example ahs the logical name WebServer:
+
+[sample json, sample yaml]
+
+If you have created EC2 instances before, you recognize properties, such as ImageId, InstanceType, and KeyName, that determine the configuration of the instance. Resource declarations are an efficient way to specify all these configuration settings at once. When you put resource declarations in a template, you can create and configure all the declared resources by using the template to create a stack. Create a new stack that uses the same template to launch the same configuration of resources.
+
+The resource declaration begins with a string that specifies the logical name for that resource. As you'll see, the logical name can be used to refer to resources within the template.
+
+...
+
+Step 4: Monitor the progress of stack creation
+
+After you complete the Create Stack wizard, CloudFormation begins creating the resources that are specified in the template. Your new stack, MyWPTestStack appears in the list at the top portion of the CloudFormation console. Its status should be CREATE_IN_PROGRESS. You can see detailed status of a stack by viewing its events.
+
+To view the events for the stack
+
+    1. On the CloudFormation console, select the stack MyWPTestStack in the list.
+    2. In the stack details page, choose the Events tab. The console automatically the event list with the most recent events every 60 seconds.
+
+The Events tab displays each major step in the creation of the stack sorted by the time of each event, with latest events on top.
+
+The first event (at the bottom of the event list) is the start of the stack creation process:
+
+2013-04-24 18:54 UTC-7 CREATE_IN_PROGRESS AWS::CloudFormation::Stack MyWPTestStack User initiated
+
+Next are events that mark the beginning and completion of each resource. For example, createion of the EC2 instance results in the following entries:
+
+2013-04-24 18:59 UTC-7 CREATE_COMPLETE AWS::EC2::Instance...
+
+2013-04-24 18:54 UTC-7 CREATE_IN_PROGRESS AWS::EC2::Instance...
+
+The CREATE_IN_PROGRESS event is logged when CloudFormation reports that it has begun to create the resource. The CREATE_COMPLETE event is logged when the resource is successfully created.
+
+When CloudFormation has successfully created the stack, you will see the following event at the top of the Events tab:
+
+2013-04-24 19:17 UTC-7 CREATE_COMPLETE AWS::CloudForrmation::Stack MyWPTestStack
+
+If CloudFormation can't create a resource, it reports a CREATE_FAILED event, and, by default, rolls back the stack and deltes any resources that have been created. The Status Reason column displays the issue that caused the failure.
+
+https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/gettingstarted.templatebasics.html
+
+Learn template basics:
+
+In Get Started, you learned how to use a template to create a stack. You saw resources declared in a template and how they map to resources in the stack. We also touched on input parameters and how they enable you to pass specific values when you create a stack from a template. In this section, we'll go deeper into resources and parameters. We'll also cover the other components of templates so that you'll know how to use these components together to create templates that produce the AWS resources you want.
+
+What is an AWS CloudFormation template?
+
+A template is a declaration of the AWS resources that make up a stack. The template is stored as a text tile whose format complies with the JavaScript Object Notation (JSON) or YAML standard. Because they're text files, you can create and edit them in any text editor and manage them in your source control system with the rest of your source code. For more information about template formats, see AWS CloudFormation template formats.
+
+In the tempalte, you declare the AWS resources you want to create and configure. You declare an object as a name-value pair or a paring of a name with a set of child objects enclosed. The syntax depends on the format you use. For more information, see the Template anatomy. The only required top-level object is the Resources object, which must declare at least one resource. Let's start with the most basic template containing only a Resources object, which contains a single resource declaration.
+
+Resources: Hello Bucket!
+
+The Resources object contains a list of resource objects. A resource declaration contains the resource's attributes, which are themselves declared as child objects. A resource must have a Type attribute, which defines the kind of AWS resource you want to create. The Type attribute has a special format.
+
+AWS::ProductIdentifier::ResourceType
+
+For example, the resource type for an Amazon S3 bucket is AWS::S3::Bucket. For a full list of resource types, see Template reference.
+
+Let's take a look at a basic template. The following template declares a single resource of type AWS::S3::Bucket with the name HelloBucket.
+
+...
+
+Resource properties using resources together
+
+Usually, a property for a resource is simply a string value. For example, the following tempalte specifies a canned ACL (PublicRead) for the AccessControl property of the bucket.
+
+YAML:
+Resources:
+  HelloBucket:
+  Type: 'AWS::S3::Bucket'
+  Properties:
+    AccessControl: PublicRead
+
+Some resources have multiple properties, and some properties can have one or more subproperties. For example, the AWS::S3::Bucket resource has two properties: AccessControl and WebsiteConfiguration. The WebsiteConfiguration property has two subproperties: IndexDocument and ErrorDocument. The following template shows our original bucket resource with the additional properties.
+
+YAML:
+
+Resources:
+  HelloBucket:
+  Properties:
+    AccessControl: PublicRead
+    WebsiteConfiguration:
+      IndexDocument: index.html
+      ErrorDocument: error.html
+
+One of the greatest benefits of templates and CloudFormation is the ability to create a set of resources that work together to create an application or solution. The name used for a resource within the template is a logical name. When CloudFormation creates a resource, it generates a physical name that's based on the combination of hte logical name, the stack name, and a unique ID.
+
+You're probably wondergin how you set properties on one resource based on the name or property of another resource. For example, you can create a CloudFront distribution backed by an S3 bucket or EC2 instance that uses EC2 security groups, and all of those resources can be created in the same template. CloudFormation has a number of intrinsic functions that you can use to refer to other resources and their properties. You can use the Ref function to refer to an identifying property of a resource. Frequently, this is the physical name of the resource; however, sometimes it can be an identifier, such as an IP address for an AWS::EC2::EIP resource or an Amazon Resource Name (ARN) for an Amazon SNS topic. For a list of values returned by the Ref function, see Ref Function. The following template contains an AWS::EC2::Instance resource. The resource's SecurityGroups property calls the Ref function to refer to the AWS::EC2::SecurityGroup resource InstanceSecurityGroup.
+
+YAML
+
+Resources:
+  Ec2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      SecurityGroups:
+        - !Ref InstanceSecurityGroup
+      KeyName
+  InstanceSecurityGroup:
+    Type: 'AWS::EC2:SecurityGroup'
+    Properties:
+      GroupDescription: Enable SSH access via port 22
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+
+The SecurityGroups property is a list of security groups, and in the previous example, we have only one item in the list. The following template has an additional item in the SecurityGroups property list.
+
+YAML
+
+Resources:
+  Ec2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties
+      SecurityGroups:
+      - !Ref InstanceSecurityGroup
+      - MyExistingSecurityGroup
+    KeyName: mykey
+    ImageId: ami-7a11e213
+  InstanceSecurityGroup:
+    Type: 'AWS::EC2:SecurityGroup'
+    Properties:
+      GroupDescription: Enable SSH access via port 22
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+
+MyExistingSecurityGroup is a string that refers to an existing EC2 security group instead of a security group declared in a template. You use literal strings to referto existing AWS resources.
+
+In the example above, the KeyName property of the AWS::EC2::Instance is the literal string mykey. This means that a key pair with the name mykey must exist in the region where the stack is being created; otherwise, stack creation will fail because the key pair doesn't exist. The key pair you use can vary with the region where you are creating the stack, or you may want to share the template with someone else so that they can use it in their AWS account. If so, you can use an input parameter so that the key pair name can be specified when the stack is created. The Ref function can refer to input parameters that are specified at stack creation time. The following template adds a Parameters object containing the KeyName parameter, which is used to specify the KeyName property for the AWS::EC2::Instance resource. The parameter type is AWS::EC2::KeyPair::KeyName, which ensures a user specifies a valid key pair name in his or her account and in the region whre the stack is being created.
+
+YAML
+
+Parameters:
+  KeyName:
+    Description: The EC2 Key Pair to allow SSH access to the instance
+    Type: 'AWS::EC2::KeyPair::KeyName'
+Resources:
+  Ec2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties
+      SecurityGroups:
+      - !Ref InstanceSecurityGroup
+      - MyExistingSecurityGroup
+    KeyName: !Ref KeyName
+    ImageId: ami-7a11e213
+  InstanceSecurityGroup:
+    Type: 'AWS::EC2:SecurityGroup'
+    Properties:
+      GroupDescription: Enable SSH access via port 22
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+
+The Ref function is handy if the parameter or the value returned for a resource is exactly what you want; however, you may need other attributes of a resource. For example, if you want to create a CloudFront distribution with an S3 origin, you need to specify the bucket location by using a DNS-style address. A number of resources have additional attributes whose values you can use in your template. To get these attributes, you use the Fn::GetAtt function. The following tempalte creates a cloudformation distribution resource that specifies the DNS name of an S3 bucket resource using Fn:GetAtt function to get the bucket's DomainName attributes.
+
+YAML
+
+Resources:
+  myBucket:
+    Type: 'AWS::S3::Bucket'
+  myDistribution:
+    Type: 'AWS::CloudFront:Distribution'
+    Properties:
+      DistributionConfig:
+        Origins:
+          -  DomainName: !GetAtt
+             - myBucket
+             - DomainName
+             Id: myS3Origin
+             S3OriginConfig:{}
+        Enabled: 'true'
+        DefaultCacheBehavior:
+          TargetOriginId: myS3Origin
+          ForwardedValues:
+            QueryString: 'false'
+          ViewerProtocolPolicy: allow-all
+
+The Fn::GetAtt function takes two parameters, the logical name of the resource and the name of the attribute to be retrieved. For a full list of available attributes for resources, see Fn::GetAtt. You'll notice that teh Fn::GetAtt function lists its two parameters in an array. For functions that take multiple parameters, you use an array to specify their parameters.
+
+s
+
+
+
+
+
+
+
+
+
 
 
 
@@ -183,3 +431,5 @@ When using Amazon RDS with Microsoft Power BI, keep the following points in mind
 
 end of copii
 What version of SQL Server are we currently running?
+What does it mean to crawl data sources to discover schema?
+what is an ODBC DSN configuration?
