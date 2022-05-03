@@ -1,0 +1,26 @@
+aws ec2 create-key-pair --key-name labkey --key-type rsa --query "KeyMaterial" --output text > labkey.pem
+
+What are the points that I want to make in this email about lumisight?
+
+Are we going to cancel?
+What did we pay for?
+Are we holding it in standby?
+Oh wait, we're still using it for checkins with the front desk...
+Do we still want to do that?
+probably. Gah! So do I not send this email?
+I mean, Eric asked me to send it, so I probably should send something...
+
+Why am I freaking out so hard over this? it isn't a big deal. ds;alfkjsd;flkjsdaf;lkjadsoiweurpiofudhov
+
+I'm freaking out because I need more... Elan? Confidence in myself? soemthing, surely.
+
+
+
+I don't know what else to say in this email, so I'm just going to leave it here for later.
+
+2022-04-25T09:19:11.407474-10:00	Keycard Entered	FALSE				187|2250	11F - Mauka Stairwell	10F-2	HEMIC Tower	Underwriting	HEMIC Tower
+2022-04-25T09:12:37.725542-10:00	Door Locked	TRUE	sdelbarrio@employersprotectiveinsurance.com	Sheri	del Barrio	1|2376	11F - Mauka Stairwell	10F-2	HEMIC Tower	Underwriting	HEMIC Tower
+2022-04-25T09:12:35.838596-10:00	Door Unlocked	TRUE	sdelbarrio@employersprotectiveinsurance.com	Sheri	del Barrio	1|2376	11F - Mauka Stairwell	10F-2	HEMIC Tower	Underwriting	HEMIC Tower
+2022-04-25T09:12:35.801239-10:00	Keycard Entered	TRUE	sdelbarrio@employersprotectiveinsurance.com	Sheri	del Barrio	1|2376	11F - Mauka Stairwell	10F-2	HEMIC Tower	Underwriting	HEMIC Tower
+2022-04-25T09:12:34.466323-10:00	Keycard Entered	FALSE				187|2395	11F - Mauka Stairwell	10F-2	HEMIC Tower	Underwriting	HEMIC Tower
+2022-04-25T09:12:31.730990-10:00	Keycard Entered	FALSE				187|2395	11F - Mauka Stairwell	10F-2	HEMIC Tower	Underwriting	HEMIC Tower
