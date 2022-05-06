@@ -1056,19 +1056,439 @@ Route table with route to internet gateway for IPv6 traffic (::/0)
     Default VPC: No
     Nondefault VPC: Yes, if you created the VPC using the first or second option in the VPC wizard, and if you specified the option to associate an IPv6 CIDR block with the VPC. Otherwise, you must manually create the route table and add the route.
 
+...
 
+Create and attach an internet gateway
 
+After you create an internet gateway, attach it to your VPC.
 
+To create an internet gateway and attach it to your VPC
 
+    1. Open the Amazon VPC console at https://console.aws.amazon.com/vpc/
+    2. In the navigation pane, choose Internet Gateways, and then choose Create Internet gateway.
+    3. Optionally name your internet gateway.
+    4. Optionally add or remove a tag.
+        [Add a tag] Choose Add tag and do the following:
+            For Key, enter the key name.
+            For Value, enter the key value.
+        [Remove a tag] Choose Remove to the right of the tag's Key and Value.
+    5. Choose Create internet gateway.
+    6. Select the internet gateway that you just created, and then choose Actions, Attach to VPC.
+    7. Select your VPC from the list, and then choose Attach internet gateway.
 
+Create a custom route table
 
+When you create a subenet, we automatically associate it with the main route tabel for the VPC. By default, the main route table doesn't contain a route to an internet gateway. The following procedure creates a custom route table with a route that sends traffic destined outside the VPC to the internet gateway, and then associates it with your subnet.
 
+To create a custom route table
 
+    1. Open the Amazon VPC console at https://console.aws.amazon.com/vpc/
+    2. In the navigation pane, choose Route Tables, and then choose Create route table.
+    3. In the Create route table dialog box, optionally name your route table, then select your VPC, and then choose Create route table.
+    4. Select the custom route table that you just created. The details pane displays tabs for working with its routes, associations, and route propagation.
+    5. On the Routes tab, choose Edit routes, Add route, and add the following routes as neccessary. Choose Save changes when you're done.
+        For IPv4 traffic, specify 0.0.0.0/0 in the Destination box, and select the internet gateway ID in the target list.
+        For IPv6 traffic, specify ::/0 in the Destination box, and select the internet gateway ID in the Target list.
+    6. On the Subnet associations tab, choose Edit subnet associations, select the check box for the subnet, and choose Save associations.
 
+For more information, see Configure route tables.
 
+...
 
+======================================================================================
+https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html
 
+Associate Elastic IP addresses with resources in your VPC
 
+An Elastic IP address is a static, public IPv4 address designed for dynamic cloud computing. You can associate an Elastic IP address with any instance or network interface in any VPC in your account. With an Elastic IP address, you can mask the failure of an instance by rapidly remapping the address to another instance in your VPC.
+
+Elastic IP address concepts and rules
+
+To use an Elastic IP address, you first allocate it for use in your account. Then, you can associate it withn an instance or network interface in your VPC. Your Elastic IP address remains allocated to your AWS account until you explicitly release it.
+
+An Elastic IP address is a property of a network interface. You can associate an Elastic IP address with an instance by updating the network interface attached to the instance. The advantage of associating the Elastic IP address with the network interface instead of directly with the instance is that you can move all the attributes of the network interface from one instance to another in a single step. For more information, see Elastic Network interfaces in the Amazon EC2 User guide for Linux instances.
+
+The following rules apply:
+
+    An Elastic IP address can be associated with a single instance or network interface at a time.
+
+    You can move an Elastic IP address from one instance or network interface to another.
+
+    If you associate an Elastic IP address with the eth0 network interface of your instance, its current public IPv4 address (if it had one) is released to the EC2-VPC public IP address pool. If you disassociate the Elastic IP address, the eth0 network interface is automatically assigned a new public IPv4 address within a few minutes. This doesn't apply if you've attached a second network interface to your instance.
+
+...
+
+Work with Elastic IP addresses
+
+The following sections describe how you can work with Elastic IP addresses.
+
+Tasks
+    Allocate an Elastic IP address.
+    Associate an Elastice IP address View your Elastic IP address
+    View your Elastic IP address
+    Disassociate an Elastic IP address
+    Release an Elastic IP address
+    Recover an Elastic IP address
+
+Allocate an Elastic IP address
+
+Before you use an Elastic IP, you must allocate one for use in your VPC.
+
+To allocate an Elastic IP address
+
+    1. Open the Amazon VPC console at https://console.aws.amazon.com/vpc/
+    2. In the navigation pane, choose Elastic IPs.
+    3. Choose Allocate Elastic address.
+    4. For Public IPv4 address pool choose one of the following:
+        Amazon's pool of IP addresses--If you want an IPv4 address to be allocated from Amazon's pool of IP addresses.
+        My pool of public IPv4 addresses--If you want to allocate an IPv4 address from an IP address pool that you have brought to your AWS account. This option is disabled if you do not have any IP adress pools.
+        Customer owned pool of IPv4 addresses--If you want to allocate an IPv4 address from a pool created fromm your on-premises network for use with an Outpost. This option is only available if you have an Outpost.
+    5. (Optional) Add or remove a tag.
+    ...
+    6. Choose Allocate
+
+Note: If you account supports EC2-Classic, first choose VPC.
+
+===============================================
+
+https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html
+
+What is a transit gateway?
+
+A transit gateway is a network transit hub that you can use to interconnect your virtual private clouds (VPCs) and on-premises networks. As your cloud infrastructure expands globally, inter-Region peering connects transit gateways together using the AWS Global infrastructure. Your data is automatically encrypted and never travels over the public internet.
+
+For more information, see AWS Transit Gateway.
+
+Transit gateway concepts
+
+The following are the key concepts for transit gateways:
+
+    Attachments--You can attach the following:
+        One or more VPCs
+        A Connect SD-WAN/third-party network appliance
+        An AWS Direct Connect gateway
+        A peering connection with another transit gateway
+        A VPN connection to a transit gateway
+
+    Transit gateway Maximum Transmission Unit (MTU)--The maximum transmission unit (MTU) of a network connection is the size, in bytes, of the largest permissible packet that can be passed over the connection. The larger the MTU of a connection, the more data that can be passsed in a single packet. A transit gateway supports an MTU of 8500 bytes for traffic between VPCs, AWS Direct Connect, Transit Gateway Connect, and peering attachments. Traffic over VPN connections can have a MTU of 1500 bytes.
+
+...
+
+https://docs.aws.amazon.com/vpc/latest/tgw/how-transit-gateways-work.html
+
+How transit gateways work
+
+A transit gateway acts as a Regional virtual router for traffic flowing between your virtual private clouds (VPCs)and on-premises networks. A transit gateway scales elastically based on the volume of network traffic. Routing through a transit gateway operates at layer 3, where packets are sent to a specific next-hop attachment, based on their destination IP addresses.
+
+Contents
+
+    Architecture diagram
+    Resource Attachments
+    Availability Zones
+    Routing
+
+Architecture diagram
+
+The following diagram shows a transit gateway with three VPC attachments. The route table for each of these VPCs includes the local route and routes that send traffic destined for the other two VPCs to the transit gateway.
+
+The following is an example of a default ransit gateway route table for the attachments shown in the previous diagram. The CIDR blocks for each VPC propagate to the route table. Therefore, each attachment can route packets to the other two attachments.
+
+Destination | Target | Route type
+VPC A CIDR | Attachment for VPC A | propagated
+VPC B CIDR | Attachment for VPC B | propagated
+VPC C CIDR | Attachment for VPC C | propagated
+
+Resource attachments
+
+A transit gateway attachment is both a source and a destination of packets. You can attach the following resources to your transit gateway:
+
+    One or more VPCs. AWS Transit Gateway deploys an elastic network interface within VPC subnets, which is then used by the transit gateway to route traffic to and from the chosen subnets. You must have at least one subnet for each Availability Zone, which then enables traffic to reach resources in every subnet of that zone. During attachment creation, resources within a particular Availability Zone can reach a transit gateway only if a subnet is enabled within the same zone. If a subnet route table includes a route to the transit gateway, traffic is only forwarded to the transit gateway if the transit gateway has an attachment in the subnet of the same Availability Zone.
+
+    One or more VPC connections
+    One or more AWS Direct Connect gateways
+    One or more Transit Gateway Connect attachments
+    One or more transit gateway peering connections
+
+    Intra-region peering connections are supported. You can have different transit gateways in different Regions.
+
+Availability Zones
+
+When you attach a VPC to a transit gateway, you must enable one or more Availability Zones to be sued by the transit gateway to route traffic to resources in the VPC subnets. To enable each Availability Zone, you specify exactly one subnet. The transit gateway places a network interface in that subnet using one IP address from that subnet. After you enable an Availability Zone, traffic can be routed to all subnets in that zone, not just the specified subnet. Resources that reside in Availability Zones where there is no transit gateway attachment cannot reach the transit gateway.
+
+We recommend that you enable multiple Availability Zones to ensure availability.
+
+Using appliance mode support
+
+If you plan to configure a stateful network appliance in your VPC, you can enable appliance mode support for that VPC attachment in which the appliance is located. This ensures that the transit gateway uses the same Availability Zone for that VPC attachment for the lifetime of a flow of traffic between source and destination. It also allows the transit gateway to send traffic to any Availability Zone in the VPC, as long as there is a subnet association in that zone. For more information, see Example: Appliance in a shared services VPC.
+
+Routing
+
+Your transit gateway routes IPv4 and IPv6 packets between attachments using transit gateway route tables. You can configure these route tables to propagate routes from the route tables for the attached VPCs, VPN connections, and Direct Connect gateways. You can also add static routes to the transit gateway route tables. When a packet comes from one attachment, it is routed to another attachment using the route that matches the destination IP address.
+
+For transit gateway peering attachments, only static routes are supported.
+
+Contents
+    Route Tables
+    Route table association
+    Route propagation
+    Routes for peering attachments
+    Route evaluation order
+
+Route tables
+
+Your tranist gateway automatically comes with a default route table. By default, this route table is the default association route table and the default propagation route table. Alternatively, if you disbale route propagation and route table association, AWS does not create a default route table for the transit gateway.
+
+You can create additional route tables for your transit gateway. This enables you to isolate subnets of attachments. Each attachment can be associated with one route table. An attachment can propagate its routes to one or more route tables.
+
+You can create a blackhole route in your transit gateway route table that drops traffic that matches the route.
+
+When you attach a VPC to a transit gateway, you must add a route to your subnet route table in order for traffic to route through the transit gateway. For more information, see Routing for a Transit Gateway in the Amazon VPC User Guide.
+
+Route table association
+
+You can associate a transit gateway attachment with a single route table. Each route table can be associated with zero to many attachments and can forward packets to other attachments.
+
+Route propagation
+
+Each attachment comes with routes that can be installed in one or more transit gateway route tables. When an attachment is propagated to a transit gateway route table, these routes are installed in the route table.
+
+For a VPC attachment, the CIDR blocks of the VPC are propagated to the transit gateway route table.
+
+When dynamic routing is used with a VPN attachment or a Direct Connect gateway attachment, you can propagate the routes learned from the on-premises router through BGP to any of the transit gateway route tables.
+
+When dynamic routing is used with a VPC attachment, the routes in the route table associated with the VPN attachment are advertised to teh customer gateway through BGP.
+
+For a connect attachment, routes in the route table associated with the Connect attachment are advertised to the third-party virtual appliances, such as SD-WAN appliances, running in a VPC through BGP.
+
+For a Direct Connect gateway attachment, allowed prefix interactions control which routes are advertised to the customer network from AWS.
+
+Whena static route and a propagated route have the same destination, the static route has the higher priority, so the propagated route is not included in the route table. If you remove the static route, the overlapping propagated route is included in the route table.
+
+Routes for peering attachments
+
+You can peer two transit gateways and route traffic between them. To do this, you create a peering attachment on your transit gateway and specify the peer transit gateway with which to create the peering connection. You then create a static route in your transit gateway route table to route traffic to the transit gatewya peering attachment. Traffic that's routed to the peer transit gateway can then be routed to the VPC and VPN attachements for the peer transit gateway.
+
+For more information, see Example: Peered transit gateways.
+
+Route evaluation order
+
+Transit gateway routes are evaluated in the following order:
+
+    The most specific route for the destination address.
+    For routes with the same destination IP address but different targets, the route priority is as follows:
+        Static routes (for example, Site-toSite VPN static routes)
+        Prefix list referenced routes
+        VPC propagated Routes
+        Direct Connect gateway propagated routes
+        Transit Gateway Connect propagated routes
+        Site-to-Site VPN propagated routes
+
+Transit gateway only  shows a preferred route. A backup route will only appear in the Transit Gateway route table if that route is no longer advertised. For example, if you are advertising the same routes over the Direct Connect gateway and over Site-to-Site VPN. AWS Transit Gateway will only show the routes received from the Direct Connect gateway route, which is the preferred route. The Site-to-Site VPN, which is the backup route, will only display when the Direct Connect gateway is no longer advertised.
+
+Consider the following VPC route table. The VPC local route has the highest priority, followed by the routes that are more specific. When a static route and a propagated route have the same destination, the static route has a higher priority.
+
+Destination | Target | Priority
+10.0.0.0/16 | local | 1
+192.168.0.0/16 | pcx-12345 | 2
+172.31.0.0/16 | vgw-12345(static) or tgw-12345(static) | 2
+172.31.0.0/16 | vgw-12345(propagated) | 3
+0.0.0.0/0 | igw-12345 | 4
+
+================================================================================================================
+https://docs.aws.amazon.com/vpc/latest/tgw/tgw-getting-started.html
+
+Getting started with transit gateways
+
+The following tasks help you become familiar with transit gateways. You will create a transit gateway and then connect two of your VPCs using the transit gateway.
+
+Tasks
+    Prerequisites
+    Step 1: Create the transit gateway
+    Step 2: Attach your VPCs to your transit gateway
+    Step 3: Add routes between the transit gateway and your VPCs
+    Step 4: Test the transit gateway
+    Step 5: Delete the transit gateway
+
+Prerequisites
+
+    To demonstrate a simple example of using a transit gateway, create two VPCs in the same Region. The VPCs cannot have overlapping CIDRs. Launch one Amazon EC2 instance in each VPC. For more information, see Get started with Amazon VPC in the Amazon VPC User Guide.
+
+    You cannot have identical routes pointing to two different VPCs. A transit gateway does not propagate the CIDRs of a newly attached VPC if an identical route exists in the transit gateway route tables.
+
+    Verify that you have the permissions required to work with transit gateways. For more information, see Authentication and access control for your transit gateways.
+
+    You can't ping hosts if you haven't added an ICMP rule for each of the host security groups. For more information, see Work with security groups in the Amazon VPC User Guide.
+
+Step 1: Create the transit gateway
+
+When you create a transit gateway, we create a default transit gateway route table and use it as the default association route table and hte default propagation route table.
+
+To create a transit gateway...
+
+Create a transit gateway attachment to a VPC
+
+    1. Open the Amazon VPC console at https://console.aws.amazon/vpc/
+    2. On the naviation pane, choose Transit Gateway Attachments.
+    3. Choose Create transit gateway attachment.
+    4. (Optional) For Name tag, enter a name for the attachment.
+    5. For Transit gateway ID, choose the transit gateway to use for the attachment.
+    6. For attachment type, choose VPC.
+    7. Choose whether to enable DNS support. For this exercise, do not enable IPv6 support.
+    8. For VPC ID, choose the VPC to attach to the transit gateway.
+    9. For Subnet IDs, select one subnet for each Availability Zone to be used by the transit gateway to route traffic. You must select at least one subnet. You can select only one subnet per Availability Zone.
+    10. Choose Create transit gateway attachment.
+
+Each attachment is always associated with exactly one route table. Route tables can be associated with zero to many attachments. To determine the routes to configure, decide on the use case for your transit gateway, and then configure the routese. For more information, see Examples.
+
+Step 3: Add routes between the transit gateway and your VPCs
+
+A route table includes dynamic and static routes that determine the next hop for associated VPCs based on the destination IP address of the packet. Configure a route that has a destination for non-local routes and the target of the transit gateway attachment ID. For more information, see Routing for a transit gateawy in Amazon VPC User Guide.
+
+To add a route to a VPC route table
+
+    1. Open the Amazon VPC console at https//console.aws.amazon.com/vpc/
+    2. On the navigation pane, choose Route Tables.
+    3. Choose the route table associated with your VPC.
+    4. Choose the Routes tab, then choose Edit routes.
+    5. Choose Add route.
+    6. In the Destination column, enter the destination IP address range. For Target, choose Transit Gateway, and then choose the transit gateway ID.
+    7. Choose Save changes.
+
+...
+
+https://docs.aws.amazon.com/vpc/latest/tgw/tgw-best-design-practices.html
+
+Transit gateway design best practices
+
+The following are best practices for your transit gateway design:
+
+Use a separate subnet for each transit gateway VPC attachment. For each subnet, use a small CIDR, for example /28, so that you hae more addresses for EC2 resources. When you use a separate subnet, you can configure the following:
+    Keep the inbound and outbound network ACLs associated with the transit gateway subnets open.
+    Depending on your traffic flow, you can apply network ACLs to your workload subnets.
+
+Create one network ACL and associate it with all of the subnets that are associated with the transit gateway. Keep the network ACL open in both the inbound and outbound directions.
+
+Associate the same VPC route table with all of the subnets that are associated with the transit gateway, unless your network design requires multiple VPC route tables (for example, a middle-box VPC that routes traffic through multiple NAT gateways).
+
+Use Border Gateway Protocol (BGP) Site-to-site VPN connections. If your customer gateway device or firewall for the connection supports multipath, enable the feature.
+
+Enable route propagation for AWS Direct Connect gateway attachments and BGP Site-To-Site VPN attachments.
+
+When migrating from VPC peering to use an AWS Transit Gateway,
+    A transit gateway does not support Security Group referencing.
+    An MTU size mismatch between VPC peering and transit gateway might result in some packets dropping for asymmetric traffic. Update both VPCs at the same time to avoid jumbo packets dropping due to size mismatch.
+
+You do not need additional transit gateways for high availability, because transit gateways are highly available by design.
+
+Limit the number of transit gateway route tables unless your design requires multiple transit gateway route tables.
+
+For redundancy, use a single Transit Gateway in each Region for disaster recovery.
+
+For deployments with multiple transit gateways, we recommend that you use a unique Autonomous System number (ASN) for each of your transit gateways. Transit Gateway also supports intra-Region peering. For more information, see Building a global network using AWS Transit Gateway Intra-Region peering.
+
+https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html
+
+Amazon CloudWatch concepts
+
+The following terminology and concepts are central to your understanding and use of Amazon CloudWatch:
+
+    Namespaces
+    Metrics
+    Dimensions
+    Resolution
+    Statistics
+    Precentiles
+    Alarms
+
+Namespaces
+
+A namespace is a container for CloudWatch metrics. Metrics in different namespaces are isolated from each other, so that metrics from different applications are not mistakenly aggreated into the same statistics.
+
+There is no default namespace. You must specify a namespace for each data point you publish to CloudWatch. You can specify a namespace name when you create a metric. These names must contain valid XML characters and be fewer than 256 characters in length. Possible characters are: alphanumeric characters (0-9A-Za-z), period (.), hyphen(-), underscore(_), forward slash (/), hash (#), and colon (:).
+
+The AWS namespaces typically use the following naming convention: AWS/service. For example, Amazon EC2 uses the AWS/EC2 namespace. For the list of AWS namespaces, see AWS services that publish CloudWatch metrics.
+
+Metrics
+
+Metrics are the fundamental concept in CloudWatch. A metric represents a time-ordered set of data points that are published to CloudWatch. Think of a metric as a variable to monitor, and the data points as representing the values of that variable over time. For example, the CPU usage of a particular EC2 instance is one metric provided by Amazon EC2. The data points themselves can come from any application or business activity from which you collect data.
+
+By default, many AWS services provide free metrics for resources (such as Amazon EC2 instances, Amazon EBS volumnes, and Amazon RDS DB instances). For a charge, you can also enable detailed monitoring for some resources, such as your Amazon EC2 instances, or publish your own application metrics. For custom metrics, you can add the data points in any order, and at any rate you choose. Youc an retrieve statistics about those data points as an ordered set of time-series data.
+
+Metrics exist onliy in the Region in which they are created. Metrics cannot be deleted, but they automatically expire after 15 months if no new data is published to them. Data points older than 15 months expire on a rolling basis; as new data points come in, data older than 15 months is dropped.
+
+Metrics are uniquesly defined by a name, namespace, and zero or more dimensions. Each data point in a metric has a time stamp, and (optionally) a unit of measure. You can retrieve statistics from CloudWatch for any metric.
+
+For more information, see Viewing available metrics and Publishing Custom metrics.
+
+Time stamps
+
+Each metric data point must be associated with a time stamp. The time stamp can be up to two weeks in the past and up to two hours into the future. If you do not provide a time stamp, CloudWatch creates a times tamp for you based on the time the data point was received.
+
+Time stamps are dateTime objects, with the complete date plus hours, minutes, and seconds (for example, 2016-10-31T23:59:59Z). For more information, see dateTime. Although it is not required, we recommend that you use Coordinated Universal Time (UTC). When you retrieve statistics from CloudWatch, all times are in UTC.
+
+CloudWatch alarms check metrics based on the current time in UTC. Custom metrics sent to CloudWatch with time stamps other than the current UTC time can cause alarms to display the Insufficient Data state or result in delayed alarms.
+
+=====================================================================================================================
+https://academy.uipath.com/learningpath-viewer/6053/1/250085/3
+
+Introduction to Version Control Systems
+
+What are version control systems?
+
+Version control systems are tools used by software development teams to manage the collaboration on large projects.
+
+A version control system allows developers to track a code change, review the history of the code, and revert to a previous version of the project if needed.
+
+Here are some benefits of using version control systems:
+
+Enhanced Collaboration: Team members can work freely on any file at any time and merge the changes into a common version at the right time.
+
+Storing versions: Only the current version is stored on the disk; all others are in the system.
+
+Restoring previous versions: Restore older versions of the file at any time.
+
+Tracking different project versions: New versions are usually saved with change discriptions. Versions of the same file can also be compared.
+
+The verson control systems UiPath Studio is integrated with are Git, TFS, and SVN. The connection to a version control system is done at the project level. To manage your connections, access Studio, go to the Backstage view, and click the team tab.
+
+Alternatively, the Add to Source Control button in the status bar offers shortcuts to Git Init, Copy to Git, Add to TFS, and Add to SVN.
+
+Note: You cannot connect a project to GIT, TFS, and SVN at the same time.
+
+Which version control system should you choose?
+
+Regardless of the type o version control system used, project files are stored on a s erver where you push your files after you have completed your work on your local machine.
+
+However, deciding whether to use a centralized version control system like SVN or a distributed version control system like Git affectshow you commit changes. This will be covered later in the course.
+
+A Closer Look at Git
+
+Git Overview
+
+Git is an open-source version control system. Git is distributed, unlike older centralized verson control systems such as SVN and CVS, which allows every developer to have a complete histo9ry of their code repository locally. This makes the intial clone of the repository slower, but subsequent operations such as commit, blame, diff, merge, and log dramatically faster.
+
+Git also has good support for branching, merging, and rewriting repository history. The pull request is one popular feature that allows teams to collaborate on Git branches and efficiently review each other's code. Git is the most widely used version control system in the world and is considered the modern standard in software development.
+
+Here is a basic overview of how Git works:
+
+    1. Create a repository (project) with a Git hosting tool
+    2. Copy or clone the repository to your local machine.
+    3. Add a file to your local repository and commit (save) the changes locally.
+    4. Push you changes to the remote repository.
+    5. Another developer in the team can pull the file to their local repository and make changes, then they can commit and push the file.
+    6. They can also create a branch (alternative), make a change, commit the change.
+    7. On a pull request (propose chagnes to the master branch).
+    8. Merge your branch to the master branch.
+
+SVN and Git side-by-side
+
+With a centralized system, the SVN version control system stores all files and historical data on a central server. The developers commit their changes to this central server repository.
+
+Trunk: The trunk is the hub of yoru current, stable code and product. It only includes tested, unbroken code.
+
+Branches: Here you add the new codes and features. Using a copy of the trunk code, team members conduct research and development in the branch. This allows each team member to work on the enhanced features without disrupting each other's progress.
+
+Tags: Tags are a duplicate of a branch at a given point in time. Tags are not used during development but are used during deployment after the branch's code is completed. Marking code with tags makes it easy to review, and, if necessary, revert your code.
 
 
 
