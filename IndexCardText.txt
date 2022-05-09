@@ -291,109 +291,133 @@ Git Init.
 
 
 13
-UiPath
+Hemic
+Eating your own dog food, drinking your own champagne, eating your own caviar – some sound more appetizing than others. Whichever phrase you choose, this is tech industry shorthand for the use of one’s own products. More specifically, it’s when a company uses its own products to find and resolve bugs
 
 
 
 
 14
-UiPath
+Hemic
+I'm going to be working with Mike and Jasmine on their s3 bucket thing
 
 
 
 
 15
-UiPath
+Hemic
+intruder.io is likely going to be our easy button for pen testing.
 
 
 
 
 16
-UiPath
+Hemic
+I should ask for meeting agendas and also offer them. It helps in technical situations where you need to know who you need to know who to invite.
 
 
 
 
 17
-UiPath
+Hemic
+An SMTP relay is an email relay service that basically works in two steps:
 
+It receives the outgoing mail from the sender (that is, your amazing Groundhog Day’s email campaign).
+It delivers it to the recipient’s local post office, another SMTP server.
 
-
-
+C:\Users\jayoshimi\PycharmProjects\pythonProject\venv\Scripts\python.exe "C:/Users/jayoshimi/PycharmProjects/pythonProject/cards document.py"
 18
-UiPath
-
+AWS SysOps Admin
+AWS CloudFormation Templates include several major sections. The Resources section is the only required section.
 
 
 
 19
-UiPath
-
+AWS SysOps Admin
+CloudFormation Template secion: Format version (optional)
+  The AWS CloudFormation template version that the template conforms to. The template format version isn't hte same as the API or VSDL version. The template format version can change independently of the API and WSDL versions.
 
 
 
 20
-UiPath
+AWS SysOps Admin
+CloudFormation Template section: Description (optional)
+  A text string that describes the template. This seciotn must always follow the templat format version section.
 
 
 
 
 21
-UiPath
-
+AWS SysOps Admin
+CloudFormation Template section: Metadata (optional)
+Objects that provide additional information about the template.
 
 
 
 22
-UiPath
-
+AWS SysOps Admin
+CloudFormation Template section: Parameters (optional)
+Values to pass to your temmplate (when you create or update the stack). You can refer to parameters from the Resources or Ouputs section of the template.
 
 
 
 23
-UiPath
+AWS SysOps Admin
+CloudFormation Template Section: Rules (optional)
+  Validates a parameter or a combination of parameters passed to a template during a stack creation or stack update
 
 
 
 
 24
-UiPath
+AWS SysOps Admin
+CloudFormation Template Section: Mappings (optional)
 
+A mapping of keys and associated values that you can use to speicy conditional parameter values, similar to a lookup table. YOu can match a key to a corresponding value by using the Fn::FindInMap intrinsic function in the Resources and Outputs sections.
 
 
 
 25
-UiPath
+AWS SysOps Admin
+CloudFormation Template section: Conditions (optional)
 
+Conditions that control whether certain resources are creaetd or whether certain resource properties are assigned a value during stack creation or update. For example, you could conditionally create a resource that depends on whether the stack is for a prduciton or test environment.
 
 
 
 26
-UiPath
+AWS SysOps Admin
+CloudFormation Template section: Transform (optional)
 
+For serverless applications (also referered to as Lambda-based applications), specifies the version of the AWS Serverless Application Model (AWS SAM) to use. When you specify a transform, you can use AWS SAM syntax to declare resources in your template. The model defines the syntax that you can use and how it's processed.
 
 
 
 27
-UiPath
+AWS SysOps Admin
+CloudFormation Template section: Resources (required)
 
+Specifies the stack resources and their properties, such as Amazon Elastic Cloud Compute instances or Amazon Simple Store Services buckets. You can refer to the resources in the Resources and Outputs sections of the template.
 
 
 
 28
-UiPath
+AWS SysOps Admin
+CloudFormation Template section: Outputs (optional)
+
+Describes the values that are returned whenever you view your stack's properties. For example, you can declare an output for an S3 bucket name and then call the aws cloudformation describe-stacks AWS CLI command to view the name.
 
 
 
 
 29
-UiPath
+AWS SysOps Admin
 
 
 
 
 30
-UiPath
+AWS SysOps Admin
 
 
 

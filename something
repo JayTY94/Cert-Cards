@@ -1490,6 +1490,314 @@ Branches: Here you add the new codes and features. Using a copy of the trunk cod
 
 Tags: Tags are a duplicate of a branch at a given point in time. Tags are not used during development but are used during deployment after the branch's code is completed. Marking code with tags makes it easy to review, and, if necessary, revert your code.
 
+==============================================================================
+https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_ad_connector.html
+
+Active Directory Connector
+
+AD Connector is a directory gateway with which you can redirect directory requests to your on-premises Microsoft Active Directory without caching any information in the cloud. AD Connector comes in two sizes, small and large. You can spread application loads across multiple AD connectors to scale to your performance needs. There are no enforced user or connection limits.
+
+AD Connector does not support AD transitive trusts. AD Connectors and your on-premises AD domains have a 1-to-1 relationship. That is, for each on-premises domain, including child domains in an AD forest that you want ot authenticate against, you must create a unique AD connector.
+
+Note AD Connector cannot be shared with other AWS accounts. If this is a requirement, consider using AWS Managed Microsoft AD to Share your directory. AD Connector is also not multi-VPC aware, which means that AWS applications like WorkSpaces are required to be provisioned in the same VPC as your AD Connector.
+
+Once set up, AD Connector offers the following benefits:
+
+    Your end users and IT administrators can use thier existing corporate credentials to log on to AWS applications such as WorkSpaces, Amazon WorkDocs, and Amazon WorkMail.
+
+    You can manage AWS resources like Amazon EC2 instances or Amazon S3 buckets through IAM role-based access to the AWS Management Console.
+
+    You can consistently enforce existing security policies (such as password expiration, password history, and account lockouts) whether users or IT administrators are accessing resources in your on-premises infrastructure in the AWS Cloud.
+
+    You can use AD Connector to enable multi-factor authentication by integrating with your existing RADIUS-based MFA infrastructure to provide an additional layer of security when users access AWS applications.
+
+Continue reading the topics in this secion to learn how to connect a directory and make the most of AD Connector features.
+
+====================================================================================
+https://docs.aws.amazon.com/directoryservice/latest/admin-guide/prereq_connector.html
+
+AD Connector prerequisites
+
+To connect your existing directory with an AD connector, you need the following:
+
+VPC
+
+Set up a VPC with the following:
+
+    At least two subnets. Each of the subnets must be in a different Availability Zone.
+    The VPC must be connected to your existing network through a virtual private network (VPN) connection or AWS Direct Connect.
+    The VPC must have default hardware tenancy.
+
+AWS Directory Services uses a two VPC structure. The EC2 instances which make up your dierctory run outside of your AWS account, and are managed by AWS. They ahve two network adapters, ETH0 and ETH1. ETH0 is the management adapter, and exists outside of your network. ETH1 is created within your account.
+
+The management IP range of your directory's ETH0 netowrk is chosen programmatically to ensure it does not conflict with the VPC where you directory is deployed. This IP range can be in either of the following pairs (as Directories run in two subnets):
+
+    10.0.1.0/24 & 10.0.2.0.24
+    192.168.1.0/24 & 192.168.2.0/24
+
+We avoid conflicts by checking the first octet of the the ETH1 CIDR. If it starts with a 10, then we choose a 192.168.0.0/16 VPC with 192.168.1.0/24 and 192.168.2.0/24 subnets. If the first octet is anything else other than a 10, we choose a 10.0.0.0/16 VPC with 10.0.1.0/24 and 10.0.2.0/24 subnets.
+
+The selection algorithm does not include routes on your VPC. It is therefore possible to have an IP routing conflict result from this scenario.
+
+The VPC must NOT be configured with the following VPC endpoint(s):
+
+    Route 53 VPC endpoints that include DNS conditional overrides for *.amazonaws.com which resolve to non public AWS IP addresses
+    CloudWatch VPC endpoint
+    Systsms Manager VPC endpoint
+    Security Token Service VPC endpoint
+
+For more information, see the following topics in Amazon VPC User Guide:
+
+===============================================================================
+https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-guide.html
+
+Working with AWS CloudFormation templates
+
+To provision and configure your stack resources, you must understand AWS CloudFormation templates, which are formatted text files in JSON or YAML. These templates describe the resources that you want to provision in your AWS CloudFormation stacks. You can use AWS CloudFormation Designer or any text editor to create and save templates. For more information about the structure and syntax of a template, see Template anatomy.
+
+If you're unfamiliar with JSON or YAML, you can use AWS CloudFormation Designer to help you get started with AWS CloudFormation templates. AWS CloudFormation Designer is a tool for visually creating and modifying templates. For more information, see What is AWS CloudFormation Designer?.
+
+Template snippets provides examples that demonstrate how to write templates for a particular resource. For example, you can view snippets for Amazon EC2 instances, Amazon S3 domains, AWS CloudFormation mappings, and more. Snippets are grouped by resource, wiht general purpose AWS CloudFormation snippets in General template snippets.
+
+For details about the supported resources, type names, intrinsic functions, and pseudo parameters you can use in your templates, see Template reference.
+
+Topics
+  AWS CloudFormation template formats
+  Template anatomy
+  What is AWS CloudFormation Designer?
+  Walkthroughs
+  Template snippets
+  Custom resources
+  Using AWS CloudFormation macros to perform custom processing on templates
+  Using modules to encapsulate and reuse resource configurations
+  Perform ECS blue/green deployments through CodeDeploy using AWS CloudFormation
+  Using regular expressions in AWS CloudFormation templates
+
+AWS CloudFormation template formats
+
+You can authos AWS CloudFormation templates in JSON or YAML formats. We support all AWS CloudFormation features for both formats, including AWS CloudFormation Designer.
+
+When deciding which format to use, pick the format you're most comfortable working in. Also consider that YAML inherently provides some features, such as commenting, that aren't available in JSON.
+
+Important: We recommend that you don't add # YAML comments to your templates in Designer. If your YAML templates have # comments, Designer doesn't preserve those comments when converting the template to JSON. In addition, if you modify your template in Designer (for example, if you move a resources on the canvas), your comments are lost.
+
+You can add comments to the AWS CloudFormation templates you create outside of Designer. The following example shows a YAML template with inline comments.
+
+AWSTemplateFormatVersion: "2010-09-09"
+Description: A Sample template
+Resources:
+  MyEC2Instance: #An inline comment
+    Type: "AWS::EC2::Instance"
+    Properties:
+      ImageID: "ami-0ff8a91507f77f867" #Another comment -- This is a Linux AMI
+      InstanceType: t2.micro
+      KeyName: testkey
+      BlockDeviceMappings:
+        -
+          DeviceName: /dev/sdm
+          Ebs:
+            VolumeType: io1
+            Iops:200
+            DeleteOnTermination: false
+            VolumeSize: 20
+
+For more information about the template syntax for each format, see Template anatomy.
+
+AWS CloudFormation supports the following JSON and YAML specifications:
+
+JSON
+  AWS CloudFormation follows the ECMA-404 JSON standard. For more information about the JSON format, see http://www.json.org.
+
+YAML
+  AWS CloudFormation supports the YAML Version 1.1 sepcification with a few exceptions.
+  AWS CloudFormation doesn't support the following features:
+    The binary, omap, pair, set, and timestamp tags
+    Aliases
+    Hash merges
+  For more information about YAML, see https://yaml.org.
+
+Template anatomy
+
+A template is a JSON- or YAML-formatted text file that describes your AWS infrastrcture.
+
+JSON
+The following example shows a JSON-formatted template fragmetn.
+{
+  "AWSTemplateFormatVersion" : "version date",
+
+  "Description" : "JSON string",
+
+  "Metadata" : {
+    template metadata
+  }
+
+  "Parameters" : {
+    set of parameters
+  },
+
+  "Mappings" : {
+    set of mappings
+  },
+
+  "Conditions" : {
+    set of conditions
+  },
+
+  "Transform" : {
+    set of transforms
+  }
+
+  "Resources" : {
+    set of resources
+  },
+
+  "Outputs" : {
+    set of outputs
+  }
+}
+
+Template sections
+
+Templates include several major sections. The Resources section is hte only required section. Some sections in a template can be in any order. However, as you build your template, it can be helpful to use the logical order shown in the following list because values in one section might refer to values from a previous section.
+
+Format version (optional)
+  The AWS CloudFormation template version that the template conforms to. The template format version isn't hte same as the API or VSDL version. The template format version can change independently of the API and WSDL versions.
+
+Description (optional)
+  A text string that describes the template. This seciotn must always follow the templat format version section.
+
+Metadata (optional)
+  Objects that provide additional information about the template
+
+...
+
+
+Format version
+
+The AWSTemplateFormatVersion section (optional) identifies the capabilities of the template. The latest formate version is 2010-09-09 and is currently the only valid value.
+
+Note:
+The tempalte format version isn't the same as the API or WSDL version. The template format version can change independendtly of the API asnd WSDDL versions.
+
+The value for the template format version declaration must be a literal string. You can't use a parameter or function to specify the template format version. If you don't specify a value, AWS Cloudformation assumes the latest format version. The following snippet is an example of a valid template format version declaration:
+
+JSON
+"AWSTemplateFormatVersion": "2010-09-09"
+
+====================================================================================
+
+Metadata
+
+You can use the optional Metadata section to include arbitrary JSON or YAML objects that provide details about the template. For example, you can include template implementation details about specific resources, as shown in the following snippet:
+
+Important
+During a stack update, you cannot update the metadata section by itself. You can update it only when you include changes that add, modify, or delete resources.
+
+Important
+CloudFormation does not transform, modify, or redact any information you include in the Metadata section. Because of this, we strongly recommend you do not use this section to store sensitive information, such as passwords or secrets.
+
+JSON
+"Metadata" : {
+  "Instances" : {"Description" : "Information about the instances"},
+  "Databases" : {"Description" : "Information about databases"}
+}
+
+Metadata keys
+
+Some AWS CloudFormation features retrieve settings or configuration information that youd efine in the Metadata section. You define this information in the following AWS CloudFormation-specific metadata keys:
+
+AWS::CloudFormation::Init
+  Defines configuration tasks for the cfn-init helper script. This script is useful for configuring and installing applications on EC2 instances. For more information, see AWS::CloudFormation::Init.
+
+AWS::CloudFormation::Interface
+  Defines the grouping and ordering of input parameters when they are displayed in the AWS CloudFormation console. By default, the AWS CloudFormation console aplphabetically sorts parameters by their logical ID. For more information, see AWS::CloudFormation::Interface.
+
+AWS::CloudFormation::Designer
+  Describes how your resources are laid out in AWS CloudFormation Designer (Designer). Designer automatically adds this information when you use it to create an update templates. For more information, see What is AWS CloudFomration Designer?
+
+https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-authentication.html
+
+AWS::CloudFormation::Authentication
+
+Use the AWS::CloudFormation::Authentication resource to specify authentication credentials for files or sources that you specify with the AWS::CloudFormation::Init resource.
+
+To include authentication information for a file or source that you specify with AWS::CloudFormation::init, use the uris property if the source is a URI or the buckets propertiy if the source is an Amazon S3 bucket. For more information about files, see Files. For more information about sources, see Sources.
+
+You can also specify authentication information for files directly in the AWS::CloudFormation::Init resource. The files key of the resource contains a property named authentication. You can use the authentication property to associate authentication information defined in an AWS::CloudFormation::Authentication resource directly with a file.
+
+For files, AWS CloudFormation looks for authentication information in the following order:
+  1. The authentication property of the AWS::CloudFormation::Init files key.
+  2. The uris or buckets property of the AWS::CloudFormation::Authentication resource.
+
+For sources, CloudFormation looks for authentication information in the uris or buckets property of the AWS::CloudFormation::Authentication resource.
+
+Topics
+  Syntax
+  Properties
+  Examples
+
+Syntax
+
+To declare this entity in your CloudFormation tempalte, use the following syntax:
+
+You should be aware of the following considerations whne using the AWS::CloudFormation::Authenticaiton type:
+
+  Unlike CloudFormation resources, the AWS::CloudFormation::Authentication type doesn't contain a block called properties, but instead contians a list of user-named blocks, even containing its own authentication properties. Not all properties pertain to each authenticaiton type; see the type property for more details.
+
+  Unlike most CloudFormation resources, property names use lower camel case.
+
+JSON
+{
+  "Type" : "AWS::CloudFormation::Authentication" {
+    "String" : {
+      "accessKeyId": String,
+      "buckets" : [String, ...],
+      "password" : String,
+      "secretKey" : String,
+      "type" : String,
+      "uris" : [ String, ... ],
+      "username" : String,
+      "roleName" : String
+    }
+  }
+}
+
+Properties
+
+accessKeyId
+  Specifies the access key ID for S3 authenticaiton.
+  Required: Conditional. Can be specified only if the type property is set to "S3".
+  Type: String
+
+buckets
+  A comma-delimited list of Amazon S3 buckets to be associated with the S3 authenticaiton credentials.
+  Required: Conditional. Can be specified only if the type property is set to "S3".
+  Type: List of String values
+
+password
+  Specifies the password for basic authentication.
+  Required: Conditional. Can be specified only if the type property is set to "basic".
+  Type: String
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
